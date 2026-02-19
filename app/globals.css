@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Custom scrollbar ── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #101622; }
+::-webkit-scrollbar-thumb { background: #232f48; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #135bec; }
+
+/* ── Glassmorphism ── */
+.glass-panel {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(16, 22, 34, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ── Text gradient ── */
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Card hover lift ── */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px -16px rgba(19, 91, 236, 0.25);
+}
+
+/* ── Scroll-triggered fade-in ── */
+.fade-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+}
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

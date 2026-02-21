@@ -1,4 +1,4 @@
-import { MapPin, Star } from 'lucide-react'
+import { Star } from 'lucide-react'
 import type { Temoignage } from '@/data/temoignages'
 
 interface TestimonialCardProps {
@@ -9,7 +9,7 @@ export default function TestimonialCard({ temoignage }: TestimonialCardProps) {
   const { nom, ville, metier, note, texte, date } = temoignage
 
   return (
-    <div className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-surface-dark p-6 card-hover">
+    <div className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-surface-dark p-6 card-hover h-full">
       {/* Stars */}
       <div className="flex gap-0.5">
         {Array.from({ length: note }).map((_, i) => (
@@ -23,17 +23,11 @@ export default function TestimonialCard({ temoignage }: TestimonialCardProps) {
       </blockquote>
 
       {/* Author */}
-      <div className="flex items-center justify-between border-t border-white/5 pt-4">
-        <div>
-          <p className="text-white font-semibold text-sm">{nom}</p>
-          <p className="text-slate-500 text-xs">{metier}</p>
-        </div>
-        <div className="flex items-center gap-1 text-slate-500 text-xs">
-          <MapPin size={11} />
-          <span>{ville}</span>
-          <span className="mx-1">·</span>
-          <span>{date}</span>
-        </div>
+      <div className="border-t border-white/5 pt-4">
+        <p className="text-white font-semibold text-sm">{nom}</p>
+        <p className="text-slate-500 text-xs mt-1">
+          {metier} · {ville} · {date}
+        </p>
       </div>
     </div>
   )

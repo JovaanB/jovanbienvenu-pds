@@ -8,7 +8,6 @@
 
 import {
   ShieldCheck,
-  Clock,
   MapPin,
   MessageCircle,
   TrendingUp,
@@ -89,6 +88,7 @@ export const navLinks = [
   { href: "/", label: "Accueil" },
   { href: "/creation-site-internet", label: "Création de site" },
   { href: "/referencement-local-google", label: "Référencement local" },
+  { href: "/tarifs", label: "Tarifs" },
   { href: "/realisations", label: "Réalisations" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
@@ -106,18 +106,23 @@ export const hero = {
    * sera automatiquement mis en valeur (couleur blanche / gras).
    */
   subheadline:
-    "Développeur web freelance basé à Fourmies, j'accompagne artisans et commerçants de l'Avesnois dans leur transformation digitale. Devis gratuit sous 24h.",
+    "Développeur web basé à Fourmies, je crée des sites internet et optimise les fiches Google My Business des artisans et commerçants de l'Avesnois. Devis gratuit sous 24h.",
   subheadlineHighlight: "l'Avesnois",
 
   cta: {
-    primary: { label: "Voir mes offres", href: "/creation-site-internet" },
+    primary: { label: "Demander un devis gratuit", href: "/contact" },
     secondary: { label: "Appeler maintenant" }, // href construit depuis siteInfo.phone
+    gmb: {
+      label: "Je cherche à optimiser ma fiche Google",
+      href: "/referencement-local-google",
+    },
   },
 
   /** Mini-stats affichées sous les boutons CTA */
   stats: [
-    { value: "100%", label: "Clients satisfaits" },
-    { value: "150%", label: "Visibilité moyenne" },
+    { value: "10+", label: "Sites livrés" },
+    { value: "8+", label: "Ans d'expérience" },
+    { value: "5", label: "Villes couvertes" },
   ],
 };
 
@@ -131,11 +136,6 @@ export const trustItems: TrustItem[] = [
     Icon: ShieldCheck,
     label: "Auto-entrepreneur enregistré",
     sub: `SIRET : ${siteInfo.siret}`,
-  },
-  {
-    Icon: Clock,
-    label: `+ ${new Date().getFullYear() - siteInfo.experienceSince} ans d'expérience`,
-    sub: `Depuis ${siteInfo.experienceSince}`,
   },
   {
     Icon: MapPin,
@@ -329,7 +329,7 @@ export const faqs = [
   },
   {
     q: "Que se passe-t-il après la livraison de mon site ?",
-    a: "Je ne vous abandonne pas après la mise en ligne ! Je vous forme à gérer votre site en autonomie, reste disponible pour vos questions, et propose une maintenance mensuelle optionnelle. Vous avez un interlocuteur unique sur la durée.",
+    a: "Je ne vous abandonne pas après la mise en ligne ! Je reste disponible pour vos questions, et propose une maintenance mensuelle optionnelle.",
   },
 ];
 

@@ -201,6 +201,13 @@ export default function ReferencementLocalPage() {
                   ))}
                 </ul>
 
+                <div className="flex items-start gap-2.5 p-3 rounded-xl bg-green-500/10 border border-green-500/20 mb-4">
+                  <span className="text-green-400 text-base shrink-0 mt-0.5">🛡️</span>
+                  <p className="text-green-300 text-xs leading-relaxed">
+                    <span className="font-semibold">Garantie résultats</span> — Pas de progression visible en 8 semaines ? Je retravaille la fiche sans frais supplémentaires.
+                  </p>
+                </div>
+
                 <Link
                   href="/contact"
                   className="group w-full flex items-center justify-center gap-2 py-4 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-xl transition-all duration-200 hover:shadow-[0_0_24px_-4px_rgba(147,51,234,0.5)] active:scale-95"

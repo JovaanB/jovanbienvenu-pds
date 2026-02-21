@@ -1,12 +1,12 @@
-import { trustItems } from '@/lib/site'
-import FadeIn from '@/components/FadeIn'
+import { trustItems } from "@/lib/site";
+import FadeIn from "@/components/FadeIn";
 
 export default function TrustBanner() {
   return (
     <section className="border-y border-white/5 bg-black/30 backdrop-blur-sm relative z-10">
       <div className="max-w-7xl mx-auto px-6 py-8">
         <FadeIn>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x divide-white/10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-0 lg:divide-x divide-white/10">
             {trustItems.map(({ Icon, label, sub }) => (
               <div
                 key={label}
@@ -16,7 +16,9 @@ export default function TrustBanner() {
                   <Icon size={20} className="text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-white leading-tight">{label}</p>
+                  <p className="text-sm font-semibold text-white leading-tight">
+                    {label}
+                  </p>
                   <p className="text-xs text-slate-500 mt-0.5">{sub}</p>
                 </div>
               </div>
@@ -25,5 +27,5 @@ export default function TrustBanner() {
         </FadeIn>
       </div>
     </section>
-  )
+  );
 }

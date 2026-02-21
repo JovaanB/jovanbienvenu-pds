@@ -1,6 +1,6 @@
 # Jovan — Landing Page Développeur Web & SEO Local
 
-Landing page professionnelle pour un développeur web freelance basé dans l'Avesnois (Nord, France), ciblant artisans et commerçants locaux.
+Landing page professionnelle pour un développeur web basé dans l'Avesnois (Nord, France), ciblant artisans et commerçants locaux.
 
 ## ✨ Stack technique
 
@@ -78,14 +78,14 @@ npm run start
 
 ### Informations à remplacer avant mise en ligne
 
-| Fichier | Élément à modifier |
-|---|---|
-| `components/Navbar.tsx` | Nom / logo |
-| `components/Hero.tsx` | Texte accroche, numéro de téléphone |
-| `components/TrustBanner.tsx` | Numéro SIRET, années d'expérience |
-| `components/WhatsAppButton.tsx` | Numéro WhatsApp (`wa.me/33XXXXXXXXX`) |
-| `components/Footer.tsx` | Liens LinkedIn, Instagram, Mentions légales |
-| `app/layout.tsx` | Métadonnées SEO (title, description, keywords) |
+| Fichier                         | Élément à modifier                             |
+| ------------------------------- | ---------------------------------------------- |
+| `components/Navbar.tsx`         | Nom / logo                                     |
+| `components/Hero.tsx`           | Texte accroche, numéro de téléphone            |
+| `components/TrustBanner.tsx`    | Numéro SIRET, années d'expérience              |
+| `components/WhatsAppButton.tsx` | Numéro WhatsApp (`wa.me/33XXXXXXXXX`)          |
+| `components/Footer.tsx`         | Liens LinkedIn, Instagram, Mentions légales    |
+| `app/layout.tsx`                | Métadonnées SEO (title, description, keywords) |
 
 ### Couleurs
 
@@ -116,6 +116,7 @@ colors: {
 ## 📱 Responsive
 
 Le site est développé en **mobile-first** et testé sur :
+
 - Mobile (320px+)
 - Tablette (768px+)
 - Desktop (1024px+)
@@ -123,6 +124,7 @@ Le site est développé en **mobile-first** et testé sur :
 ## 🔗 Formulaire de contact
 
 Le formulaire est **UI seulement** (pas de backend). Pour l'activer en production, vous pouvez utiliser :
+
 - [Resend](https://resend.com) + Next.js API Route
 - [Formspree](https://formspree.io)
 - [EmailJS](https://www.emailjs.com)

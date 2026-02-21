@@ -50,9 +50,9 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-slate-500 text-sm leading-relaxed max-w-xs">
-              Développeur web freelance basé à Fourmies. Je crée des sites
-              internet et optimise la visibilité locale des artisans et
-              commerçants de l'Avesnois.
+              Développeur web basé à Fourmies. Je crée des sites internet et
+              optimise la visibilité locale des artisans et commerçants de
+              l'Avesnois.
             </p>
           </div>
 

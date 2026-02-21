@@ -111,10 +111,13 @@ export default function ContactForm() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-slate-300 mb-2">Téléphone</label>
+            <label className="block text-sm font-medium text-slate-300 mb-2">
+              Téléphone <span className="text-primary">*</span>
+            </label>
             <input
               type="tel"
               name="telephone"
+              required
               placeholder="06 XX XX XX XX"
               className={inputClass}
             />

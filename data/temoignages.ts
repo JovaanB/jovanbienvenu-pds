@@ -20,22 +20,12 @@ export type Temoignage = {
 export const temoignages: Temoignage[] = [
   {
     id: 1,
-    nom: "Yohan L.",
+    nom: "Steel Dream",
     ville: "Fourmies",
     metier: "",
     note: 5,
     texte:
-      "Jovan a créé mon site en moins de 2 semaines. Depuis la mise en ligne, j'ai des appels de nouveaux clients tous les jours. Très à l'écoute, il a su comprendre mon activité et le résultat est exactement ce que j'espérais. Je recommande vivement !",
-    date: "Janvier 2026",
-  },
-  {
-    id: 2,
-    nom: "Séverine L.",
-    ville: "Wignehies",
-    metier: "Gîte",
-    note: 5,
-    texte:
-      "Grâce à l'optimisation de ma fiche Google pour mon gîte, je suis passé de la 3ème à la 1ère page en 4 semaines. Mon carnet de réservation est plein et je reçois des demandes chaque semaine depuis Google. Vraiment efficace et pro.",
+      "Je tenais à te remercier sincèrement pour la qualité du travail que tu as réalisé sur mon site internet et ma fiche Google My Business. Le résultat est à la hauteur de mes attentes, et je suis pleinement satisfait du rendu final. Tu as su faire preuve d’écoute, de professionnalisme et de réactivité tout au long du projet. J’ai particulièrement apprécié ta capacité à comprendre mes besoins et à les traduire en un site à la fois moderne, clair et performant. Merci pour ton engagement, ton sérieux et ton accompagnement. Ce fut un réel plaisir de collaborer avec toi, et je n’hésiterai pas à te recommander autour de moi. Encore un grand merci.",
     date: "Janvier 2026",
   },
 ];

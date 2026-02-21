@@ -16,11 +16,29 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setStatus('loading')
     setErrorMsg('')
 
     const form = e.currentTarget
     const data = Object.fromEntries(new FormData(form).entries())
+
+    // Validation côté client
+    if (!data.service || (data.service as string).trim() === '') {
+      setErrorMsg('Veuillez sélectionner un service.')
+      setStatus('error')
+      return
+    }
+    if (!data.telephone || (data.telephone as string).trim() === '') {
+      setErrorMsg('Veuillez renseigner votre numéro de téléphone.')
+      setStatus('error')
+      return
+    }
+    if (!data.message || (data.message as string).trim().length < 10) {
+      setErrorMsg('Votre message doit contenir au moins 10 caractères.')
+      setStatus('error')
+      return
+    }
+
+    setStatus('loading')
 
     try {
       const res = await fetch('/api/contact', {
@@ -165,10 +183,12 @@ export default function ContactForm() {
           <textarea
             name="message"
             required
+            minLength={10}
             rows={5}
             placeholder="Décrivez votre projet, votre activité, vos besoins…"
             className={`${inputClass} resize-none`}
           />
+          <p className="text-xs text-slate-600 mt-1">Minimum 10 caractères.</p>
         </div>
 
         {/* Error */}

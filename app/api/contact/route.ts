@@ -1,42 +1,49 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
+import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
 
 export type ContactPayload = {
-  prenom: string
-  nom: string
-  email: string
-  telephone?: string
-  ville?: string
-  service: string
-  message: string
-}
+  prenom: string;
+  nom: string;
+  email: string;
+  telephone: string;
+  ville?: string;
+  service: string;
+  message: string;
+};
 
 const SERVICE_LABELS: Record<string, string> = {
-  'site-vitrine': 'Création de site internet',
-  'seo-local': 'Référencement local / Google My Business',
-  'pack-complet': 'Pack complet (site + SEO local)',
-  'autre': 'Autre / Simple renseignement',
-}
+  "site-vitrine": "Création de site internet",
+  "seo-local": "Référencement local / Google My Business",
+  "pack-complet": "Pack complet (site + SEO local)",
+  autre: "Autre / Simple renseignement",
+};
 
 function validatePayload(body: unknown): body is ContactPayload {
-  if (!body || typeof body !== 'object') return false
-  const b = body as Record<string, unknown>
+  if (!body || typeof body !== "object") return false;
+  const b = body as Record<string, unknown>;
   return (
-    typeof b.prenom === 'string' && b.prenom.trim().length > 0 &&
-    typeof b.nom === 'string' && b.nom.trim().length > 0 &&
-    typeof b.email === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(b.email) &&
-    typeof b.service === 'string' && b.service.trim().length > 0 &&
-    typeof b.message === 'string' && b.message.trim().length >= 10
-  )
+    typeof b.prenom === "string" &&
+    b.prenom.trim().length > 0 &&
+    typeof b.nom === "string" &&
+    b.nom.trim().length > 0 &&
+    typeof b.email === "string" &&
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(b.email) &&
+    typeof b.telephone === "string" &&
+    b.telephone.trim().length > 0 &&
+    typeof b.service === "string" &&
+    b.service.trim().length > 0 &&
+    typeof b.message === "string" &&
+    b.message.trim().length >= 10
+  );
 }
 
 function buildEmailHtml(payload: ContactPayload): string {
-  const serviceLabel = SERVICE_LABELS[payload.service] ?? payload.service
-  const now = new Date().toLocaleString('fr-FR', {
-    timeZone: 'Europe/Paris',
-    dateStyle: 'full',
-    timeStyle: 'short',
-  })
+  const serviceLabel = SERVICE_LABELS[payload.service] ?? payload.service;
+  const now = new Date().toLocaleString("fr-FR", {
+    timeZone: "Europe/Paris",
+    dateStyle: "full",
+    timeStyle: "short",
+  });
 
   return `<!DOCTYPE html>
 <html lang="fr">
@@ -74,18 +81,26 @@ function buildEmailHtml(payload: ContactPayload): string {
                 <a href="mailto:${payload.email}" style="color:#135bec;font-size:15px;margin-top:2px;display:block;text-decoration:none;">${payload.email}</a>
               </td>
             </tr>
-            ${payload.telephone ? `<tr>
+            ${
+              payload.telephone
+                ? `<tr>
               <td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
                 <span style="color:#64748b;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">Téléphone</span><br/>
                 <a href="tel:${payload.telephone}" style="color:#135bec;font-size:15px;margin-top:2px;display:block;text-decoration:none;">${payload.telephone}</a>
               </td>
-            </tr>` : ''}
-            ${payload.ville ? `<tr>
+            </tr>`
+                : ""
+            }
+            ${
+              payload.ville
+                ? `<tr>
               <td style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
                 <span style="color:#64748b;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">Ville</span><br/>
                 <span style="color:#e2e8f0;font-size:15px;margin-top:2px;display:block;">${payload.ville}</span>
               </td>
-            </tr>` : ''}
+            </tr>`
+                : ""
+            }
           </table>
 
           <!-- Message -->
@@ -112,39 +127,45 @@ function buildEmailHtml(payload: ContactPayload): string {
     </td></tr>
   </table>
 </body>
-</html>`
+</html>`;
 }
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json()
+    const body = await request.json();
 
     if (!validatePayload(body)) {
       return NextResponse.json(
-        { error: 'Données invalides. Vérifiez que tous les champs obligatoires sont remplis.' },
-        { status: 400 }
-      )
+        {
+          error:
+            "Données invalides. Vérifiez que tous les champs obligatoires sont remplis.",
+        },
+        { status: 400 },
+      );
     }
 
-    const resend = new Resend(process.env.RESEND_API_KEY)
-    const serviceLabel = SERVICE_LABELS[body.service] ?? body.service
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const serviceLabel = SERVICE_LABELS[body.service] ?? body.service;
 
     await resend.emails.send({
-      from: 'Site Jovan <noreply@jovanbienvenu.com>',
-      to: ['contact@jovanbienvenu.com'],
+      from: "onboarding@resend.dev",
+      to: process.env.CONTACT_EMAIL!,
       replyTo: body.email,
       subject: `Nouveau message — ${serviceLabel} · ${body.prenom} ${body.nom}`,
       html: buildEmailHtml(body),
-    })
+    });
 
     return NextResponse.json(
-      { success: true, message: 'Votre message a bien été envoyé.' },
-      { status: 200 }
-    )
+      { success: true, message: "Votre message a bien été envoyé." },
+      { status: 200 },
+    );
   } catch {
     return NextResponse.json(
-      { error: 'Erreur serveur. Veuillez réessayer ou contacter directement par téléphone.' },
-      { status: 500 }
-    )
+      {
+        error:
+          "Erreur serveur. Veuillez réessayer ou contacter directement par téléphone.",
+      },
+      { status: 500 },
+    );
   }
 }

@@ -67,15 +67,18 @@ export const externalLinks = {
 // 3. SEO — MÉTADONNÉES
 // ─────────────────────────────────────────────────────────────────────────────
 export const seoMetadata = {
-  title: "Jovan — Développeur Web & SEO Local | Avesnois, Nord",
+  title: "Création de site internet à Fourmies — 590€ | Jovan",
   description:
-    "Création de sites internet et référencement local Google My Business pour artisans et commerçants dans l'Avesnois (Fourmies, Hirson, Avesnes-sur-Helpe, Maubeuge). Devis gratuit.",
+    "Développeur web à Fourmies. Site internet à 590€ + optimisation Google My Business à 280€ pour artisans et commerçants de l'Avesnois. Devis gratuit sous 24h.",
   keywords: [
-    "création site internet Avesnois",
+    "création site internet Fourmies",
+    "création site web Fourmies",
     "développeur web Fourmies",
-    "SEO local Nord",
-    "Google My Business Avesnois",
-    "site vitrine artisan",
+    "référencement local Fourmies",
+    "Google My Business Fourmies",
+    "création site internet Maubeuge",
+    "SEO local Avesnois",
+    "site vitrine artisan Nord",
   ],
 };
 
@@ -95,7 +98,7 @@ export const navLinks = [
 // 5. HERO
 // ─────────────────────────────────────────────────────────────────────────────
 export const hero = {
-  headline1: "Création de sites internet",
+  headline1: "Création de site internet",
   headline2: "dans l'Avesnois.",
 
   /**
@@ -281,7 +284,7 @@ export const pricingTiers: PricingTier[] = [
   {
     name: "Optimisation fiche Google",
     badge: null,
-    price: "200",
+    price: "280",
     unit: "€",
     billing: "forfait unique",
     desc: "Optimisation complète de votre fiche Google My Business pour apparaître en tête des résultats locaux.",

@@ -74,12 +74,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  const cityPages: MetadataRoute.Sitemap = villes.map((ville) => ({
+  const cityPagesSite: MetadataRoute.Sitemap = villes.map((ville) => ({
     url: `${SITE_URL}/creation-site-internet-${ville.slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.85,
   }))
 
-  return [...staticPages, ...cityPages]
+  const cityPagesGmb: MetadataRoute.Sitemap = villes.map((ville) => ({
+    url: `${SITE_URL}/referencement-local-google-${ville.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }))
+
+  return [...staticPages, ...cityPagesSite, ...cityPagesGmb]
 }

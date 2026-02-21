@@ -32,7 +32,7 @@ const articleSchema = {
   datePublished: DATE,
   dateModified: DATE,
   author: { "@type": "Person", name: "Jovan Bienvenu", url: SITE_URL },
-  publisher: { "@type": "LocalBusiness", name: SITE_NAME, url: SITE_URL },
+  publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
   inLanguage: "fr-FR",
 };
 
@@ -195,7 +195,7 @@ export default function ArticleSiteVitrineVsGMB() {
                   </ul>
                   <div className="mt-4 pt-4 border-t border-white/8">
                     <p className="text-slate-500 text-xs">
-                      Coût : <strong className="text-slate-300">200 €</strong>{" "}
+                      Coût : <strong className="text-slate-300">280 €</strong>{" "}
                       (optimisation pro) ou gratuit en DIY
                     </p>
                     <p className="text-slate-500 text-xs">
@@ -229,7 +229,7 @@ export default function ArticleSiteVitrineVsGMB() {
                       « Qui est disponible près de moi maintenant ? »
                     </strong>{" "}
                     C'est là qu'un client cherche{" "}
-                    <em>« plombier urgence Fourmies »</em> à 20h. Il veut un
+                    <Link href="/referencement-local-google-fourmies" className="text-slate-300 underline decoration-slate-600 hover:text-amber-300 transition-colors">« plombier urgence Fourmies »</Link> à 20h. Il veut un
                     numéro de téléphone, des avis, et savoir si vous êtes ouvert
                     — pas lire 5 pages de contenu.
                   </p>
@@ -369,6 +369,24 @@ export default function ArticleSiteVitrineVsGMB() {
                   >
                     Voir le Pack Visibilité
                   </Link>
+                </div>
+                <div className="flex flex-wrap justify-center items-center gap-2 mt-5 pt-5 border-t border-white/8">
+                  <span className="text-slate-500 text-xs w-full text-center mb-1">Référencement local par ville :</span>
+                  {[
+                    { label: 'Fourmies', slug: 'fourmies' },
+                    { label: 'Avesnes-sur-Helpe', slug: 'avesnes-sur-helpe' },
+                    { label: 'Hirson', slug: 'hirson' },
+                    { label: 'Maubeuge', slug: 'maubeuge' },
+                    { label: 'Glageon', slug: 'glageon' },
+                  ].map((v) => (
+                    <Link
+                      key={v.slug}
+                      href={`/referencement-local-google-${v.slug}`}
+                      className="text-xs px-3 py-1 rounded-full border border-white/15 text-slate-400 hover:border-white/30 hover:text-slate-300 transition-colors"
+                    >
+                      {v.label}
+                    </Link>
+                  ))}
                 </div>
               </div>
             </FadeIn>

@@ -35,7 +35,7 @@ export default function Footer() {
 
       {/* Footer main */}
       <div className="max-w-7xl mx-auto px-6 py-12 border-t border-white/5">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
           {/* Brand */}
           <div>
             <Link
@@ -72,6 +72,7 @@ export default function Footer() {
                   label: "Référencement local GMB",
                 },
                 { href: "/realisations", label: "Mes réalisations" },
+                { href: "/blog", label: "Blog" },
                 { href: "/contact", label: "Demander un devis" },
               ].map((link) => (
                 <li key={link.href}>
@@ -86,12 +87,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Zones desservies */}
+          {/* Création de site par ville */}
           <div>
             <h3 className="text-white font-semibold text-sm mb-4">
               <span className="flex items-center gap-2">
                 <MapPin size={14} className="text-primary" />
-                Zones desservies
+                Création de site
               </span>
             </h3>
             <ul className="space-y-2.5">
@@ -101,7 +102,29 @@ export default function Footer() {
                     href={`/creation-site-internet-${ville.slug}`}
                     className="text-slate-500 text-sm hover:text-white transition-colors duration-200"
                   >
-                    {ville.nomComplet}
+                    {ville.nom}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Référencement local par ville */}
+          <div>
+            <h3 className="text-white font-semibold text-sm mb-4">
+              <span className="flex items-center gap-2">
+                <MapPin size={14} className="text-purple-400" />
+                Référencement local
+              </span>
+            </h3>
+            <ul className="space-y-2.5">
+              {villes.map((ville) => (
+                <li key={ville.slug}>
+                  <Link
+                    href={`/referencement-local-google-${ville.slug}`}
+                    className="text-slate-500 text-sm hover:text-white transition-colors duration-200"
+                  >
+                    {ville.nom}
                   </Link>
                 </li>
               ))}

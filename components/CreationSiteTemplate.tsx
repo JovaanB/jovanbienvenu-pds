@@ -9,7 +9,8 @@ import {
   SITE_URL,
 } from "@/lib/metadata";
 import { siteInfo, faqs } from "@/lib/site";
-import type { VilleSEO } from "@/data/villes";
+import { villes, type VilleSEO } from "@/data/villes";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const livrables = [
   "Design professionnel sur-mesure",
@@ -61,6 +62,7 @@ export default function CreationSiteTemplate({
 
   const schema = buildLocalBusinessSchema({
     addressLocality: ville?.nom ?? "Fourmies",
+    postalCode: ville?.codePostal ?? "59610",
     url: pageUrl,
   });
 
@@ -404,6 +406,32 @@ export default function CreationSiteTemplate({
         </div>
       </section>
 
+      {/* ── MAILLAGE INTERNE VILLES ── */}
+      <section className="relative z-10 py-12 px-6">
+        <div className="max-w-3xl mx-auto">
+          <FadeIn>
+            <div className="rounded-2xl border border-white/8 bg-surface-dark p-6">
+              <p className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-4">
+                Je travaille aussi à
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {villes
+                  .filter((v) => v.slug !== ville?.slug)
+                  .map((v) => (
+                    <Link
+                      key={v.slug}
+                      href={`/creation-site-internet-${v.slug}`}
+                      className="text-sm text-slate-400 hover:text-white border border-white/10 hover:border-white/30 px-4 py-2 rounded-full transition-all duration-200"
+                    >
+                      📍 Création site internet {v.nom}
+                    </Link>
+                  ))}
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* ── CTA FINAL ── */}
       <section className="relative z-10 py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
@@ -445,6 +473,7 @@ export default function CreationSiteTemplate({
           </FadeIn>
         </div>
       </section>
+      <WhatsAppButton />
     </>
   );
 }

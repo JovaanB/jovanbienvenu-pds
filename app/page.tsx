@@ -1,30 +1,46 @@
-import type { Metadata } from 'next'
-import Hero from '@/components/Hero'
-import TrustBanner from '@/components/TrustBanner'
-import Services from '@/components/Services'
-import WhyMe from '@/components/WhyMe'
-import Portfolio from '@/components/Portfolio'
-import Testimonials from '@/components/Testimonials'
-import Pricing from '@/components/Pricing'
-import FAQ from '@/components/FAQ'
-import ContactForm from '@/components/ContactForm'
-import WhatsAppButton from '@/components/WhatsAppButton'
-import SchemaOrg from '@/components/SchemaOrg'
-import { buildLocalBusinessSchema, buildMetadata, SITE_URL } from '@/lib/metadata'
+import type { Metadata } from "next";
+import Hero from "@/components/Hero";
+import TrustBanner from "@/components/TrustBanner";
+import Services from "@/components/Services";
+import WhyMe from "@/components/WhyMe";
+import Portfolio from "@/components/Portfolio";
+import Testimonials from "@/components/Testimonials";
+import Pricing from "@/components/Pricing";
+import FAQ from "@/components/FAQ";
+import ContactForm from "@/components/ContactForm";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import SchemaOrg from "@/components/SchemaOrg";
+import {
+  buildLocalBusinessSchema,
+  buildMetadata,
+  SITE_URL,
+} from "@/lib/metadata";
+import { faqs } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Jovan — Développeur web Freelance | Création de sites internet Avesnois",
+  title: "Création de site internet à Fourmies — 590€ | Jovan",
   description:
-    "Création de sites internet et référencement local Google My Business pour artisans et commerçants dans l'Avesnois (Fourmies, Hirson, Maubeuge). Devis gratuit.",
-  path: '/',
-})
+    "Développeur web à Fourmies. Site internet à 590€ + optimisation Google My Business à 280€ pour artisans et commerçants de l'Avesnois. Devis gratuit sous 24h.",
+  path: "/",
+});
 
-const schema = buildLocalBusinessSchema({ url: SITE_URL })
+const schema = buildLocalBusinessSchema({ url: SITE_URL });
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
 
 export default function Home() {
   return (
     <main className="relative">
       <SchemaOrg schema={schema} />
+      <SchemaOrg schema={faqSchema} />
 
       {/* Ambient background glows — fixed so they follow scroll */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
@@ -44,5 +60,5 @@ export default function Home() {
       <ContactForm />
       <WhatsAppButton />
     </main>
-  )
+  );
 }

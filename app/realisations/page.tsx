@@ -6,6 +6,7 @@ import { realisations } from '@/data/realisations'
 import RealisationCard from '@/components/RealisationCard'
 import FadeIn from '@/components/FadeIn'
 import SchemaOrg from '@/components/SchemaOrg'
+import WhatsAppButton from '@/components/WhatsAppButton'
 
 export const metadata: Metadata = buildMetadata({
   title: "Mes réalisations — Sites internet et SEO local dans l'Avesnois",
@@ -91,6 +92,7 @@ export default function RealisationsPage() {
           </FadeIn>
         </div>
       </section>
+      <WhatsAppButton />
     </main>
   )
 }

@@ -4,6 +4,8 @@
  */
 
 import type { Metadata } from "next";
+import { temoignages } from "@/data/temoignages";
+import { externalLinks } from "@/lib/site";
 
 export const SITE_URL = "https://jovanbienvenu.com";
 export const SITE_NAME = "Jovan — Développeur Web Avesnois";
@@ -71,24 +73,31 @@ export function buildBreadcrumbSchema(
   };
 }
 
-/** Schema.org LocalBusiness de base — étendu par chaque page */
+/** Schema.org ProfessionalService — étendu par chaque page */
 export function buildLocalBusinessSchema(overrides?: {
   addressLocality?: string;
+  /** Code postal de la ville ciblée. Défaut: "59610" (Fourmies) */
+  postalCode?: string;
   url?: string;
 }) {
+  const ratingCount = temoignages.length;
+  const ratingValue =
+    temoignages.reduce((sum, t) => sum + t.note, 0) / ratingCount;
+
   return {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "ProfessionalService",
     name: SITE_NAME,
     description:
       "Création de sites internet et référencement local Google My Business pour artisans et commerçants dans l'Avesnois.",
     url: overrides?.url ?? SITE_URL,
-    telephone: "+33788962157", // ← Mettre à jour dans lib/site.ts > siteInfo.phone
+    telephone: "+33788962157",
     email: "contact@jovanbienvenu.com",
+    image: `${SITE_URL}/images/og-default.jpg`,
     address: {
       "@type": "PostalAddress",
       addressLocality: overrides?.addressLocality ?? "Fourmies",
-      postalCode: "59610",
+      postalCode: overrides?.postalCode ?? "59610",
       addressRegion: "Hauts-de-France",
       addressCountry: "FR",
     },
@@ -100,6 +109,13 @@ export function buildLocalBusinessSchema(overrides?: {
       "Glageon",
     ],
     priceRange: "€€",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: ratingValue.toFixed(1),
+      reviewCount: String(ratingCount),
+      bestRating: "5",
+      worstRating: "1",
+    },
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -115,6 +131,20 @@ export function buildLocalBusinessSchema(overrides?: {
         closes: "19:00",
       },
     ],
-    sameAs: [],
+    review: temoignages.map((t) => ({
+      "@type": "Review",
+      author: {
+        "@type": "Person",
+        name: t.nom,
+      },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: String(t.note),
+        bestRating: "5",
+        worstRating: "1",
+      },
+      reviewBody: t.texte,
+    })),
+    sameAs: [externalLinks.linkedin],
   };
 }

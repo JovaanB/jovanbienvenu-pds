@@ -27,7 +27,7 @@ const articleSchema = {
   datePublished: DATE,
   dateModified: DATE,
   author: { '@type': 'Person', name: 'Jovan Bienvenu', url: SITE_URL },
-  publisher: { '@type': 'LocalBusiness', name: SITE_NAME, url: SITE_URL },
+  publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
   inLanguage: 'fr-FR',
 }
 
@@ -212,9 +212,10 @@ export default function ArticleTop3GoogleMaps() {
                   <h2 className="text-white font-bold text-xl">Dans l'Avesnois, la concurrence est faible</h2>
                 </div>
                 <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                  Bonne nouvelle : sur des requêtes comme <em className="text-slate-300">« électricien Fourmies »</em>,{' '}
-                  <em className="text-slate-300">« coiffeur Avesnes-sur-Helpe »</em> ou{' '}
-                  <em className="text-slate-300">« plombier Hirson »</em>, la concurrence locale est souvent faible.
+                  Bonne nouvelle : sur des requêtes comme{' '}
+                  <Link href="/referencement-local-google-fourmies" className="text-slate-300 underline decoration-slate-600 hover:text-purple-300 transition-colors">« électricien Fourmies »</Link>,{' '}
+                  <Link href="/referencement-local-google-avesnes-sur-helpe" className="text-slate-300 underline decoration-slate-600 hover:text-purple-300 transition-colors">« coiffeur Avesnes-sur-Helpe »</Link> ou{' '}
+                  <Link href="/referencement-local-google-hirson" className="text-slate-300 underline decoration-slate-600 hover:text-purple-300 transition-colors">« plombier Hirson »</Link>, la concurrence locale est souvent faible.
                   Les fiches en place sont rarement bien optimisées. Cela signifie qu'une fiche correctement
                   travaillée peut atteindre le top 3 en <strong className="text-white">4 à 8 semaines</strong>,
                   là où il faudrait 6 mois dans une grande ville.
@@ -223,6 +224,28 @@ export default function ArticleTop3GoogleMaps() {
                   C'est le meilleur moment pour prendre de l'avance sur vos concurrents avant qu'ils
                   n'y pensent eux aussi.
                 </p>
+              </div>
+            </FadeIn>
+
+            {/* Par ville */}
+            <FadeIn>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-slate-500 text-xs">Voir l'offre par ville :</span>
+                {[
+                  { label: 'Fourmies', slug: 'fourmies' },
+                  { label: 'Avesnes-sur-Helpe', slug: 'avesnes-sur-helpe' },
+                  { label: 'Hirson', slug: 'hirson' },
+                  { label: 'Maubeuge', slug: 'maubeuge' },
+                  { label: 'Glageon', slug: 'glageon' },
+                ].map((v) => (
+                  <Link
+                    key={v.slug}
+                    href={`/referencement-local-google-${v.slug}`}
+                    className="text-xs px-3 py-1 rounded-full border border-purple-500/30 text-purple-300 hover:border-purple-400/50 hover:text-purple-200 transition-colors"
+                  >
+                    {v.label}
+                  </Link>
+                ))}
               </div>
             </FadeIn>
 

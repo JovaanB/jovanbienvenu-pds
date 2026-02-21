@@ -1,53 +1,15 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { CheckCircle, ArrowRight, Phone, Clock, Star } from "lucide-react";
+import FadeIn from "@/components/FadeIn";
+import SchemaOrg from "@/components/SchemaOrg";
 import {
-  CheckCircle,
-  ArrowRight,
-  Phone,
-  Clock,
-  Star,
-  MapPin,
-} from "lucide-react";
-import {
-  buildMetadata,
   buildLocalBusinessSchema,
   buildBreadcrumbSchema,
   SITE_URL,
 } from "@/lib/metadata";
 import { siteInfo, faqsGmb } from "@/lib/site";
-import { villes as villesData } from "@/data/villes";
-import FadeIn from "@/components/FadeIn";
-import SchemaOrg from "@/components/SchemaOrg";
+import { villes, type VilleSEO } from "@/data/villes";
 import WhatsAppButton from "@/components/WhatsAppButton";
-
-export const metadata: Metadata = buildMetadata({
-  title: "Référencement local Google My Business Avesnois — 280€ | Jovan",
-  description:
-    "Optimisation fiche Google My Business dans l'Avesnois à 280€. Apparaissez en 1ère page Google à Fourmies, Maubeuge, Hirson. Résultats en 4 à 8 semaines.",
-  path: "/referencement-local-google",
-});
-
-const schema = buildLocalBusinessSchema({
-  url: `${SITE_URL}/referencement-local-google`,
-});
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqsGmb.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
-
-const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: "Accueil", url: SITE_URL },
-  {
-    name: "Référencement local Google My Business",
-    url: `${SITE_URL}/referencement-local-google`,
-  },
-]);
 
 const inclus = [
   "Audit complet de votre visibilité locale actuelle",
@@ -71,39 +33,63 @@ const stats = [
   { value: "1ère", unit: "page", label: "Position Google visée" },
 ];
 
-export default function ReferencementLocalPage() {
+interface ReferencementLocalTemplateProps {
+  ville: VilleSEO;
+}
+
+export default function ReferencementLocalTemplate({
+  ville,
+}: ReferencementLocalTemplateProps) {
+  const pageUrl = `${SITE_URL}/referencement-local-google-${ville.slug}`;
+
+  const schema = buildLocalBusinessSchema({
+    addressLocality: ville.nom,
+    postalCode: ville.codePostal,
+    url: pageUrl,
+  });
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqsGmb.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Accueil", url: SITE_URL },
+    {
+      name: "Référencement local Google",
+      url: `${SITE_URL}/referencement-local-google`,
+    },
+    { name: `Référencement local à ${ville.nom}`, url: pageUrl },
+  ]);
+
   return (
-    <main className="relative">
+    <>
       <SchemaOrg schema={schema} />
       <SchemaOrg schema={faqSchema} />
       <SchemaOrg schema={breadcrumbSchema} />
-
-      {/* Ambient glows */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute -top-[20%] right-[10%] w-[600px] h-[600px] bg-purple-900/15 rounded-full blur-[120px]" />
-        <div className="absolute top-[50%] left-[5%] w-[500px] h-[500px] bg-primary/8 rounded-full blur-[100px]" />
-      </div>
 
       {/* ── HERO ── */}
       <section className="relative z-10 pt-36 pb-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
             <p className="text-purple-400 font-bold tracking-widest uppercase text-xs mb-4">
-              Référencement local
+              Référencement local — {ville.nom}
             </p>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tight">
               Soyez{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-primary">
-                top 3
+                top 3 sur Google
               </span>{" "}
-              sur Google
+              à {ville.nom}
             </h1>
             <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-              J'optimise votre fiche Google My Business pour que les clients
-              locaux vous trouvent dans les résultats de recherche — avant vos
-              concurrents, et sans payer de publicité.
+              {ville.paragrapheIntroGmb}
             </p>
-
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contact"
@@ -149,16 +135,67 @@ export default function ReferencementLocalPage() {
         </div>
       </section>
 
+      {/* ── POURQUOI ── */}
+      <section className="relative z-10 py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="text-center mb-14">
+              <p className="text-purple-400 font-bold tracking-widest uppercase text-xs mb-3">
+                Pourquoi agir maintenant
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Pourquoi optimiser votre fiche Google à {ville.nom} ?
+              </h2>
+              <p className="text-slate-400 max-w-2xl mx-auto">
+                Quand un client cherche un artisan ou un service à {ville.nom},
+                Google Maps s&apos;affiche en premier. Sans fiche optimisée,
+                c&apos;est votre concurrent qui emporte la mise.
+              </p>
+            </div>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: "🔍",
+                titre: "76% des recherches locales",
+                desc: "finissent par un appel ou une visite en boutique le jour même. Votre fiche Google, c'est votre vitrine numéro 1.",
+              },
+              {
+                icon: "📍",
+                titre: "Le pack local Google",
+                desc: `Les 3 premières fiches qui apparaissent sur Google Maps à ${ville.nom} captent plus de 70% des clics. En dessous, presque personne ne vous voit.`,
+              },
+              {
+                icon: "💶",
+                titre: "Trafic 100% gratuit",
+                desc: "Contrairement à Google Ads, une fiche bien optimisée génère des appels et des visites sans payer par clic. Un investissement unique, des résultats durables.",
+              },
+            ].map((item) => (
+              <FadeIn key={item.titre}>
+                <div className="p-6 rounded-2xl border border-white/10 bg-surface-dark h-full">
+                  <span className="text-3xl mb-4 block">{item.icon}</span>
+                  <h3 className="text-white font-bold mb-2">{item.titre}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── OFFRE ── */}
       <section className="relative z-10 py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <div className="text-center mb-14">
               <p className="text-purple-400 font-bold tracking-widest uppercase text-xs mb-3">
-                L'offre
+                L&apos;offre
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Optimisation GMB complète — 280€
+                Optimisation GMB à {ville.nom} — 280€
               </h2>
               <p className="text-slate-400 max-w-xl mx-auto">
                 Un investissement unique qui génère un flux régulier de nouveaux
@@ -205,81 +242,94 @@ export default function ReferencementLocalPage() {
                   href="/contact"
                   className="group w-full flex items-center justify-center gap-2 py-4 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-xl transition-all duration-200 hover:shadow-[0_0_24px_-4px_rgba(147,51,234,0.5)] active:scale-95"
                 >
-                  Demander mon audit gratuit
+                  Demander mon audit gratuit à {ville.nom}
                   <ArrowRight
                     size={16}
                     className="group-hover:translate-x-1 transition-transform"
                   />
                 </Link>
-
                 <p className="text-center text-xs text-slate-600 mt-4">
                   Audit de votre visibilité actuelle offert avant toute décision
                 </p>
               </div>
             </FadeIn>
 
-            {/* Why GMB */}
+            {/* Trust items */}
             <FadeIn delay={200}>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
-                    <MapPin size={18} className="text-purple-400" />
-                    Zones desservies
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {villesData.map((ville) => (
-                      <Link
-                        key={ville.slug}
-                        href={`/referencement-local-google-${ville.slug}`}
-                        className="text-sm text-slate-300 bg-white/5 border border-white/10 hover:border-purple-500/40 hover:text-white px-3 py-1.5 rounded-full transition-all duration-200"
-                      >
-                        📍 {ville.nom}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="h-px bg-white/5" />
-
-                <div className="space-y-4">
-                  {[
-                    {
-                      icon: "📦",
-                      titre: "Incluse dans le Pack Visibilité",
-                      desc: "Avec le Pack Visibilité (site internet + fiche Google) à 590 €, la création ou optimisation de la fiche est incluse.",
-                    },
-                    {
-                      icon: "📊",
-                      titre: "Résultats mesurables",
-                      desc: "Je vous fournis un rapport de positionnement avant/après pour constater les progrès.",
-                    },
-                    {
-                      icon: "🔄",
-                      titre: "Sans abonnement obligatoire",
-                      desc: "Une fois votre fiche optimisée, vous êtes autonome. Suivi mensuel en option.",
-                    },
-                    {
-                      icon: "🤝",
-                      titre: "Intervention locale",
-                      desc: "Je me déplace chez vous pour les photos et l'échange si besoin.",
-                    },
-                  ].map((item) => (
-                    <div key={item.titre} className="flex gap-3">
-                      <span className="text-xl shrink-0">{item.icon}</span>
-                      <div>
-                        <h4 className="text-white font-semibold text-sm">
-                          {item.titre}
-                        </h4>
-                        <p className="text-slate-400 text-sm leading-relaxed">
-                          {item.desc}
-                        </p>
-                      </div>
+              <div className="space-y-5">
+                {[
+                  {
+                    icon: "📍",
+                    titre: `Intervention locale à ${ville.nom}`,
+                    desc: `Je me déplace chez vous à ${ville.nom} pour les photos et les échanges. Pas d'agence anonyme — un prestataire de proximité.`,
+                  },
+                  {
+                    icon: "📊",
+                    titre: "Rapport avant/après",
+                    desc: "Je vous fournis un rapport de positionnement avant et après l'optimisation pour constater les progrès concrets.",
+                  },
+                  {
+                    icon: "🔄",
+                    titre: "Sans abonnement obligatoire",
+                    desc: "Une fois votre fiche optimisée, vous êtes autonome. Je vous forme et reste disponible. Suivi mensuel en option.",
+                  },
+                  {
+                    icon: "📦",
+                    titre: "Incluse dans le Pack Visibilité",
+                    desc: "Avec le Pack à 590 €, l'optimisation de votre fiche Google est incluse — site internet + fiche Google, tout en un.",
+                  },
+                  {
+                    icon: "⏱️",
+                    titre: "Résultats en 4 à 8 semaines",
+                    desc: "Sur des mots-clés locaux, les premiers résultats sont visibles rapidement. La position 1 Google Maps se construit en 2 à 3 mois.",
+                  },
+                ].map((item) => (
+                  <div key={item.titre} className="flex gap-4">
+                    <span className="text-2xl shrink-0">{item.icon}</span>
+                    <div>
+                      <h3 className="text-white font-semibold text-sm mb-1">
+                        {item.titre}
+                      </h3>
+                      <p className="text-slate-400 text-sm leading-relaxed">
+                        {item.desc}
+                      </p>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </FadeIn>
           </div>
+        </div>
+      </section>
+
+      {/* ── UPSELL PACK VISIBILITÉ ── */}
+      <section className="relative z-10 py-12 px-6">
+        <div className="max-w-3xl mx-auto">
+          <FadeIn>
+            <div className="rounded-2xl border border-primary/20 bg-gradient-to-r from-primary/10 to-purple-900/10 p-8 flex flex-col md:flex-row items-center gap-6">
+              <div className="flex-1">
+                <p className="text-primary font-bold text-xs uppercase tracking-wider mb-2">
+                  Offre combinée
+                </p>
+                <h3 className="text-white font-bold text-lg mb-2">
+                  Site internet + fiche Google à {ville.nom}
+                </h3>
+                <p className="text-slate-400 text-sm">
+                  Le Pack Visibilité à 590 € inclut la création de votre site
+                  vitrine ET l&apos;optimisation de votre fiche Google — la
+                  combinaison la plus efficace pour dominer les résultats
+                  locaux.
+                </p>
+              </div>
+              <Link
+                href="/creation-site-internet"
+                className="shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl transition-all duration-200 text-sm"
+              >
+                Voir le Pack 590€
+                <ArrowRight size={15} />
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -292,7 +342,7 @@ export default function ReferencementLocalPage() {
                 FAQ
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Tout savoir sur le référencement local
+                Tout savoir sur le référencement local à {ville.nom}
               </h2>
             </div>
           </FadeIn>
@@ -328,10 +378,6 @@ export default function ReferencementLocalPage() {
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
                 Pour aller plus loin sur le SEO local
               </h2>
-              <p className="text-slate-400 text-sm">
-                Des ressources pour comprendre et maximiser votre visibilité
-                Google.
-              </p>
             </div>
           </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -344,10 +390,10 @@ export default function ReferencementLocalPage() {
                   Guide
                 </span>
                 <h3 className="text-white font-semibold text-sm leading-snug group-hover:text-purple-300 transition-colors">
-                  Comment apparaître dans le top 3 Google dans l'Avesnois ?
+                  Comment apparaître dans le top 3 Google dans l&apos;Avesnois ?
                 </h3>
                 <span className="inline-flex items-center gap-1 text-xs text-slate-500 group-hover:text-purple-400 transition-colors mt-auto">
-                  Lire l'article <ArrowRight size={12} />
+                  Lire l&apos;article <ArrowRight size={12} />
                 </span>
               </Link>
             </FadeIn>
@@ -363,7 +409,7 @@ export default function ReferencementLocalPage() {
                   Site vitrine ou fiche Google My Business — que choisir ?
                 </h3>
                 <span className="inline-flex items-center gap-1 text-xs text-slate-500 group-hover:text-purple-400 transition-colors mt-auto">
-                  Lire l'article <ArrowRight size={12} />
+                  Lire l&apos;article <ArrowRight size={12} />
                 </span>
               </Link>
             </FadeIn>
@@ -371,7 +417,33 @@ export default function ReferencementLocalPage() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
+      {/* ── MAILLAGE INTERNE VILLES ── */}
+      <section className="relative z-10 py-12 px-6">
+        <div className="max-w-3xl mx-auto">
+          <FadeIn>
+            <div className="rounded-2xl border border-white/8 bg-surface-dark p-6">
+              <p className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-4">
+                Je travaille aussi à
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {villes
+                  .filter((v) => v.slug !== ville.slug)
+                  .map((v) => (
+                    <Link
+                      key={v.slug}
+                      href={`/referencement-local-google-${v.slug}`}
+                      className="text-sm text-slate-400 hover:text-white border border-white/10 hover:border-white/30 px-4 py-2 rounded-full transition-all duration-200"
+                    >
+                      📍 Référencement local {v.nom}
+                    </Link>
+                  ))}
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── CTA FINAL ── */}
       <section className="relative z-10 py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn>
@@ -386,11 +458,11 @@ export default function ReferencementLocalPage() {
                 ))}
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Prêt à dominer Google ?
+                Prêt à dominer Google à {ville.nom} ?
               </h2>
               <p className="text-slate-400 mb-8">
-                Je commence par un audit gratuit de votre visibilité actuelle —
-                sans engagement.
+                Je commence par un audit gratuit de votre visibilité actuelle à{" "}
+                {ville.nom} — sans engagement.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
@@ -410,6 +482,6 @@ export default function ReferencementLocalPage() {
         </div>
       </section>
       <WhatsAppButton />
-    </main>
+    </>
   );
 }

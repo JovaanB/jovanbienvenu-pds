@@ -19,7 +19,7 @@ import SchemaOrg from "@/components/SchemaOrg";
 
 const SLUG = "combien-coute-site-internet-artisan";
 const DATE = "2026-02-19";
-const TITLE = "Combien coûte un site internet pour un artisan ou commerçant ?";
+const TITLE = "Combien coûte un site internet pour un artisan ?";
 const DESCRIPTION =
   "Prix, pièges à éviter et ce qu'inclut vraiment un bon site vitrine. Tour d'horizon des tarifs en 2026 pour les TPE et artisans.";
 
@@ -38,7 +38,7 @@ const articleSchema = {
   datePublished: DATE,
   dateModified: DATE,
   author: { "@type": "Person", name: "Jovan Bienvenu", url: SITE_URL },
-  publisher: { "@type": "LocalBusiness", name: SITE_NAME, url: SITE_URL },
+  publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
   inLanguage: "fr-FR",
 };
 
@@ -365,6 +365,24 @@ export default function ArticleCoutSiteInternet() {
                   Demander un devis gratuit
                   <ArrowRight size={15} />
                 </Link>
+                <div className="flex flex-wrap items-center gap-2 mt-5 pt-5 border-t border-white/8">
+                  <span className="text-slate-500 text-xs w-full mb-1">Site internet par ville :</span>
+                  {[
+                    { label: 'Fourmies', slug: 'fourmies' },
+                    { label: 'Avesnes-sur-Helpe', slug: 'avesnes-sur-helpe' },
+                    { label: 'Hirson', slug: 'hirson' },
+                    { label: 'Maubeuge', slug: 'maubeuge' },
+                    { label: 'Glageon', slug: 'glageon' },
+                  ].map((v) => (
+                    <Link
+                      key={v.slug}
+                      href={`/creation-site-internet-${v.slug}`}
+                      className="text-xs px-3 py-1 rounded-full border border-white/15 text-slate-400 hover:border-primary/50 hover:text-primary transition-colors"
+                    >
+                      {v.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </FadeIn>
 

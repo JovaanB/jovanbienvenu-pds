@@ -23,7 +23,7 @@ export function buildMetadata({
   title,
   description,
   path,
-  ogImage = "/images/og-default.jpg",
+  ogImage = "/og.png",
 }: MetadataOptions): Metadata {
   const url = `${SITE_URL}${path}`;
 
@@ -93,7 +93,7 @@ export function buildLocalBusinessSchema(overrides?: {
     url: overrides?.url ?? SITE_URL,
     telephone: "+33788962157",
     email: "contact@jovanbienvenu.com",
-    image: `${SITE_URL}/images/og-default.jpg`,
+    image: `${SITE_URL}/og.png`,
     address: {
       "@type": "PostalAddress",
       addressLocality: overrides?.addressLocality ?? "Fourmies",

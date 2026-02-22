@@ -32,6 +32,10 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     type: "website",
   },
+  icons: {
+    icon: "/favicon.ico?v=2",
+    apple: "/apple-icon.png",
+  },
   robots: {
     index: true,
     follow: true,

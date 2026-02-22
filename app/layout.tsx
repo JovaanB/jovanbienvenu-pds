@@ -31,14 +31,6 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     locale: "fr_FR",
     type: "website",
-    images: [
-      {
-        url: `${SITE_URL}/og.png`,
-        width: 1200,
-        height: 630,
-        alt: seoMetadata.title,
-      },
-    ],
   },
   robots: {
     index: true,

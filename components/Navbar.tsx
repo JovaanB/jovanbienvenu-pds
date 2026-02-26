@@ -42,7 +42,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-7">
+        <div className="hidden lg:flex items-center gap-7">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -64,14 +64,14 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <Link
           href="/contact"
-          className="hidden md:flex items-center justify-center h-9 px-5 bg-white text-gray-950 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-slate-200 transition-all duration-200 hover:scale-105 active:scale-95 shadow-lg shadow-white/5"
+          className="hidden lg:flex items-center justify-center h-9 px-5 bg-white text-gray-950 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-slate-200 transition-all duration-200 hover:scale-105 active:scale-95 shadow-lg shadow-white/5"
         >
           Devis gratuit
         </Link>
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-white p-1"
+          className="lg:hidden text-white p-1"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
         >
@@ -81,7 +81,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden mt-4 pb-4 border-t border-white/10 pt-4 flex flex-col gap-3">
+        <div className="lg:hidden mt-4 pb-4 border-t border-white/10 pt-4 flex flex-col gap-3">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (

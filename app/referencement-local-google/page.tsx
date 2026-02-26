@@ -128,18 +128,18 @@ export default function ReferencementLocalPage() {
       <section className="relative z-10 py-12 px-6">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <div className="grid grid-cols-3 gap-6 border border-white/10 rounded-2xl bg-surface-dark p-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 border border-white/10 rounded-2xl bg-surface-dark p-8">
               {stats.map((s) => (
                 <div key={s.label} className="text-center">
-                  <div className="flex items-baseline justify-center gap-1 mb-1">
-                    <span className="text-3xl md:text-4xl font-bold text-white">
+                  <div className="flex items-baseline justify-center gap-1 mb-1 flex-wrap">
+                    <span className="text-4xl font-bold text-white">
                       {s.value}
                     </span>
                     <span className="text-purple-400 text-sm font-semibold">
                       {s.unit}
                     </span>
                   </div>
-                  <p className="text-slate-500 text-xs leading-tight">
+                  <p className="text-slate-500 text-sm leading-tight">
                     {s.label}
                   </p>
                 </div>

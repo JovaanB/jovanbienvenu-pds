@@ -332,19 +332,19 @@ export default function ArticleCoutSiteInternet() {
                   Ce qu'inclut le Pack Visibilité à 590 €
                 </h2>
                 <p className="text-slate-400 text-sm mb-5">
-                  Pour les artisans et commerçants de l'Avesnois, je propose un
+                  Pour les professionnels de l'Avesnois, je propose un
                   forfait tout-inclus sans surprise.
                 </p>
                 <ul className="space-y-2 mb-6">
                   {[
-                    "Design professionnel sur-mesure",
-                    "Jusqu'à 5 pages (Accueil, Services, À propos, Galerie, Contact)",
-                    "Responsive mobile, tablette & desktop",
-                    "SEO de base optimisé (balises, Core Web Vitals)",
-                    "Hébergement 1 an inclus",
-                    "Nom de domaine offert (1 an)",
-                    "Option maintenance mensuelle disponible",
-                    "Fiche Google My Business créée ou optimisée 🎁",
+                    "Un design qui inspire confiance dès le premier regard",
+                    "Jusqu'à 5 pages (Accueil, À propos, Services, Galerie, Contact)",
+                    "Parfait sur tous les écrans — vos clients naviguent partout",
+                    "Vos clients vous contactent directement depuis le site",
+                    "Hébergement inclus — rien à payer en plus la 1ère année",
+                    "Votre adresse web .com ou .fr offerte la 1ère année",
+                    "Optimisé pour Google dès le lancement — vous existez en ligne",
+                    "Votre fiche Google optimisée offerte — double présence locale 🎁",
                   ].map((item) => (
                     <li
                       key={item}

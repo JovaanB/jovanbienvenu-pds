@@ -6,7 +6,7 @@ import ReferencementLocalTemplate from "@/components/ReferencementLocalTemplate"
 const ville = getVilleBySlug("maubeuge")!;
 
 export const metadata: Metadata = buildMetadata({
-  title: `Google My Business à Maubeuge (59) — Référencement local 280€ | Jovan`,
+  title: `Google My Business à Maubeuge (59) — Référencement local 280€`,
   description: ville.metaDescriptionGmb,
   path: "/referencement-local-google-maubeuge",
 });

@@ -6,7 +6,7 @@ import ReferencementLocalTemplate from "@/components/ReferencementLocalTemplate"
 const ville = getVilleBySlug("avesnes-sur-helpe")!;
 
 export const metadata: Metadata = buildMetadata({
-  title: `Google My Business à Avesnes-sur-Helpe (59) — Référencement local 280€ | Jovan`,
+  title: `Google My Business à Avesnes-sur-Helpe (59) — Référencement local 280€`,
   description: ville.metaDescriptionGmb,
   path: "/referencement-local-google-avesnes-sur-helpe",
 });

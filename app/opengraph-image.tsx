@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Création de site internet à Fourmies — 590€ | Jovan";
+export const alt = "Votre prochain client est déjà sur Google — Jovan, sites internet & référencement local dans l'Avesnois";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -49,7 +49,7 @@ export default function Image() {
               letterSpacing: 0.3,
             }}
           >
-            Développeur web · Fourmies & Avesnois
+            Sites internet & référencement local · Avesnois
           </div>
         </div>
 
@@ -64,7 +64,7 @@ export default function Image() {
               letterSpacing: -1,
             }}
           >
-            Votre site internet pro
+            Votre prochain client,
           </div>
           <div
             style={{
@@ -75,7 +75,7 @@ export default function Image() {
               letterSpacing: -1,
             }}
           >
-            à 590€ — livré en 2 semaines.
+            est déjà sur Google.
           </div>
           <div
             style={{
@@ -85,7 +85,7 @@ export default function Image() {
               fontWeight: 400,
             }}
           >
-            Pour artisans &amp; commerçants de l&apos;Avesnois — Devis 100% gratuit
+            Pour artisans, commerçants &amp; indépendants de l&apos;Avesnois — Devis 100% gratuit
           </div>
         </div>
 

@@ -6,7 +6,7 @@ import CreationSiteTemplate from '@/components/CreationSiteTemplate'
 const ville = getVilleBySlug('avesnes-sur-helpe')!
 
 export const metadata: Metadata = buildMetadata({
-  title: `Création de site internet à Avesnes-sur-Helpe (59) — 590€ tout inclus | Jovan`,
+  title: `Création de site internet à Avesnes-sur-Helpe (59) — 590€ tout inclus`,
   description: ville.metaDescription,
   path: '/creation-site-internet-avesnes-sur-helpe',
 })

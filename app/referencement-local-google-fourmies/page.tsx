@@ -6,7 +6,7 @@ import ReferencementLocalTemplate from "@/components/ReferencementLocalTemplate"
 const ville = getVilleBySlug("fourmies")!;
 
 export const metadata: Metadata = buildMetadata({
-  title: `Google My Business à Fourmies (59) — Référencement local 280€ | Jovan`,
+  title: `Google My Business à Fourmies (59) — Référencement local 280€`,
   description: ville.metaDescriptionGmb,
   path: "/referencement-local-google-fourmies",
 });

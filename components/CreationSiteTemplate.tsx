@@ -13,15 +13,15 @@ import { villes, type VilleSEO } from "@/data/villes";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const livrables = [
-  "Design professionnel sur-mesure",
-  "Jusqu'à 5 pages (Accueil, Services, À propos, Galerie, Contact)",
-  "Responsive mobile, tablette & desktop",
-  "Formulaire de contact fonctionnel",
-  "Hébergement 1 an inclus",
-  "Nom de domaine offert (1 an)",
-  "SEO de base optimisé (balises, méta, Core Web Vitals)",
-  "Option maintenance mensuelle disponible",
-  "Fiche Google créée ou optimisée 🎁",
+  "Un design qui inspire confiance dès le premier regard",
+  "Jusqu'à 5 pages (Accueil, À propos, Services, Galerie, Contact)",
+  "Parfait sur tous les écrans — vos clients naviguent partout",
+  "Vos clients vous contactent directement depuis le site",
+  "Hébergement inclus — rien à payer en plus la 1ère année",
+  "Votre adresse web .com ou .fr offerte la 1ère année",
+  "Optimisé pour Google dès le lancement — vous existez en ligne",
+  "Besoin d'une mise à jour après livraison ? Je suis disponible",
+  "Votre fiche Google optimisée offerte — double présence locale 🎁",
 ];
 
 const etapes = [
@@ -115,9 +115,9 @@ export default function CreationSiteTemplate({
             )}
             {!ville && (
               <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-                Artisan, commerçant ou TPE dans l'Avesnois ? Je crée votre site
+                Artisan, commerçant ou indépendant dans l'Avesnois ? Je crée votre site
                 vitrine professionnel clé en main — design moderne,
-                ultra-rapide, optimisé SEO local et livré en moins de 3
+                ultra-rapide, optimisé pour Google et livré en moins de 3
                 semaines.
               </p>
             )}
@@ -251,7 +251,7 @@ export default function CreationSiteTemplate({
                   {
                     icon: "🔒",
                     titre: "Site sécurisé & performant",
-                    desc: "HTTPS, Core Web Vitals optimisés, hébergé sur une infrastructure fiable (Vercel).",
+                    desc: "HTTPS, chargement ultra-rapide, hébergé sur une infrastructure fiable — vos visiteurs ne repartent pas.",
                   },
                   {
                     icon: "🤝",

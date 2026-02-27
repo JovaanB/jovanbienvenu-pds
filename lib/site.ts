@@ -14,7 +14,6 @@ import {
   Users,
   BarChart2,
   Monitor,
-  Globe,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -68,7 +67,7 @@ export const externalLinks = {
 export const seoMetadata = {
   title: "Création de site internet à Fourmies — 590€ | Jovan",
   description:
-    "Développeur web à Fourmies. Site internet à 590€ + optimisation Google My Business à 280€ pour artisans et commerçants de l'Avesnois. Devis gratuit sous 24h.",
+    "Création de site internet à Fourmies — votre site ramène des clients pendant que vous travaillez. 590€, livré en 2-3 semaines. Pour tous les pros de l'Avesnois. Devis gratuit sous 24h.",
   keywords: [
     "création site internet Fourmies",
     "création site web Fourmies",
@@ -77,7 +76,9 @@ export const seoMetadata = {
     "Google My Business Fourmies",
     "création site internet Maubeuge",
     "SEO local Avesnois",
-    "site vitrine artisan Nord",
+    "site internet artisan Nord",
+    "site internet kiné Avesnois",
+    "site internet profession libérale Nord",
   ],
 };
 
@@ -98,15 +99,15 @@ export const navLinks = [
 // 5. HERO
 // ─────────────────────────────────────────────────────────────────────────────
 export const hero = {
-  headline1: "Création de site internet",
-  headline2: "dans l'Avesnois.",
+  headline1: "Votre prochain client,",
+  headline2: "est déjà sur Google.",
 
   /**
    * Sous-titre complet. Le mot défini dans `subheadlineHighlight`
    * sera automatiquement mis en valeur (couleur blanche / gras).
    */
   subheadline:
-    "Développeur web basé à Fourmies, je crée des sites internet et optimise les fiches Google My Business des artisans et commerçants de l'Avesnois. Devis gratuit sous 24h.",
+    "Pendant que vous travaillez, votre site ramène des clients. Je crée des sites et des fiches Google qui transforment les recherches locales en appels — pour tous les professionnels de l'Avesnois. Devis gratuit sous 24h.",
   subheadlineHighlight: "l'Avesnois",
 
   cta: {
@@ -120,9 +121,9 @@ export const hero = {
 
   /** Mini-stats affichées sous les boutons CTA */
   stats: [
-    { value: "10+", label: "Sites livrés" },
-    { value: "8+", label: "Ans d'expérience" },
-    { value: "5", label: "Villes couvertes" },
+    { value: "10+", label: "Clients accompagnés" },
+    { value: "Top 3", label: "Google atteint" },
+    { value: "24h", label: "Devis gratuit" },
   ],
 };
 
@@ -133,19 +134,19 @@ export type TrustItem = { Icon: LucideIcon; label: string; sub: string };
 
 export const trustItems: TrustItem[] = [
   {
-    Icon: ShieldCheck,
-    label: "Auto-entrepreneur enregistré",
-    sub: `SIRET : ${siteInfo.siret}`,
-  },
-  {
-    Icon: MapPin,
-    label: "Basé dans l'Avesnois",
-    sub: siteInfo.location,
-  },
-  {
     Icon: MessageCircle,
-    label: "Réponse sous 24h",
-    sub: "Du lundi au samedi",
+    label: "Devis gratuit en 24h",
+    sub: "Sans engagement, du lundi au samedi",
+  },
+  {
+    Icon: TrendingUp,
+    label: "Livraison en 2-3 semaines",
+    sub: "Planning précis fourni dès le début",
+  },
+  {
+    Icon: ShieldCheck,
+    label: "Satisfaction garantie",
+    sub: "On retravaille jusqu'à ce que vous soyez satisfait",
   },
 ];
 
@@ -160,11 +161,11 @@ export const services = {
       "Sites vitrines modernes, ultra-rapides et parfaitement adaptés aux mobiles. Design unique pour captiver votre audience dès la première seconde et convertir les visiteurs en clients.",
     features: [
       "Site vitrine & e-commerce",
-      "Design responsive (mobile-first)",
-      "Optimisation vitesse & performance (Core Web Vitals)",
+      "Parfait sur mobile, tablette et PC — 70% de vos clients naviguent sur téléphone",
+      "Site ultra-rapide — un client qui attend part chez le concurrent",
       "Hébergement & nom de domaine inclus",
       "Maintenance optionnelle après livraison",
-      "Référencement naturel de base (SEO on-page)",
+      "Optimisé pour Google dès la mise en ligne — vos clients vous trouvent",
     ],
     cta: {
       label: "Découvrir l'offre complète",
@@ -204,27 +205,27 @@ export type WhyItem = {
 export const whyItems: WhyItem[] = [
   {
     Icon: MapPin,
-    gradient: "from-blue-500 to-primary",
-    title: "Proximité géographique",
-    desc: "Basé à Fourmies, je connais le tissu économique de l'Avesnois. Je ne suis pas une agence parisienne anonyme — je suis votre voisin, disponible pour me déplacer chez vous.",
+    gradient: "",
+    title: "Pas une agence. Un voisin.",
+    desc: "Je connais l'Avesnois, ses professionnels, ses quartiers. On se voit en vrai si besoin. Et vous savez exactement qui appeler — pas un ticket de support.",
   },
   {
     Icon: TrendingUp,
-    gradient: "from-purple-500 to-indigo-600",
-    title: "Tarifs adaptés aux TPE/artisans",
-    desc: "Des forfaits pensés pour les petites entreprises locales. Pas de surprise, des prix transparents et des facilités de paiement selon votre situation.",
+    gradient: "",
+    title: "Un prix fixe, zéro surprise",
+    desc: "Vous savez ce que vous payez avant de commencer. Facilités de paiement disponibles selon votre situation. Pas d'abonnement forcé, pas de frais cachés.",
   },
   {
     Icon: Users,
-    gradient: "from-amber-500 to-orange-500",
-    title: "Accompagnement personnalisé",
-    desc: "Un interlocuteur unique pour tous vos besoins numériques. Je m'adapte à votre rythme, vous explique chaque étape et vous forme à gérer votre outil.",
+    gradient: "",
+    title: "Toujours disponible, jamais un bot",
+    desc: "Pas de ticket de support, pas de FAQ. Vous m'appelez directement. Je réponds en moins d'une journée, souvent dans l'heure.",
   },
   {
     Icon: BarChart2,
-    gradient: "from-emerald-500 to-green-600",
-    title: "Résultats mesurables",
-    desc: "Pas de jargon technique. Je me concentre sur ce qui compte : plus de trafic, plus d'appels, plus de chiffre d'affaires — avec des rapports clairs à la clé.",
+    gradient: "",
+    title: "Des chiffres, pas des promesses",
+    desc: "Chaque mois, vous voyez combien de personnes ont visité votre site, cliqué pour appeler, cherché votre adresse. Rien de flou — que des résultats mesurables.",
   },
 ];
 
@@ -262,15 +263,15 @@ export const pricingTiers: PricingTier[] = [
     billing: "forfait unique",
     desc: "Création de site internet + fiche Google (création ou optimisation). Tout ce qu'il faut pour être trouvé en ligne.",
     features: [
-      "Design professionnel sur-mesure",
+      "Un design qui inspire confiance dès le premier regard",
       "Jusqu'à 5 pages (Accueil, À propos, Services, Galerie, Contact)",
-      "Responsive mobile, tablette & desktop",
-      "Formulaire de contact",
-      "Hébergement 1 an inclus",
-      "Nom de domaine offert (1 an)",
-      "SEO de base (balises, méta, vitesse)",
-      "Option maintenance mensuelle disponible",
-      "Création ou optimisation de la fiche Google 🎁",
+      "Parfait sur tous les écrans — vos clients naviguent partout",
+      "Vos clients vous contactent directement depuis le site",
+      "Hébergement inclus — rien à payer en plus la 1ère année",
+      "Votre adresse web .com ou .fr offerte la 1ère année",
+      "Optimisé pour Google dès le lancement — vous existez en ligne",
+      "Besoin d'une mise à jour après livraison ? Je suis disponible",
+      "Votre fiche Google optimisée offerte — double présence locale 🎁",
     ],
     cta: "Demander un devis",
     href: "/contact",

@@ -10,9 +10,9 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = buildMetadata({
   title:
-    "Tarifs création site internet & référencement local — Fourmies | Jovan",
+    "Tarifs création site internet & référencement local — Fourmies",
   description:
-    "Prix transparents : site internet à 590€ + fiche Google incluse, ou optimisation Google My Business à 280€. Forfaits clés en main pour artisans de l'Avesnois. Devis gratuit 24h.",
+    "Prix transparents : site internet à 590€ + fiche Google incluse, ou optimisation Google My Business à 280€. Forfaits clés en main pour les professionnels de l'Avesnois. Devis gratuit 24h.",
   path: "/tarifs",
 });
 
@@ -59,7 +59,7 @@ export default function TarifsPage() {
               </span>
             </h1>
             <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
-              Deux forfaits pensés pour les artisans et commerçants de
+              Deux forfaits pensés pour les professionnels de
               l&apos;Avesnois. Vous savez exactement ce que vous payez et ce que
               vous obtenez — avant même de signer.
             </p>

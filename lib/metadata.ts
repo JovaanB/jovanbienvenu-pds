@@ -8,7 +8,9 @@ import { temoignages } from "@/data/temoignages";
 import { externalLinks } from "@/lib/site";
 
 export const SITE_URL = "https://jovanbienvenu.com";
-export const SITE_NAME = "Jovan — Développeur Web Avesnois";
+export const SITE_NAME = "Jovan — Sites Internet & Référencement Local Avesnois";
+/** Suffixe court utilisé dans le template <title> des pages */
+export const SITE_BRAND = "Jovan";
 
 interface MetadataOptions {
   title: string;
@@ -87,9 +89,9 @@ export function buildLocalBusinessSchema(overrides?: {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: SITE_NAME,
+    name: "Jovan Bienvenu",
     description:
-      "Création de sites internet et référencement local Google My Business pour artisans et commerçants dans l'Avesnois.",
+      "Création de sites internet et référencement local Google My Business pour les professionnels de l'Avesnois.",
     url: overrides?.url ?? SITE_URL,
     telephone: "+33788962157",
     email: "contact@jovanbienvenu.com",

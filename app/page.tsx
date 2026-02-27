@@ -18,9 +18,9 @@ import {
 import { faqs } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Création de site internet à Fourmies — 590€ | Jovan",
+  title: "Création de site internet à Fourmies — 590€",
   description:
-    "Développeur web à Fourmies. Site internet à 590€ + optimisation Google My Business à 280€ pour artisans et commerçants de l'Avesnois. Devis gratuit sous 24h.",
+    "Création de site internet à Fourmies — votre site ramène des clients pendant que vous travaillez. 590€, livré en 2-3 semaines. Pour tous les pros de l'Avesnois. Devis gratuit sous 24h.",
   path: "/",
 });
 

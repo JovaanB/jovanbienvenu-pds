@@ -11,7 +11,7 @@ import WhatsAppButton from '@/components/WhatsAppButton'
 export const metadata: Metadata = buildMetadata({
   title: "Mes réalisations — Sites internet et SEO local dans l'Avesnois",
   description:
-    "Découvrez mes projets de création de sites internet et de référencement local Google réalisés pour des artisans et commerçants de l'Avesnois. Résultats mesurables.",
+    "Découvrez mes projets de création de sites internet et de référencement local Google réalisés pour des professionnels de l'Avesnois. Résultats mesurables.",
   path: '/realisations',
 })
 
@@ -47,7 +47,7 @@ export default function RealisationsPage() {
             </h1>
             <p className="text-slate-400 text-lg max-w-2xl mx-auto">
               Des sites internet et des optimisations SEO qui produisent des résultats concrets pour
-              des artisans et commerçants de l'Avesnois.
+              des professionnels de l'Avesnois.
             </p>
           </FadeIn>
         </div>

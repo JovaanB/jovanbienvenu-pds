@@ -9,7 +9,7 @@ import SchemaOrg from "@/components/SchemaOrg";
 export const metadata: Metadata = buildMetadata({
   title: "Blog — Conseils création de site internet et SEO local pour artisans",
   description:
-    "Guides pratiques et conseils SEO pour artisans et commerçants de l'Avesnois : prix site internet, Google, visibilité locale. Par Jovan, développeur web à Fourmies.",
+    "Guides pratiques et conseils SEO pour les professionnels de l'Avesnois : prix site internet, Google, visibilité locale. Par Jovan, développeur web à Fourmies.",
   path: "/blog",
 });
 
@@ -43,7 +43,7 @@ export default function BlogPage() {
               </span>
             </h1>
             <p className="text-slate-400">
-              Tout ce qu'un artisan ou commerçant doit savoir pour gagner en
+              Tout ce qu'un professionnel indépendant doit savoir pour gagner en
               visibilité en ligne — sans jargon, sans prise de tête.
             </p>
           </FadeIn>

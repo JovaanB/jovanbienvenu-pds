@@ -12,11 +12,10 @@ export default function Testimonials() {
               Témoignages
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Ce que disent mes clients
+              Ils me font confiance. Voici pourquoi.
             </h2>
             <p className="text-slate-400 max-w-xl mx-auto">
-              Des artisans et commerçants de l'Avesnois qui ont fait confiance à
-              mon travail.
+              Des retours clients réels, de l'Avesnois — pas des avis générés.
             </p>
           </div>
         </FadeIn>

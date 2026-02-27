@@ -6,7 +6,7 @@ import ReferencementLocalTemplate from "@/components/ReferencementLocalTemplate"
 const ville = getVilleBySlug("hirson")!;
 
 export const metadata: Metadata = buildMetadata({
-  title: `Google My Business à Hirson (02) — Référencement local 280€ | Jovan`,
+  title: `Google My Business à Hirson (02) — Référencement local 280€`,
   description: ville.metaDescriptionGmb,
   path: "/referencement-local-google-hirson",
 });

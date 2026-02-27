@@ -21,7 +21,7 @@ import SchemaOrg from "@/components/SchemaOrg";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Référencement local Google My Business Avesnois — 280€ | Jovan",
+  title: "Référencement local Google My Business Avesnois — 280€",
   description:
     "Optimisation fiche Google My Business dans l'Avesnois à 280€. Apparaissez en 1ère page Google à Fourmies, Maubeuge, Hirson. Résultats en 4 à 8 semaines.",
   path: "/referencement-local-google",

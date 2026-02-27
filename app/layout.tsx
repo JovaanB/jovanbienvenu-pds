@@ -4,7 +4,7 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { SITE_URL, SITE_NAME } from "@/lib/metadata";
+import { SITE_URL, SITE_NAME, SITE_BRAND } from "@/lib/metadata";
 import { seoMetadata } from "@/lib/site";
 import "./globals.css";
 
@@ -19,7 +19,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: {
     default: seoMetadata.title,
-    template: `%s | ${SITE_NAME}`,
+    template: `%s | ${SITE_BRAND}`,
   },
   description: seoMetadata.description,
   keywords: seoMetadata.keywords,

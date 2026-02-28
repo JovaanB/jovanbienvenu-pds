@@ -334,9 +334,9 @@ export default function ArticleSiteVitrineVsGMB() {
                 </div>
                 <p className="text-slate-400 text-sm leading-relaxed">
                   C'est pourquoi le{" "}
-                  <strong className="text-white">
+                  <Link href="/tarifs" className="text-white font-semibold underline decoration-white/30 hover:decoration-white transition-colors">
                     Pack Visibilité à 590 €
-                  </strong>{" "}
+                  </Link>{" "}
                   inclut les deux : création de site internet + fiche Google My
                   Business créée ou optimisée. Le meilleur rapport qualité/prix
                   pour une TPE ou un artisan local.

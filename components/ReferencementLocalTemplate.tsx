@@ -135,6 +135,50 @@ export default function ReferencementLocalTemplate({
         </div>
       </section>
 
+      {/* ── C'EST QUOI GMB ── */}
+      <section className="relative z-10 py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <FadeIn>
+            <p className="text-purple-400 font-bold tracking-widest uppercase text-xs mb-3">
+              Google Business Profile
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+              C&apos;est quoi une fiche Google My Business ?
+            </h2>
+            <div className="space-y-4 text-slate-400 text-sm leading-relaxed mb-8">
+              <p>
+                Google My Business (aujourd&apos;hui appelé{" "}
+                <strong className="text-white">Google Business Profile</strong>) est la fiche
+                qui apparaît quand un client cherche votre activité sur Google Maps ou dans
+                les résultats de recherche. Elle affiche votre nom, téléphone, horaires,
+                photos, avis et localisation — avant même votre site internet.
+              </p>
+              <p>
+                C&apos;est la première chose que voit un prospect local avant de vous appeler.
+                Une fiche absente ou mal renseignée, c&apos;est votre concurrent qui décroche
+                l&apos;appel à votre place.
+              </p>
+              <p className="text-slate-300">
+                {ville.contextEconomique}
+              </p>
+            </div>
+            <div className="grid grid-cols-3 gap-4">
+              {[
+                { icon: "📞", label: "Appel direct", desc: "Le client appelle d'un clic depuis Google" },
+                { icon: "⭐", label: "Avis clients", desc: "Les avis s'affichent directement sur Google" },
+                { icon: "🗺️", label: "Itinéraire GPS", desc: "Un clic suffit pour vous trouver" },
+              ].map((item) => (
+                <div key={item.label} className="text-center p-4 rounded-xl border border-white/8 bg-surface-dark">
+                  <span className="text-2xl block mb-2">{item.icon}</span>
+                  <p className="text-white text-xs font-semibold mb-1">{item.label}</p>
+                  <p className="text-slate-500 text-xs leading-tight">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* ── POURQUOI ── */}
       <section className="relative z-10 py-20 px-6">
         <div className="max-w-5xl mx-auto">
@@ -329,7 +373,7 @@ export default function ReferencementLocalTemplate({
                 </p>
               </div>
               <Link
-                href="/creation-site-internet"
+                href={`/creation-site-internet-${ville.slug}`}
                 className="shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl transition-all duration-200 text-sm"
               >
                 Voir le Pack 590€
@@ -488,7 +532,7 @@ export default function ReferencementLocalTemplate({
           </FadeIn>
         </div>
       </section>
-      <WhatsAppButton />
+      <WhatsAppButton message="Bonjour Jovan, je souhaite un audit gratuit de ma fiche Google My Business." />
     </>
   );
 }

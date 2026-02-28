@@ -416,7 +416,7 @@ export default function ReferencementLocalPage() {
           </FadeIn>
         </div>
       </section>
-      <WhatsAppButton />
+      <WhatsAppButton message="Bonjour Jovan, je souhaite un audit gratuit de ma fiche Google My Business." />
     </main>
   );
 }

@@ -109,9 +109,14 @@ export default function CreationSiteTemplate({
             </h1>
 
             {ville && (
-              <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-                {ville.paragrapheIntro}
-              </p>
+              <>
+                <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-4 leading-relaxed">
+                  {ville.paragrapheIntro}
+                </p>
+                <p className="text-slate-500 text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+                  {ville.contextEconomique}
+                </p>
+              </>
             )}
             {!ville && (
               <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
@@ -204,6 +209,15 @@ export default function CreationSiteTemplate({
                   <p className="text-amber-400/70 text-xs mt-1">
                     Incluse dans le pack à 590 € — pas de supplément
                   </p>
+                  {ville && (
+                    <Link
+                      href={`/referencement-local-google-${ville.slug}`}
+                      className="inline-flex items-center gap-1 text-amber-400 hover:text-amber-300 text-xs mt-2 transition-colors"
+                    >
+                      Voir l&apos;offre référencement local {ville.nom}
+                      <ArrowRight size={11} />
+                    </Link>
+                  )}
                 </div>
 
                 <ul className="space-y-3">
@@ -473,7 +487,7 @@ export default function CreationSiteTemplate({
           </FadeIn>
         </div>
       </section>
-      <WhatsAppButton />
+      <WhatsAppButton message="Bonjour Jovan, je souhaite un devis pour la création de mon site internet." />
     </>
   );
 }

@@ -92,7 +92,7 @@ export default function RealisationsPage() {
           </FadeIn>
         </div>
       </section>
-      <WhatsAppButton />
+      <WhatsAppButton message="Bonjour Jovan, j'ai vu vos réalisations et souhaite discuter d'un projet similaire." />
     </main>
   )
 }

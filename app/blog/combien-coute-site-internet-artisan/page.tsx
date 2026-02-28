@@ -358,13 +358,22 @@ export default function ArticleCoutSiteInternet() {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl transition-colors text-sm"
-                >
-                  Demander un devis gratuit
-                  <ArrowRight size={15} />
-                </Link>
+                <div className="flex flex-wrap gap-3">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl transition-colors text-sm"
+                  >
+                    Demander un devis gratuit
+                    <ArrowRight size={15} />
+                  </Link>
+                  <Link
+                    href="/tarifs"
+                    className="inline-flex items-center gap-2 px-6 py-3 border border-white/15 text-slate-300 hover:text-white hover:border-white/30 font-medium rounded-xl transition-colors text-sm"
+                  >
+                    Voir les tarifs détaillés
+                    <ArrowRight size={15} />
+                  </Link>
+                </div>
                 <div className="flex flex-wrap items-center gap-2 mt-5 pt-5 border-t border-white/8">
                   <span className="text-slate-500 text-xs w-full mb-1">Site internet par ville :</span>
                   {[

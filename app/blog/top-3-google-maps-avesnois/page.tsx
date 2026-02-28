@@ -260,10 +260,10 @@ export default function ArticleTop3GoogleMaps() {
                   Je vous dis exactement où vous en êtes et ce qui peut être amélioré.
                 </p>
                 <Link
-                  href="/referencement-local-google"
+                  href="/referencement-local-google-fourmies"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-xl transition-colors text-sm mr-3"
                 >
-                  Voir l'offre SEO local
+                  Voir l'offre SEO local à Fourmies
                   <ArrowRight size={15} />
                 </Link>
                 <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 border border-white/15 text-slate-300 hover:text-white hover:border-white/30 font-medium rounded-xl transition-colors text-sm">

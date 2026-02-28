@@ -49,11 +49,26 @@ export default function Footer() {
                 {siteInfo.name}
               </span>
             </Link>
-            <p className="text-slate-500 text-sm leading-relaxed max-w-xs">
+            <p className="text-slate-500 text-sm leading-relaxed max-w-xs mb-4">
               Développeur web basé à Fourmies. Je crée des sites internet et
               optimise la visibilité locale des artisans et commerçants de
               l'Avesnois.
             </p>
+            <div>
+              <p className="text-slate-600 text-xs font-bold uppercase tracking-widest mb-2">
+                Zones desservies
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {villes.map((ville) => (
+                  <span
+                    key={ville.slug}
+                    className="text-xs text-slate-500 bg-white/4 border border-white/8 px-2 py-0.5 rounded-full"
+                  >
+                    {ville.nom}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Quick links */}

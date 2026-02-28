@@ -34,10 +34,21 @@ const pricingFaq = [
   },
 ];
 
+const pricingFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: pricingFaq.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export default function TarifsPage() {
   return (
     <main className="relative">
       <SchemaOrg schema={breadcrumbSchema} />
+      <SchemaOrg schema={pricingFaqSchema} />
 
       {/* Ambient glows */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
@@ -164,6 +175,22 @@ export default function TarifsPage() {
                 className="text-primary hover:text-blue-300 underline underline-offset-4 transition-colors"
               >
                 Demandez un devis personnalisé →
+              </Link>
+            </p>
+            <p className="text-center text-slate-600 text-xs mt-4">
+              En savoir plus :{" "}
+              <Link
+                href="/creation-site-internet"
+                className="text-slate-500 hover:text-white underline underline-offset-4 transition-colors"
+              >
+                Création de site internet
+              </Link>
+              {" "}·{" "}
+              <Link
+                href="/referencement-local-google"
+                className="text-slate-500 hover:text-white underline underline-offset-4 transition-colors"
+              >
+                Référencement local Google
               </Link>
             </p>
           </FadeIn>
@@ -343,7 +370,7 @@ export default function TarifsPage() {
         </div>
       </section>
 
-      <WhatsAppButton />
+      <WhatsAppButton message="Bonjour Jovan, j'aimerais en savoir plus sur vos tarifs et demander un devis." />
     </main>
   );
 }

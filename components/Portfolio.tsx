@@ -57,7 +57,7 @@ export default function Portfolio() {
                   {r.image ? (
                     <Image
                       src={r.image}
-                      alt={`${r.client} — ${r.titre}`}
+                      alt={`${r.client} — ${r.titre} — ${r.secteur} à ${r.ville}`}
                       fill
                       className="object-contain p-3"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

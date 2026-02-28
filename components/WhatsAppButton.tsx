@@ -3,10 +3,18 @@
 import { siteInfo } from '@/lib/site'
 import { trackEvent } from '@/lib/gtag'
 
-export default function WhatsAppButton() {
+interface WhatsAppButtonProps {
+  message?: string
+}
+
+export default function WhatsAppButton({ message }: WhatsAppButtonProps) {
+  const href = message
+    ? `https://wa.me/${siteInfo.whatsapp}?text=${encodeURIComponent(message)}`
+    : `https://wa.me/${siteInfo.whatsapp}`
+
   return (
     <a
-      href={`https://wa.me/${siteInfo.whatsapp}`}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Nous contacter sur WhatsApp"

@@ -91,13 +91,13 @@ export default function ReferencementLocalTemplate({
               {ville.paragrapheIntroGmb}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/contact"
+              <a
+                href="https://audit.jovanbienvenu.com/visibilite"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-full transition-all duration-200 hover:shadow-[0_0_32px_-6px_rgba(147,51,234,0.6)] active:scale-95"
               >
-                Demander un audit gratuit
+                Diagnostic gratuit de ma fiche
                 <ArrowRight size={18} />
-              </Link>
+              </a>
               <a
                 href={`tel:${siteInfo.phone}`}
                 className="inline-flex items-center gap-2 px-8 py-4 border border-white/20 text-white font-medium rounded-full hover:border-white/40 hover:bg-white/5 transition-all duration-200"
@@ -289,16 +289,16 @@ export default function ReferencementLocalTemplate({
                   </p>
                 </div>
 
-                <Link
-                  href="/contact"
+                <a
+                  href="https://audit.jovanbienvenu.com/visibilite"
                   className="group w-full flex items-center justify-center gap-2 py-4 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-xl transition-all duration-200 hover:shadow-[0_0_24px_-4px_rgba(147,51,234,0.5)] active:scale-95"
                 >
-                  Demander mon audit gratuit à {ville.nom}
+                  Diagnostic gratuit de ma fiche à {ville.nom}
                   <ArrowRight
                     size={16}
                     className="group-hover:translate-x-1 transition-transform"
                   />
-                </Link>
+                </a>
                 <p className="text-center text-xs text-slate-600 mt-4">
                   Audit de votre visibilité actuelle offert avant toute décision
                 </p>
@@ -516,13 +516,13 @@ export default function ReferencementLocalTemplate({
                 {ville.nom} — sans engagement.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  href="/contact"
+                <a
+                  href="https://audit.jovanbienvenu.com/visibilite"
                   className="inline-flex items-center gap-2 px-8 py-4 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-xl transition-all duration-200 active:scale-95"
                 >
-                  Demander mon audit gratuit
+                  Diagnostic gratuit de ma fiche
                   <ArrowRight size={18} />
-                </Link>
+                </a>
                 <div className="flex items-center gap-2 text-slate-400 text-sm">
                   <Clock size={14} className="text-purple-400" />
                   Réponse sous 24h · Lun-Sam

@@ -57,7 +57,9 @@ export default function Home() {
       <Testimonials />
       <Pricing />
       <FAQ />
-      <ContactForm />
+      <section id="contact">
+        <ContactForm />
+      </section>
       <WhatsAppButton message="Bonjour Jovan, je souhaite un devis gratuit pour mon activité." />
     </main>
   );

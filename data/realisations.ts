@@ -35,34 +35,62 @@ export type Realisation = {
 export const realisations: Realisation[] = [
   {
     id: 1,
-    titre: "Site vitrine métallerie sur-mesure",
+    titre: "Site vitrine ferronnerie artisanale",
+    client: "Ferronnerie Chimacienne",
+    secteur: "Ferronnerie & Métallurgie",
+    categorie: "Bâtiment",
+    ville: "Chimay",
+    type: "Site Vitrine",
+    description:
+      "Site vitrine pour un ferronnier artisan basé à Chimay (Belgique). Présentation des créations sur-mesure — portails, clôtures, garde-corps, mobilier — avec formulaire de contact intégré.",
+    resultat: "Site en ligne — visible sur Google pour les recherches locales.",
+    image: "/realisations/ferronnerie-chimacienne.png",
+    url: "https://ferronnerie-chimacienne.be",
+  },
+  {
+    id: 4,
+    titre: "Site vitrine électricien",
+    client: "Elecluminance",
+    secteur: "Électricité & Énergie",
+    categorie: "Bâtiment",
+    ville: "Outreau",
+    type: "Site Vitrine",
+    description:
+      "Site vitrine pour un électricien basé à Outreau. Présentation des services — installations électriques, éclairage, domotique — avec galerie photo et formulaire de contact.",
+    resultat: "Site en ligne — visible sur Google pour les recherches locales.",
+    image: "/realisations/elecluminance.png",
+    url: "https://elecluminance.fr",
+  },
+  {
+    id: 2,
+    titre: "Site vitrine Steel Dream",
     client: "Steel Dream",
-    secteur: "Métallerie artisanale",
+    secteur: "Ferronnerie & Métallurgie",
     categorie: "Bâtiment",
     ville: "Fourmies",
     type: "Site Vitrine",
     description:
-      "Site vitrine sur-mesure pour un artisan métallier à Fourmies. Galerie de réalisations (portails, garde-corps, fer forgé, découpe laser), formulaire de devis intégré et zone d'intervention couvrant l'Avesnois et la Belgique frontalière.",
-    resultat:
-      "Formulaire de devis en ligne opérationnel — nouvelle source de contacts directs.",
-    image: "/images/realisations/steeldream.png",
+      "Site vitrine pour une entreprise de ferronnerie basée à Fourmies. Présentation des services — portails, garde-corps, mobilier sur-mesure — avec galerie photo et formulaire de contact.",
+    resultat: "Site en ligne — visible sur Google pour les recherches locales.",
+    image: "/realisations/steeldream.png",
     url: "https://steeldream.fr",
   },
   {
-    id: 2,
-    titre: "Site vitrine gîte rural PMR",
+    id: 3,
+    titre: "Site vitrine gîte rural",
     client: "Bienvenue du côté de chez nous",
     secteur: "Tourisme & Hébergement",
     categorie: "Tourisme",
     ville: "Wignehies",
     type: "Site Vitrine",
     description:
-      "Site vitrine avec système de réservation intégré pour un gîte rural labellisé Gîtes de France dans l'Avesnois. Galerie photo immersive, présentation des équipements.",
-    resultat: "4,85 / 5 — 97 avis clients sur Gîtes de France.",
-    image: "/images/realisations/bienvenue-du-cote-de-chez-nous.png",
+      "Site vitrine pour un gîte dans l'Avesnois. Galerie photo, présentation des équipements, formulaire de réservation. Visible sur Google pour les recherches locales.",
+    resultat:
+      "Site en ligne — référencé sur Google Maps et moteurs de recherche.",
+    image: "/realisations/bienvenueducotedecheznous.png",
     url: "https://bienvenueducotedecheznous.fr",
   },
 ];
 
 /** Catégories disponibles pour le filtre du portfolio */
-export const categoriesPortfolio = ["Tous", "Bâtiment", "Tourisme"] as const;
+export const categoriesPortfolio = ["Tous", "Tourisme", "Bâtiment"] as const;

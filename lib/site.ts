@@ -114,8 +114,8 @@ export const hero = {
     primary: { label: "Demander un devis gratuit", href: "/contact" },
     secondary: { label: "Appeler maintenant" }, // href construit depuis siteInfo.phone
     gmb: {
-      label: "Je cherche à optimiser ma fiche Google",
-      href: "/referencement-local-google",
+      label: "Diagnostic gratuit de ma fiche Google",
+      href: "https://audit.jovanbienvenu.com/visibilite",
     },
   },
 

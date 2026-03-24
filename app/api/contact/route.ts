@@ -148,7 +148,7 @@ export async function POST(request: NextRequest) {
     const serviceLabel = SERVICE_LABELS[body.service] ?? body.service;
 
     await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: "Contact <contact@jovanbienvenu.com>",
       to: process.env.CONTACT_EMAIL!,
       replyTo: body.email,
       subject: `Nouveau message — ${serviceLabel} · ${body.prenom} ${body.nom}`,

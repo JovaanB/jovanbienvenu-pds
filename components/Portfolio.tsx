@@ -30,11 +30,11 @@ export default function Portfolio() {
               Portfolio
             </p>
             <h2 className="text-3xl md:text-5xl font-bold text-white">
-              Réalisations Récentes
+              Projets récents
             </h2>
             <p className="text-slate-400 max-w-md">
-              Des exemples concrets de ce que je peux réaliser pour votre
-              activité.
+              Des projets réels, des résultats mesurables - pour des artisans
+              de l&apos;Avesnois.
             </p>
             {/* Filter tabs */}
             <div className="flex flex-wrap justify-center gap-2 mt-4">
@@ -116,7 +116,7 @@ export default function Portfolio() {
                       href="#contact"
                       className="inline-flex items-center gap-1.5 text-sm font-bold text-primary hover:text-blue-300 transition-colors group/link"
                     >
-                      Projet similaire ?
+                      Même résultat pour vous ?
                       <ArrowRight
                         size={14}
                         className="group-hover/link:translate-x-1 transition-transform"

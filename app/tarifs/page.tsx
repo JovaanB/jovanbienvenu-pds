@@ -89,7 +89,7 @@ export default function TarifsPage() {
                   {/* Badge populaire */}
                   {tier.badge && (
                     <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                      <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-purple-600 text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-purple-600/30">
+                      <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-orange-500 text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-orange-500/30">
                         ✦ {tier.badge}
                       </span>
                     </div>
@@ -120,22 +120,32 @@ export default function TarifsPage() {
                     </div>
                   </div>
 
-                  {/* Garantie sur l'offre GMB */}
-                  {!tier.highlight && (
-                    <div className="flex items-start gap-2 p-3 rounded-xl bg-green-500/10 border border-green-500/20 mb-5">
-                      <Shield
-                        size={14}
-                        className="text-green-400 shrink-0 mt-0.5"
-                      />
-                      <p className="text-green-300 text-xs leading-relaxed">
-                        <span className="font-semibold">
-                          Garantie résultats
-                        </span>{" "}
-                        - Pas de progression en 8 semaines ? Je retravaille la
-                        fiche sans frais.
-                      </p>
-                    </div>
-                  )}
+                  {/* Garantie sur chaque offre */}
+                  <div className="flex items-start gap-2 p-3 rounded-xl bg-green-500/10 border border-green-500/20 mb-5">
+                    <Shield
+                      size={14}
+                      className="text-green-400 shrink-0 mt-0.5"
+                    />
+                    <p className="text-green-300 text-xs leading-relaxed">
+                      {tier.highlight ? (
+                        <>
+                          <span className="font-semibold">
+                            Livraison garantie en 3 semaines
+                          </span>{" "}
+                          - ou je continue jusqu&apos;à ce que votre site soit
+                          parfait.
+                        </>
+                      ) : (
+                        <>
+                          <span className="font-semibold">
+                            Garantie résultats
+                          </span>{" "}
+                          - Pas de progression en 8 semaines ? Je retravaille
+                          la fiche sans frais.
+                        </>
+                      )}
+                    </p>
+                  </div>
 
                   <ul className="space-y-3 mb-8 flex-1">
                     {tier.features.map((f) => (
@@ -173,7 +183,7 @@ export default function TarifsPage() {
                 href="/contact"
                 className="text-primary hover:text-blue-300 underline underline-offset-4 transition-colors"
               >
-                Demandez un devis personnalisé →
+                Obtenir un devis personnalisé →
               </Link>
             </p>
             <p className="text-center text-slate-600 text-xs mt-4">
@@ -221,13 +231,13 @@ export default function TarifsPage() {
                   situation: "Vous n'avez pas de site internet",
                   conseil: "Pack Visibilité à 590€",
                   detail:
-                    "Site vitrine + fiche Google incluse. La solution complète pour exister en ligne dès le départ.",
+                    "Site vitrine + fiche Google incluse. Vous êtes visible et crédible dès le premier jour.",
                   color: "text-purple-400",
                   bg: "bg-purple-500/10 border-purple-500/20",
                 },
                 {
                   situation: "Vous avez un site mais pas de fiche Google",
-                  conseil: "Optimisation GMB à 280€",
+                  conseil: "Fiche Google à 280€",
                   detail:
                     "Une fiche Google bien optimisée génère souvent plus de contacts qu'un site seul sur une zone locale.",
                   color: "text-primary",
@@ -235,9 +245,9 @@ export default function TarifsPage() {
                 },
                 {
                   situation: "Vous avez déjà une fiche Google peu visible",
-                  conseil: "Optimisation GMB à 280€",
+                  conseil: "Fiche Google à 280€",
                   detail:
-                    "L'audit révèle les points faibles. Une fiche existante optimisée monte souvent plus vite qu'une création from scratch.",
+                    "L'audit révèle les points faibles. Une fiche existante optimisée remonte plus vite qu'une fiche créée de zéro.",
                   color: "text-primary",
                   bg: "bg-primary/10 border-primary/20",
                 },
@@ -246,7 +256,7 @@ export default function TarifsPage() {
                   conseil:
                     "Pack Visibilité à 590€ - le meilleur rapport qualité/prix",
                   detail:
-                    "Site + fiche Google pour 590€ au lieu de 590€ + 280€ séparément. La fiche est offerte dans le pack.",
+                    "Site + fiche Google pour 590€ au lieu de 870€ séparément. La fiche est offerte dans le pack.",
                   color: "text-amber-400",
                   bg: "bg-amber-500/10 border-amber-500/20",
                 },
@@ -286,12 +296,13 @@ export default function TarifsPage() {
               </p>
               <div className="flex flex-wrap gap-3">
                 {villes.map((ville) => (
-                  <span
+                  <Link
                     key={ville.slug}
-                    className="text-sm text-slate-300 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full"
+                    href={`/creation-site-internet-${ville.slug}`}
+                    className="text-sm text-slate-300 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full hover:border-white/30 hover:text-white transition-colors"
                   >
                     📍 {ville.nom}
-                  </span>
+                  </Link>
                 ))}
               </div>
               <p className="text-slate-600 text-xs mt-4">
@@ -311,7 +322,7 @@ export default function TarifsPage() {
                 FAQ
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Questions sur les tarifs
+                Vos questions - réponses directes
               </h2>
             </div>
           </FadeIn>
@@ -342,18 +353,18 @@ export default function TarifsPage() {
           <FadeIn>
             <div className="relative rounded-2xl border border-primary/20 bg-gradient-to-b from-primary/10 to-surface-dark p-10 md:p-16">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Un devis gratuit sous 24h
+                Votre devis en 24h - sans engagement
               </h2>
               <p className="text-slate-400 mb-8">
-                Décrivez votre activité et votre besoin - je reviens vers vous
-                rapidement avec une proposition adaptée à votre situation.
+                Dites-moi ce que vous faites et où vous êtes - je vous reviens
+                avec une proposition claire, taillée pour votre activité.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl transition-all duration-200 hover:shadow-[0_0_32px_-6px_rgba(19,91,236,0.7)] active:scale-95"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary-hover text-white font-bold rounded-full transition-all duration-200 hover:shadow-[0_0_32px_-6px_rgba(19,91,236,0.7)] active:scale-95"
                 >
-                  Demander mon devis gratuit
+                  Obtenir mon devis gratuit
                   <ArrowRight size={18} />
                 </Link>
                 <a

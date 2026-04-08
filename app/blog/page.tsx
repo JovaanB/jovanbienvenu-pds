@@ -121,7 +121,7 @@ export default function BlogPage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl transition-colors text-sm"
               >
-                Demander un audit gratuit
+                Obtenir mon devis gratuit
                 <ArrowRight size={15} />
               </Link>
             </div>

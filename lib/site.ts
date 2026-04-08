@@ -121,9 +121,9 @@ export const hero = {
 
   /** Mini-stats affichées sous les boutons CTA */
   stats: [
-    { value: "10+", label: "Clients accompagnés" },
-    { value: "Top 3", label: "Google atteint" },
-    { value: "24h", label: "Devis gratuit" },
+    { value: "10+", label: "Clients en Avesnois" },
+    { value: "590€", label: "Prix fixe tout inclus" },
+    { value: "2-3 sem.", label: "Livraison garantie" },
   ],
 };
 
@@ -158,7 +158,7 @@ export const services = {
     Icon: Monitor,
     title: "Création de site internet",
     description:
-      "Sites vitrines modernes, ultra-rapides et parfaitement adaptés aux mobiles. Design unique pour captiver votre audience dès la première seconde et convertir les visiteurs en clients.",
+      "Un site codé à la main — pas un template WordPress. Vous le payez une fois, il travaille pour vous des années. Vos clients vous trouvent sur Google et vous appellent, sans que vous dépensiez un euro en pub.",
     features: [
       "Site vitrine & e-commerce",
       "Parfait sur mobile, tablette et PC - 70% de vos clients naviguent sur téléphone",
@@ -168,7 +168,7 @@ export const services = {
       "Optimisé pour Google dès la mise en ligne - vos clients vous trouvent",
     ],
     cta: {
-      label: "Découvrir l'offre complète",
+      label: "Voir le Pack Visibilité à 590€",
       href: "/creation-site-internet",
     },
   },
@@ -176,7 +176,7 @@ export const services = {
     Icon: MapPin,
     title: "Référencement local / Google My Business",
     description:
-      "Soyez le premier choix dans votre ville. J'optimise votre fiche Google Business Profile pour que les clients locaux vous trouvent avant vos concurrents - sans pub.",
+      "Votre fiche Google optimisée pour apparaître en tête des résultats Maps dans votre ville. Contrairement à Google Ads, vous ne payez pas à chaque clic — une fois en place, ça tourne tout seul.",
     features: [
       "Audit de visibilité locale",
       "Création & optimisation fiche Google Business Profile",
@@ -186,7 +186,7 @@ export const services = {
       "Rapport mensuel de performance",
     ],
     cta: {
-      label: "Découvrir l'offre complète",
+      label: "Voir l'offre référencement local",
       href: "/referencement-local-google",
     },
   },
@@ -257,7 +257,7 @@ export type PricingTier = {
 export const pricingTiers: PricingTier[] = [
   {
     name: "Pack Visibilité",
-    badge: "Le plus populaire",
+    badge: "Économisez 280€",
     price: "590",
     unit: "€",
     billing: "forfait unique",
@@ -269,11 +269,11 @@ export const pricingTiers: PricingTier[] = [
       "Vos clients vous contactent directement depuis le site",
       "Hébergement inclus - rien à payer en plus la 1ère année",
       "Votre adresse web .com ou .fr offerte la 1ère année",
-      "Optimisé pour Google dès le lancement - vous existez en ligne",
-      "Besoin d'une mise à jour après livraison ? Je suis disponible",
+      "Visible sur Google dès la mise en ligne - vos clients vous trouvent",
+      "Support inclus après livraison - je reste disponible",
       "Votre fiche Google optimisée offerte - double présence locale 🎁",
     ],
-    cta: "Demander un devis",
+    cta: "Obtenir le Pack Visibilité",
     href: "/contact",
     highlight: true,
     accentClass: "text-orange-400",
@@ -298,7 +298,7 @@ export const pricingTiers: PricingTier[] = [
       "Mise à jour des horaires, catégories et services",
       "Conseils pour obtenir et gérer les avis clients",
     ],
-    cta: "Demander un devis",
+    cta: "Obtenir mon devis gratuit",
     href: "/contact",
     highlight: false,
     accentClass: "text-primary",
@@ -386,11 +386,11 @@ export const contactConfig = {
 // 14. CTA FINAL (Footer)
 // ─────────────────────────────────────────────────────────────────────────────
 export const footerCta = {
-  headline: "Prêt à transformer votre activité ?",
-  subline: "Discutons de vos objectifs autour d'un café (ou en visio).",
-  freeAuditLine: "Le premier audit de votre présence en ligne est",
-  freeWord: "offert",
-  ctaLabel: "Lancer mon projet maintenant 🚀",
+  headline: "Votre concurrent est déjà en haut de Google Maps.",
+  subline: "Dites-moi ce que vous faites et où vous êtes.",
+  freeAuditLine: "Je vous dis en 24h ce qu'on peut faire -",
+  freeWord: "c'est gratuit.",
+  ctaLabel: "Démarrer mon projet - c'est gratuit",
   ctaHref: "/contact",
   copyrightName: "Jovan",
 };

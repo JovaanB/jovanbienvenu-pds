@@ -174,32 +174,32 @@ export default function Hero() {
       <div className="absolute inset-0 dot-grid pointer-events-none opacity-40" />
 
       <div className="max-w-7xl mx-auto w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 lg:gap-16 items-center">
           {/* ── Left column ── */}
           <div className="flex flex-col items-start gap-7">
             {/* H1 */}
             <h1 className="text-5xl sm:text-6xl lg:text-[4.25rem] font-extrabold tracking-tight text-white leading-[1.04]">
-              <span className="block">Votre prochain</span>
-              <span className="block">client cherche</span>
-              <span className="block">sur Google.</span>
+              <span className="block">Trouvé sur Google.</span>
+              <span className="block">Sans payer de pub.</span>
             </h1>
 
             {/* Sub */}
             <p className="text-lg text-slate-400 max-w-lg leading-relaxed font-light">
-              Je crée des{" "}
-              <span className="text-white font-semibold">sites internet</span>{" "}
-              et des{" "}
-              <span className="text-white font-semibold">fiches Google</span>{" "}
-              qui transforment les recherches locales en appels - pour les
-              artisans et professionnels de l&apos;Avesnois.
+              Je crée votre{" "}
+              <span className="text-white font-semibold">site internet</span> et
+              votre{" "}
+              <span className="text-white font-semibold">fiche Google</span>{" "}
+              pour que vos clients vous trouvent — sans pub, sans abonnement.
+              Pour les artisans et commerçants de l&apos;Avesnois.{" "}
+              <span className="text-white font-semibold">590€, forfait unique.</span>
             </p>
 
             {/* Checklist */}
             <ul className="space-y-2.5">
               {[
-                "Site vitrine livré en 2 à 3 semaines",
-                "Fiche Google dans le Top 3 local",
-                "Devis gratuit répondu sous 24h",
+                "Vous payez une fois. Vous restez visible des années.",
+                "Vos clients vous appellent directement depuis Google Maps",
+                "Devis gratuit — réponse sous 24h",
               ].map((item) => (
                 <li
                   key={item}

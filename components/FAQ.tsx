@@ -14,9 +14,9 @@ export default function FAQ() {
         <FadeIn>
           <div className="text-center mb-16">
             <p className="text-primary font-bold tracking-widest uppercase text-xs mb-3">FAQ</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white">Questions fréquentes</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Vos questions, mes réponses</h2>
             <p className="text-slate-400 mt-4">
-              Toutes les réponses aux questions que se posent les artisans et commerçants.
+              Ce que les artisans me demandent avant de démarrer - réponses directes.
             </p>
           </div>
         </FadeIn>

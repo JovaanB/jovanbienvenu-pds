@@ -21,7 +21,7 @@ const steps = [
     icon: TrendingUp,
     label: "Étape 03",
     title: "Vos clients vous trouvent",
-    desc: "Votre téléphone commence à sonner. Chaque mois, je vous envoie un rapport clair : visites sur votre site, appels générés, positions Google. Des résultats mesurables.",
+    desc: "Votre site et votre fiche Google sont en ligne. Les premières positions sur Google Maps apparaissent en 4 à 8 semaines. Chaque mois, vous recevez un rapport clair : visites, appels générés, positions Google.",
   },
 ];
 
@@ -36,10 +36,10 @@ export default function Process() {
               Simple &amp; transparent
             </p>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
-              Comment ça marche ?
+              Visible sur Google en 3 semaines
             </h2>
             <p className="text-slate-400 max-w-lg mx-auto leading-relaxed">
-              De votre premier message à vos premiers clients - en 3 étapes
+              De votre premier message à vos premiers appels - en 3 étapes
               claires. Pas de jargon, pas de surprise.
             </p>
           </div>

@@ -50,9 +50,8 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-slate-500 text-sm leading-relaxed max-w-xs mb-4">
-              Développeur web basé à Fourmies. Je crée des sites internet et
-              optimise la visibilité locale des artisans et commerçants de
-              l'Avesnois.
+              Basé à Fourmies. Je crée des sites internet et des fiches Google
+              pour les artisans et commerçants de l&apos;Avesnois.
             </p>
             <div>
               <p className="text-slate-600 text-xs font-bold uppercase tracking-widest mb-2">
@@ -88,7 +87,7 @@ export default function Footer() {
                 },
                 { href: "/realisations", label: "Mes réalisations" },
                 { href: "/blog", label: "Blog" },
-                { href: "/contact", label: "Demander un devis" },
+                { href: "/contact", label: "Obtenir un devis gratuit" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link

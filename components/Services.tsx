@@ -39,11 +39,11 @@ export default function Services() {
             </p>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
               <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight">
-                Mes services
+                Ce que vous obtenez
               </h2>
               <p className="text-slate-400 max-w-sm text-sm leading-relaxed">
-                Des solutions sur-mesure pour dominer votre marché local -
-                livrées clé en main.
+                Des solutions clé en main pour être visible là où vos clients
+                vous cherchent.
               </p>
             </div>
           </div>

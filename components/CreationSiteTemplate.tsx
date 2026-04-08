@@ -15,12 +15,12 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 const livrables = [
   "Un design qui inspire confiance dès le premier regard",
   "Jusqu'à 5 pages (Accueil, À propos, Services, Galerie, Contact)",
-  "Parfait sur tous les écrans - vos clients naviguent partout",
+  "Parfait sur tous les écrans - 70% de vos clients naviguent sur mobile",
   "Vos clients vous contactent directement depuis le site",
   "Hébergement inclus - rien à payer en plus la 1ère année",
   "Votre adresse web .com ou .fr offerte la 1ère année",
-  "Optimisé pour Google dès le lancement - vous existez en ligne",
-  "Besoin d'une mise à jour après livraison ? Je suis disponible",
+  "Optimisé pour Google dès le lancement - vos clients vous trouvent",
+  "Disponible après livraison pour toutes vos questions",
   "Votre fiche Google optimisée offerte - double présence locale 🎁",
 ];
 
@@ -38,7 +38,7 @@ const etapes = [
   {
     num: "03",
     titre: "Développement",
-    desc: "Je développe votre site avec les meilleures technologies. Rapide, sécurisé, optimisé SEO dès le départ.",
+    desc: "Je code votre site à la main - pas un template WordPress bricolé. Résultat : rapide, stable, optimisé pour Google dès le premier jour.",
   },
   {
     num: "04",
@@ -120,10 +120,9 @@ export default function CreationSiteTemplate({
             )}
             {!ville && (
               <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-                Artisan, commerçant ou indépendant dans l'Avesnois ? Je crée
-                votre site vitrine professionnel clé en main - design moderne,
-                ultra-rapide, optimisé pour Google et livré en moins de 3
-                semaines.
+                Votre prochain client vous cherche sur Google en ce moment. Je
+                crée votre site vitrine pour qu&apos;il vous appelle vous - pas
+                votre concurrent. Clé en main, livré en moins de 3 semaines.
               </p>
             )}
 
@@ -132,7 +131,7 @@ export default function CreationSiteTemplate({
                 href="/contact"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary-hover text-white font-bold rounded-full transition-all duration-200 hover:shadow-[0_0_32px_-6px_rgba(19,91,236,0.7)] active:scale-95"
               >
-                Demander un devis gratuit
+                Obtenir mon devis gratuit
                 <ArrowRight size={18} />
               </Link>
               <a
@@ -175,9 +174,9 @@ export default function CreationSiteTemplate({
                 Un site complet à 590€ - tout inclus
               </h2>
               <p className="text-slate-400 max-w-xl mx-auto">
-                Pas de surprise, pas de frais cachés. Un forfait unique qui
-                couvre tout ce dont votre entreprise a besoin pour exister en
-                ligne.
+                Pas de surprise, pas de frais cachés. Un forfait unique pour
+                être visible, crédible et rentable en ligne - dès la première
+                semaine.
               </p>
             </div>
           </FadeIn>
@@ -239,7 +238,7 @@ export default function CreationSiteTemplate({
                   href="/contact"
                   className="group mt-8 w-full flex items-center justify-center gap-2 py-4 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl transition-all duration-200 hover:shadow-[0_0_24px_-4px_rgba(19,91,236,0.6)] active:scale-95"
                 >
-                  Demander un devis gratuit
+                  Obtenir mon devis gratuit
                   <ArrowRight
                     size={16}
                     className="group-hover:translate-x-1 transition-transform"
@@ -255,27 +254,27 @@ export default function CreationSiteTemplate({
                   {
                     icon: "⚡",
                     titre: "Livré en moins de 2 semaines",
-                    desc: "Délai moyen constaté sur mes dernières réalisations. Pas d'attente interminable.",
+                    desc: "Un planning précis vous est fourni dès le départ. Sur mes dernières réalisations, la livraison tient en 10 jours ouvrés.",
                   },
                   {
                     icon: "📍",
-                    titre: "Développeur local de proximité",
-                    desc: `Basé à Fourmies, je me déplace chez vous ${nomVille} pour les échanges importants.`,
+                    titre: "Un voisin, pas une agence",
+                    desc: `Basé à Fourmies, je me déplace chez vous ${nomVille}. Vous parlez à une vraie personne - pas à un ticket de support.`,
                   },
                   {
                     icon: "🔒",
-                    titre: "Site sécurisé & performant",
-                    desc: "HTTPS, chargement ultra-rapide, hébergé sur une infrastructure fiable - vos visiteurs ne repartent pas.",
+                    titre: "Site rapide & sécurisé",
+                    desc: "HTTPS, chargement en moins d'une seconde, hébergement fiable. Un site lent perd des clients - le vôtre les garde.",
                   },
                   {
                     icon: "🤝",
-                    titre: "Accompagnement après livraison",
-                    desc: "Je ne disparais pas après la mise en ligne. Je suis disponible pour vos questions.",
+                    titre: "Disponible après livraison",
+                    desc: "Questions, ajustements, évolutions - je reste disponible après la mise en ligne. Pas de ticket de support.",
                   },
                   {
                     icon: "⏱️",
                     titre: "Réponse sous 24h",
-                    desc: "Du lundi au samedi, je réponds rapidement - souvent le jour même.",
+                    desc: "Du lundi au samedi. En pratique, je réponds généralement sous 2h en semaine.",
                   },
                 ].map((item) => (
                   <div key={item.titre} className="flex gap-4">
@@ -305,7 +304,7 @@ export default function CreationSiteTemplate({
                 Comment ça marche
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                De l'idée à la mise en ligne en 4 étapes
+                Votre site en ligne en moins de 3 semaines
               </h2>
             </div>
           </FadeIn>
@@ -342,7 +341,7 @@ export default function CreationSiteTemplate({
                 FAQ
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Questions fréquentes
+                Vos questions, réponses directes
               </h2>
             </div>
           </FadeIn>
@@ -466,8 +465,8 @@ export default function CreationSiteTemplate({
                   Prêt à lancer votre projet {nomVille} ?
                 </h2>
                 <p className="text-slate-400 mb-8">
-                  Devis gratuit et sans engagement sous 24h. Je réponds souvent
-                  dans la journée.
+                  Devis gratuit, sans engagement. Je vous réponds sous 24h -
+                  généralement sous 2h en semaine.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link

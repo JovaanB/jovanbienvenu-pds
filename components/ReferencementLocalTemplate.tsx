@@ -30,7 +30,7 @@ const stats = [
     unit: "en moyenne",
     label: "De vues sur la fiche après optimisation",
   },
-  { value: "1ère", unit: "page", label: "Position Google visée" },
+  { value: "0€", unit: "de pub", label: "Le trafic vient sans payer par clic" },
 ];
 
 interface ReferencementLocalTemplateProps {
@@ -209,12 +209,13 @@ export default function ReferencementLocalTemplate({
                 Pourquoi agir maintenant
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Pourquoi optimiser votre fiche Google à {ville.nom} ?
+                Votre fiche Google, c&apos;est votre vitrine numéro 1
               </h2>
               <p className="text-slate-400 max-w-2xl mx-auto">
-                Quand un client cherche un artisan ou un service à {ville.nom},
-                Google Maps s&apos;affiche en premier. Sans fiche optimisée,
-                c&apos;est votre concurrent qui emporte la mise.
+                À {ville.nom}, quand un client cherche un artisan sur Google, il
+                voit d&apos;abord Google Maps - pas les sites. Sans fiche
+                optimisée, c&apos;est votre concurrent qui décroche le
+                téléphone.
               </p>
             </div>
           </FadeIn>
@@ -260,11 +261,11 @@ export default function ReferencementLocalTemplate({
                 L&apos;offre
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Optimisation GMB à {ville.nom} - 280€
+                Votre fiche Google au top à {ville.nom} - 280€
               </h2>
               <p className="text-slate-400 max-w-xl mx-auto">
-                Un investissement unique qui génère un flux régulier de nouveaux
-                clients locaux, sans publicité payante.
+                Un investissement unique. Des clients qui appellent chaque
+                semaine. Sans payer un centime de pub.
               </p>
             </div>
           </FadeIn>
@@ -336,8 +337,8 @@ export default function ReferencementLocalTemplate({
                 {[
                   {
                     icon: "📍",
-                    titre: `Intervention locale à ${ville.nom}`,
-                    desc: `Je me déplace chez vous à ${ville.nom} pour les photos et les échanges. Pas d'agence anonyme - un prestataire de proximité.`,
+                    titre: `Je me déplace à ${ville.nom}`,
+                    desc: `Je viens chez vous pour les photos et les échanges. Vous parlez à une vraie personne - pas à une agence qui sous-traite.`,
                   },
                   {
                     icon: "📊",
@@ -356,8 +357,8 @@ export default function ReferencementLocalTemplate({
                   },
                   {
                     icon: "⏱️",
-                    titre: "Résultats en 4 à 8 semaines",
-                    desc: "Sur des mots-clés locaux, les premiers résultats sont visibles rapidement. La position 1 Google Maps se construit en 2 à 3 mois.",
+                    titre: "Premiers résultats en 4 à 8 semaines",
+                    desc: "Les premières remontées sur Google Maps sont visibles rapidement. Une position top 3 solide se consolide sur 2 à 3 mois.",
                   },
                 ].map((item) => (
                   <div key={item.titre} className="flex gap-4">
@@ -534,11 +535,11 @@ export default function ReferencementLocalTemplate({
                 ))}
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Prêt à dominer Google à {ville.nom} ?
+                Votre fiche Google optimisée à {ville.nom} - on commence quand ?
               </h2>
               <p className="text-slate-400 mb-8">
-                Je commence par un audit gratuit de votre visibilité actuelle à{" "}
-                {ville.nom} - sans engagement.
+                Je commence par un audit gratuit de votre visibilité actuelle -
+                sans engagement, sans jargon.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a

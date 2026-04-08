@@ -36,7 +36,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 text-white group">
           <img src="/logo.png" alt={siteInfo.name} className="w-6 h-6" />
-          <span className="text-lg font-bold tracking-tight">
+          <span className="text-lg font-extrabold tracking-tight font-heading">
             {siteInfo.name}
           </span>
         </Link>

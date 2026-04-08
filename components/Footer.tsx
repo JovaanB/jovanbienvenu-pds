@@ -24,11 +24,11 @@ export default function Footer() {
             </span>
             .
           </p>
-          <Link href={footerCta.ctaHref} className="relative inline-flex group">
-            <span className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 via-primary to-purple-600 rounded-xl blur opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
-            <span className="relative inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold text-white bg-gray-950 rounded-xl focus:outline-none hover:bg-gray-900 transition-colors">
-              {footerCta.ctaLabel}
-            </span>
+          <Link
+            href={footerCta.ctaHref}
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold text-white bg-cta hover:bg-cta-hover rounded-xl transition-all duration-200 hover:shadow-[0_0_36px_-8px_rgba(249,115,22,0.6)] active:scale-95"
+          >
+            {footerCta.ctaLabel}
           </Link>
         </div>
       </div>

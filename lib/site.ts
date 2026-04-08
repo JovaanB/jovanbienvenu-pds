@@ -40,7 +40,7 @@ export const siteInfo = {
   siteUrl: "https://jovanbienvenu.com",
 
   /** SIRET — affiché dans le bandeau de confiance */
-  siret: "893 883 157 00024",
+  siret: "893 883 157 00032",
 
   /** Ville et département */
   location: "Fourmies, Nord (59)",
@@ -205,25 +205,25 @@ export type WhyItem = {
 export const whyItems: WhyItem[] = [
   {
     Icon: MapPin,
-    gradient: "",
+    gradient: "from-primary/20 to-primary/5",
     title: "Pas une agence. Un voisin.",
     desc: "Je connais l'Avesnois, ses professionnels, ses quartiers. On se voit en vrai si besoin. Et vous savez exactement qui appeler — pas un ticket de support.",
   },
   {
     Icon: TrendingUp,
-    gradient: "",
+    gradient: "from-primary/20 to-primary/5",
     title: "Un prix fixe, zéro surprise",
     desc: "Vous savez ce que vous payez avant de commencer. Facilités de paiement disponibles selon votre situation. Pas d'abonnement forcé, pas de frais cachés.",
   },
   {
     Icon: Users,
-    gradient: "",
+    gradient: "from-primary/20 to-primary/5",
     title: "Toujours disponible, jamais un bot",
     desc: "Pas de ticket de support, pas de FAQ. Vous m'appelez directement. Je réponds en moins d'une journée, souvent dans l'heure.",
   },
   {
     Icon: BarChart2,
-    gradient: "",
+    gradient: "from-primary/20 to-primary/5",
     title: "Des chiffres, pas des promesses",
     desc: "Chaque mois, vous voyez combien de personnes ont visité votre site, cliqué pour appeler, cherché votre adresse. Rien de flou — que des résultats mesurables.",
   },
@@ -276,11 +276,12 @@ export const pricingTiers: PricingTier[] = [
     cta: "Demander un devis",
     href: "/contact",
     highlight: true,
-    accentClass: "text-purple-400",
-    ctaClass: "bg-purple-600 hover:bg-purple-500 text-white",
-    checkClass: "text-purple-400",
-    borderClass: "border-purple-500/30",
-    bgClass: "bg-gradient-to-b from-purple-900/20 to-surface-dark",
+    accentClass: "text-orange-400",
+    ctaClass:
+      "bg-cta hover:bg-cta-hover text-white shadow-lg shadow-orange-500/20",
+    checkClass: "text-orange-400",
+    borderClass: "border-orange-500/25",
+    bgClass: "bg-gradient-to-b from-orange-900/10 to-surface-dark",
   },
   {
     name: "Optimisation fiche Google",

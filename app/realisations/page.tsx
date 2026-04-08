@@ -1,6 +1,4 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
 import { buildMetadata, buildLocalBusinessSchema, buildBreadcrumbSchema, SITE_URL } from '@/lib/metadata'
 import { realisations } from '@/data/realisations'
 import RealisationCard from '@/components/RealisationCard'
@@ -72,26 +70,6 @@ export default function RealisationsPage() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section className="relative z-10 py-20 px-6">
-        <div className="max-w-2xl mx-auto text-center">
-          <FadeIn>
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Votre projet sera le prochain ?
-            </h2>
-            <p className="text-slate-400 mb-8">
-              Devis gratuit sous 24h — je me déplace dans tout l'Avesnois.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl transition-all duration-200 hover:shadow-[0_0_32px_-6px_rgba(19,91,236,0.6)] active:scale-95"
-            >
-              Lancer mon projet
-              <ArrowRight size={18} />
-            </Link>
-          </FadeIn>
-        </div>
-      </section>
       <WhatsAppButton message="Bonjour Jovan, j'ai vu vos réalisations et souhaite discuter d'un projet similaire." />
     </main>
   )

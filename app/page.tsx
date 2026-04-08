@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import TrustBanner from "@/components/TrustBanner";
+import Process from "@/components/Process";
 import Services from "@/components/Services";
 import WhyMe from "@/components/WhyMe";
 import Portfolio from "@/components/Portfolio";
@@ -42,19 +43,16 @@ export default function Home() {
       <SchemaOrg schema={schema} />
       <SchemaOrg schema={faqSchema} />
 
-      {/* Ambient background glows — fixed so they follow scroll */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute -top-[20%] left-[20%] w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] mix-blend-screen animate-pulse-glow" />
-        <div className="absolute top-[40%] -right-[10%] w-[500px] h-[500px] bg-purple-900/10 rounded-full blur-[100px]" />
-        <div className="absolute -bottom-[20%] left-[10%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px]" />
-      </div>
+      {/* Ambient background */}
+      <div className="ambient-bg" />
 
       <Hero />
       <TrustBanner />
+      <Process />
       <Services />
       <WhyMe />
-      <Portfolio />
       <Testimonials />
+      <Portfolio />
       <Pricing />
       <FAQ />
       <section id="contact">

@@ -1,15 +1,15 @@
-import type { Metadata } from 'next'
-import { buildMetadata } from '@/lib/metadata'
-import { getVilleBySlug } from '@/data/villes'
-import CreationSiteTemplate from '@/components/CreationSiteTemplate'
+import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
+import { getVilleBySlug } from "@/data/villes";
+import CreationSiteTemplate from "@/components/CreationSiteTemplate";
 
-const ville = getVilleBySlug('maubeuge')!
+const ville = getVilleBySlug("maubeuge")!;
 
 export const metadata: Metadata = buildMetadata({
-  title: `Création de site internet à Maubeuge (59) — 590€ tout inclus`,
+  title: `Création de site internet à Maubeuge (59) - 590€ tout inclus`,
   description: ville.metaDescription,
-  path: '/creation-site-internet-maubeuge',
-})
+  path: "/creation-site-internet-maubeuge",
+});
 
 export default function CreationSiteMaubeugePage() {
   return (
@@ -19,5 +19,5 @@ export default function CreationSiteMaubeugePage() {
       </div>
       <CreationSiteTemplate ville={ville} />
     </main>
-  )
+  );
 }

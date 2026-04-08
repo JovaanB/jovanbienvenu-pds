@@ -78,7 +78,7 @@ export default function ReferencementLocalTemplate({
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
             <p className="text-purple-400 font-bold tracking-widest uppercase text-xs mb-4">
-              Référencement local — {ville.nom}
+              Référencement local - {ville.nom}
             </p>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tight">
               Soyez{" "}
@@ -87,8 +87,11 @@ export default function ReferencementLocalTemplate({
               </span>{" "}
               à {ville.nom}
             </h1>
-            <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
+            <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-4 leading-relaxed">
               {ville.paragrapheIntroGmb}
+            </p>
+            <p className="text-slate-500 text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+              {ville.contextEconomique}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
@@ -148,30 +151,48 @@ export default function ReferencementLocalTemplate({
             <div className="space-y-4 text-slate-400 text-sm leading-relaxed mb-8">
               <p>
                 Google My Business (aujourd&apos;hui appelé{" "}
-                <strong className="text-white">Google Business Profile</strong>) est la fiche
-                qui apparaît quand un client cherche votre activité sur Google Maps ou dans
-                les résultats de recherche. Elle affiche votre nom, téléphone, horaires,
-                photos, avis et localisation — avant même votre site internet.
+                <strong className="text-white">Google Business Profile</strong>)
+                est la fiche qui apparaît quand un client cherche votre activité
+                sur Google Maps ou dans les résultats de recherche. Elle affiche
+                votre nom, téléphone, horaires, photos, avis et localisation -
+                avant même votre site internet.
               </p>
               <p>
-                C&apos;est la première chose que voit un prospect local avant de vous appeler.
-                Une fiche absente ou mal renseignée, c&apos;est votre concurrent qui décroche
-                l&apos;appel à votre place.
+                C&apos;est la première chose que voit un prospect local avant de
+                vous appeler. Une fiche absente ou mal renseignée, c&apos;est
+                votre concurrent qui décroche l&apos;appel à votre place.
               </p>
-              <p className="text-slate-300">
-                {ville.contextEconomique}
-              </p>
+              <p className="text-slate-300">{ville.contextEconomique}</p>
             </div>
             <div className="grid grid-cols-3 gap-4">
               {[
-                { icon: "📞", label: "Appel direct", desc: "Le client appelle d'un clic depuis Google" },
-                { icon: "⭐", label: "Avis clients", desc: "Les avis s'affichent directement sur Google" },
-                { icon: "🗺️", label: "Itinéraire GPS", desc: "Un clic suffit pour vous trouver" },
+                {
+                  icon: "📞",
+                  label: "Appel direct",
+                  desc: "Le client appelle d'un clic depuis Google",
+                },
+                {
+                  icon: "⭐",
+                  label: "Avis clients",
+                  desc: "Les avis s'affichent directement sur Google",
+                },
+                {
+                  icon: "🗺️",
+                  label: "Itinéraire GPS",
+                  desc: "Un clic suffit pour vous trouver",
+                },
               ].map((item) => (
-                <div key={item.label} className="text-center p-4 rounded-xl border border-white/8 bg-surface-dark">
+                <div
+                  key={item.label}
+                  className="text-center p-4 rounded-xl border border-white/8 bg-surface-dark"
+                >
                   <span className="text-2xl block mb-2">{item.icon}</span>
-                  <p className="text-white text-xs font-semibold mb-1">{item.label}</p>
-                  <p className="text-slate-500 text-xs leading-tight">{item.desc}</p>
+                  <p className="text-white text-xs font-semibold mb-1">
+                    {item.label}
+                  </p>
+                  <p className="text-slate-500 text-xs leading-tight">
+                    {item.desc}
+                  </p>
                 </div>
               ))}
             </div>
@@ -239,7 +260,7 @@ export default function ReferencementLocalTemplate({
                 L&apos;offre
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Optimisation GMB à {ville.nom} — 280€
+                Optimisation GMB à {ville.nom} - 280€
               </h2>
               <p className="text-slate-400 max-w-xl mx-auto">
                 Un investissement unique qui génère un flux régulier de nouveaux
@@ -283,9 +304,13 @@ export default function ReferencementLocalTemplate({
                 </ul>
 
                 <div className="flex items-start gap-2.5 p-3 rounded-xl bg-green-500/10 border border-green-500/20 mb-4">
-                  <span className="text-green-400 text-base shrink-0 mt-0.5">🛡️</span>
+                  <span className="text-green-400 text-base shrink-0 mt-0.5">
+                    🛡️
+                  </span>
                   <p className="text-green-300 text-xs leading-relaxed">
-                    <span className="font-semibold">Garantie résultats</span> — Pas de progression visible en 8 semaines ? Je retravaille la fiche sans frais supplémentaires.
+                    <span className="font-semibold">Garantie résultats</span> -
+                    Pas de progression visible en 8 semaines ? Je retravaille la
+                    fiche sans frais supplémentaires.
                   </p>
                 </div>
 
@@ -312,7 +337,7 @@ export default function ReferencementLocalTemplate({
                   {
                     icon: "📍",
                     titre: `Intervention locale à ${ville.nom}`,
-                    desc: `Je me déplace chez vous à ${ville.nom} pour les photos et les échanges. Pas d'agence anonyme — un prestataire de proximité.`,
+                    desc: `Je me déplace chez vous à ${ville.nom} pour les photos et les échanges. Pas d'agence anonyme - un prestataire de proximité.`,
                   },
                   {
                     icon: "📊",
@@ -327,7 +352,7 @@ export default function ReferencementLocalTemplate({
                   {
                     icon: "📦",
                     titre: "Incluse dans le Pack Visibilité",
-                    desc: "Avec le Pack à 590 €, l'optimisation de votre fiche Google est incluse — site internet + fiche Google, tout en un.",
+                    desc: "Avec le Pack à 590 €, l'optimisation de votre fiche Google est incluse - site internet + fiche Google, tout en un.",
                   },
                   {
                     icon: "⏱️",
@@ -367,7 +392,7 @@ export default function ReferencementLocalTemplate({
                 </h3>
                 <p className="text-slate-400 text-sm">
                   Le Pack Visibilité à 590 € inclut la création de votre site
-                  vitrine ET l&apos;optimisation de votre fiche Google — la
+                  vitrine ET l&apos;optimisation de votre fiche Google - la
                   combinaison la plus efficace pour dominer les résultats
                   locaux.
                 </p>
@@ -457,7 +482,7 @@ export default function ReferencementLocalTemplate({
                   Guide
                 </span>
                 <h3 className="text-white font-semibold text-sm leading-snug group-hover:text-purple-300 transition-colors">
-                  Site vitrine ou fiche Google My Business — que choisir ?
+                  Site vitrine ou fiche Google My Business - que choisir ?
                 </h3>
                 <span className="inline-flex items-center gap-1 text-xs text-slate-500 group-hover:text-purple-400 transition-colors mt-auto">
                   Lire l&apos;article <ArrowRight size={12} />
@@ -513,7 +538,7 @@ export default function ReferencementLocalTemplate({
               </h2>
               <p className="text-slate-400 mb-8">
                 Je commence par un audit gratuit de votre visibilité actuelle à{" "}
-                {ville.nom} — sans engagement.
+                {ville.nom} - sans engagement.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a

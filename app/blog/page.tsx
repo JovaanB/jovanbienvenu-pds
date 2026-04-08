@@ -7,7 +7,7 @@ import FadeIn from "@/components/FadeIn";
 import SchemaOrg from "@/components/SchemaOrg";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Blog — Conseils création de site internet et SEO local pour artisans",
+  title: "Blog - Conseils création de site internet et SEO local pour artisans",
   description:
     "Guides pratiques et conseils SEO pour les professionnels de l'Avesnois : prix site internet, Google, visibilité locale. Par Jovan, développeur web à Fourmies.",
   path: "/blog",
@@ -44,7 +44,7 @@ export default function BlogPage() {
             </h1>
             <p className="text-slate-400">
               Tout ce qu'un professionnel indépendant doit savoir pour gagner en
-              visibilité en ligne — sans jargon, sans prise de tête.
+              visibilité en ligne - sans jargon, sans prise de tête.
             </p>
           </FadeIn>
         </div>
@@ -115,7 +115,7 @@ export default function BlogPage() {
               </p>
               <p className="text-slate-400 text-sm mb-6">
                 Ces guides vous ont donné des idées ? Discutons de votre
-                situation concrète — c'est gratuit.
+                situation concrète - c'est gratuit.
               </p>
               <Link
                 href="/contact"

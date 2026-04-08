@@ -21,7 +21,7 @@ import SchemaOrg from "@/components/SchemaOrg";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Référencement local Google My Business Avesnois — 280€",
+  title: "Référencement local Google My Business Avesnois - 280€",
   description:
     "Optimisation fiche Google My Business dans l'Avesnois à 280€. Apparaissez en 1ère page Google à Fourmies, Maubeuge, Hirson. Résultats en 4 à 8 semaines.",
   path: "/referencement-local-google",
@@ -100,7 +100,7 @@ export default function ReferencementLocalPage() {
             </h1>
             <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
               J'optimise votre fiche Google My Business pour que les clients
-              locaux vous trouvent dans les résultats de recherche — avant vos
+              locaux vous trouvent dans les résultats de recherche - avant vos
               concurrents, et sans payer de publicité.
             </p>
 
@@ -158,7 +158,7 @@ export default function ReferencementLocalPage() {
                 L'offre
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Optimisation GMB complète — 280€
+                Optimisation GMB complète - 280€
               </h2>
               <p className="text-slate-400 max-w-xl mx-auto">
                 Un investissement unique qui génère un flux régulier de nouveaux
@@ -202,9 +202,13 @@ export default function ReferencementLocalPage() {
                 </ul>
 
                 <div className="flex items-start gap-2.5 p-3 rounded-xl bg-green-500/10 border border-green-500/20 mb-4">
-                  <span className="text-green-400 text-base shrink-0 mt-0.5">🛡️</span>
+                  <span className="text-green-400 text-base shrink-0 mt-0.5">
+                    🛡️
+                  </span>
                   <p className="text-green-300 text-xs leading-relaxed">
-                    <span className="font-semibold">Garantie résultats</span> — Pas de progression visible en 8 semaines ? Je retravaille la fiche sans frais supplémentaires.
+                    <span className="font-semibold">Garantie résultats</span> -
+                    Pas de progression visible en 8 semaines ? Je retravaille la
+                    fiche sans frais supplémentaires.
                   </p>
                 </div>
 
@@ -367,7 +371,7 @@ export default function ReferencementLocalPage() {
                   Guide
                 </span>
                 <h3 className="text-white font-semibold text-sm leading-snug group-hover:text-purple-300 transition-colors">
-                  Site vitrine ou fiche Google My Business — que choisir ?
+                  Site vitrine ou fiche Google My Business - que choisir ?
                 </h3>
                 <span className="inline-flex items-center gap-1 text-xs text-slate-500 group-hover:text-purple-400 transition-colors mt-auto">
                   Lire l'article <ArrowRight size={12} />
@@ -396,7 +400,7 @@ export default function ReferencementLocalPage() {
                 Prêt à dominer Google ?
               </h2>
               <p className="text-slate-400 mb-8">
-                Je commence par un audit gratuit de votre visibilité actuelle —
+                Je commence par un audit gratuit de votre visibilité actuelle -
                 sans engagement.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

@@ -1,28 +1,33 @@
-import type { Metadata } from 'next'
-import { buildMetadata, buildLocalBusinessSchema, buildBreadcrumbSchema, SITE_URL } from '@/lib/metadata'
-import { siteInfo } from '@/lib/site'
-import ContactForm from '@/components/ContactForm'
-import FadeIn from '@/components/FadeIn'
-import SchemaOrg from '@/components/SchemaOrg'
-import { Phone, Mail, MapPin, Clock } from 'lucide-react'
+import type { Metadata } from "next";
+import {
+  buildMetadata,
+  buildLocalBusinessSchema,
+  buildBreadcrumbSchema,
+  SITE_URL,
+} from "@/lib/metadata";
+import { siteInfo } from "@/lib/site";
+import ContactForm from "@/components/ContactForm";
+import FadeIn from "@/components/FadeIn";
+import SchemaOrg from "@/components/SchemaOrg";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Contact — Devis gratuit création site internet Avesnois",
+  title: "Contact - Devis gratuit création site internet Avesnois",
   description:
     "Demandez votre devis gratuit pour la création de votre site internet ou l'optimisation de votre fiche Google My Business dans l'Avesnois. Réponse sous 24h.",
-  path: '/contact',
-})
+  path: "/contact",
+});
 
-const schema = buildLocalBusinessSchema({ url: `${SITE_URL}/contact` })
+const schema = buildLocalBusinessSchema({ url: `${SITE_URL}/contact` });
 
 const contactPointSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
   url: `${SITE_URL}/contact`,
-  name: "Contact — Jovan Bienvenu, Développeur Web Avesnois",
+  name: "Contact - Jovan Bienvenu, Développeur Web Avesnois",
   mainEntity: {
     "@type": "LocalBusiness",
-    name: "Jovan — Développeur Web Avesnois",
+    name: "Jovan - Développeur Web Avesnois",
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+33788962157",
@@ -32,45 +37,52 @@ const contactPointSchema = {
       availableLanguage: "French",
       hoursAvailable: {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ],
         opens: "09:00",
         closes: "19:00",
       },
     },
   },
-}
+};
 
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: "Accueil", url: SITE_URL },
   { name: "Contact", url: `${SITE_URL}/contact` },
-])
+]);
 
 const infos = [
   {
     icon: Phone,
-    label: 'Téléphone',
+    label: "Téléphone",
     value: siteInfo.phoneDisplay,
     href: `tel:${siteInfo.phone}`,
   },
   {
     icon: Mail,
-    label: 'Email',
+    label: "Email",
     value: siteInfo.email,
     href: `mailto:${siteInfo.email}`,
   },
   {
     icon: MapPin,
     label: "Zone d'intervention",
-    value: 'Fourmies, Avesnes-sur-Helpe, Hirson, Maubeuge, Glageon',
+    value: "Fourmies, Avesnes-sur-Helpe, Hirson, Maubeuge, Glageon",
     href: null,
   },
   {
     icon: Clock,
-    label: 'Disponibilité',
-    value: 'Lun-Sam · 9h00 - 19h00 · Réponse sous 24h',
+    label: "Disponibilité",
+    value: "Lun-Sam · 9h00 - 19h00 · Réponse sous 24h",
     href: null,
   },
-]
+];
 
 export default function ContactPage() {
   return (
@@ -93,14 +105,14 @@ export default function ContactPage() {
               Contact
             </p>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-              Parlons de{' '}
+              Parlons de{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-300">
                 votre projet
               </span>
             </h1>
             <p className="text-slate-400">
-              Remplissez le formulaire ou appelez-moi directement. Je vous réponds sous 24h —
-              souvent dans la journée.
+              Remplissez le formulaire ou appelez-moi directement. Je vous
+              réponds sous 24h - souvent dans la journée.
             </p>
           </FadeIn>
         </div>
@@ -112,10 +124,12 @@ export default function ContactPage() {
           {/* Infos contact */}
           <FadeIn className="lg:col-span-2" delay={0}>
             <div className="space-y-6">
-              <h2 className="text-white font-bold text-xl">Informations de contact</h2>
+              <h2 className="text-white font-bold text-xl">
+                Informations de contact
+              </h2>
 
               {infos.map((info) => {
-                const Icon = info.icon
+                const Icon = info.icon;
                 return (
                   <div key={info.label} className="flex gap-4">
                     <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
@@ -137,7 +151,7 @@ export default function ContactPage() {
                       )}
                     </div>
                   </div>
-                )
+                );
               })}
 
               <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 mt-6">
@@ -145,8 +159,8 @@ export default function ContactPage() {
                   🎁 Premier audit offert
                 </p>
                 <p className="text-amber-400/70 text-xs leading-relaxed">
-                  Je commence toujours par un audit gratuit de votre présence en ligne. Pas
-                  d'engagement, juste un état des lieux honnête.
+                  Je commence toujours par un audit gratuit de votre présence en
+                  ligne. Pas d'engagement, juste un état des lieux honnête.
                 </p>
               </div>
             </div>
@@ -159,5 +173,5 @@ export default function ContactPage() {
         </div>
       </section>
     </main>
-  )
+  );
 }

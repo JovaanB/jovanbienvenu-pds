@@ -1,23 +1,28 @@
-import type { Metadata } from 'next'
-import { buildMetadata, buildLocalBusinessSchema, buildBreadcrumbSchema, SITE_URL } from '@/lib/metadata'
-import { realisations } from '@/data/realisations'
-import RealisationCard from '@/components/RealisationCard'
-import FadeIn from '@/components/FadeIn'
-import SchemaOrg from '@/components/SchemaOrg'
-import WhatsAppButton from '@/components/WhatsAppButton'
+import type { Metadata } from "next";
+import {
+  buildMetadata,
+  buildLocalBusinessSchema,
+  buildBreadcrumbSchema,
+  SITE_URL,
+} from "@/lib/metadata";
+import { realisations } from "@/data/realisations";
+import RealisationCard from "@/components/RealisationCard";
+import FadeIn from "@/components/FadeIn";
+import SchemaOrg from "@/components/SchemaOrg";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Mes réalisations — Sites internet et SEO local dans l'Avesnois",
+  title: "Mes réalisations - Sites internet et SEO local dans l'Avesnois",
   description:
     "Découvrez mes projets de création de sites internet et de référencement local Google réalisés pour des professionnels de l'Avesnois. Résultats mesurables.",
-  path: '/realisations',
-})
+  path: "/realisations",
+});
 
-const schema = buildLocalBusinessSchema({ url: `${SITE_URL}/realisations` })
+const schema = buildLocalBusinessSchema({ url: `${SITE_URL}/realisations` });
 const breadcrumbSchema = buildBreadcrumbSchema([
-  { name: 'Accueil', url: SITE_URL },
-  { name: 'Mes réalisations', url: `${SITE_URL}/realisations` },
-])
+  { name: "Accueil", url: SITE_URL },
+  { name: "Mes réalisations", url: `${SITE_URL}/realisations` },
+]);
 
 export default function RealisationsPage() {
   return (
@@ -38,14 +43,14 @@ export default function RealisationsPage() {
               Portfolio
             </p>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Mes{' '}
+              Mes{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-300">
                 réalisations
               </span>
             </h1>
             <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-              Des sites internet et des optimisations SEO qui produisent des résultats concrets pour
-              des professionnels de l'Avesnois.
+              Des sites internet et des optimisations SEO qui produisent des
+              résultats concrets pour des professionnels de l'Avesnois.
             </p>
           </FadeIn>
         </div>
@@ -72,5 +77,5 @@ export default function RealisationsPage() {
 
       <WhatsAppButton message="Bonjour Jovan, j'ai vu vos réalisations et souhaite discuter d'un projet similaire." />
     </main>
-  )
+  );
 }

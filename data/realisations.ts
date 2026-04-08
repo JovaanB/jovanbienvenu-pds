@@ -1,6 +1,6 @@
 /**
  * ╔══════════════════════════════════════════════════════════════════╗
- * ║                     PROJETS — PORTFOLIO                         ║
+ * ║                     PROJETS - PORTFOLIO                         ║
  * ║  Ajouter / modifier les réalisations ici.                       ║
  * ║  image : chemin relatif depuis /public, null si pas d'image.    ║
  * ╚══════════════════════════════════════════════════════════════════╝
@@ -42,8 +42,9 @@ export const realisations: Realisation[] = [
     ville: "Chimay",
     type: "Site Vitrine",
     description:
-      "Site vitrine pour un ferronnier artisan basé à Chimay (Belgique). Présentation des créations sur-mesure — portails, clôtures, garde-corps, mobilier — avec formulaire de contact intégré.",
-    resultat: "Site en ligne — visible sur Google pour les recherches locales.",
+      "Site vitrine pour un ferronnier artisan basé à Chimay (Belgique). Présentation des créations sur-mesure - portails, clôtures, garde-corps, mobilier - avec formulaire de contact intégré.",
+    resultat:
+      "Référencé sur Google en moins de 2 semaines - clients belges et frontaliers captés via Google Maps.",
     image: "/realisations/ferronnerie-chimacienne.png",
     url: "https://ferronnerie-chimacienne.be",
   },
@@ -56,8 +57,9 @@ export const realisations: Realisation[] = [
     ville: "Outreau",
     type: "Site Vitrine",
     description:
-      "Site vitrine pour un électricien basé à Outreau. Présentation des services — installations électriques, éclairage, domotique — avec galerie photo et formulaire de contact.",
-    resultat: "Site en ligne — visible sur Google pour les recherches locales.",
+      "Site vitrine pour un électricien basé à Outreau. Présentation des services - installations électriques, éclairage, domotique - avec galerie photo et formulaire de contact.",
+    resultat:
+      "Visible sur Google Search et Google Maps pour les recherches « électricien Outreau » dès la mise en ligne.",
     image: "/realisations/elecluminance.png",
     url: "https://elecluminance.fr",
   },
@@ -70,8 +72,9 @@ export const realisations: Realisation[] = [
     ville: "Fourmies",
     type: "Site Vitrine",
     description:
-      "Site vitrine pour une entreprise de ferronnerie basée à Fourmies. Présentation des services — portails, garde-corps, mobilier sur-mesure — avec galerie photo et formulaire de contact.",
-    resultat: "Site en ligne — visible sur Google pour les recherches locales.",
+      "Site vitrine pour une entreprise de ferronnerie basée à Fourmies. Présentation des services - portails, garde-corps, mobilier sur-mesure - avec galerie photo et formulaire de contact.",
+    resultat:
+      "Top 1 Google Maps à Fourmies pour « métallier » en moins de 5 jours après lancement.",
     image: "/realisations/steeldream.png",
     url: "https://steeldream.fr",
   },
@@ -86,7 +89,7 @@ export const realisations: Realisation[] = [
     description:
       "Site vitrine pour un gîte dans l'Avesnois. Galerie photo, présentation des équipements, formulaire de réservation. Visible sur Google pour les recherches locales.",
     resultat:
-      "Site en ligne — référencé sur Google Maps et moteurs de recherche.",
+      "Référencé sur Google Maps et moteurs de recherche - réservations directes via le site sans intermédiaire.",
     image: "/realisations/bienvenueducotedecheznous.png",
     url: "https://bienvenueducotedecheznous.fr",
   },

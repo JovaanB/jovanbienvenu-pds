@@ -156,7 +156,7 @@ function GoogleLocalPackMockup() {
         </div>
       </div>
 
-      {/* Static badge overlays — neutral, don't compete with hero CTA */}
+      {/* Static badge overlays - neutral, don't compete with hero CTA */}
       <div className="absolute -left-5 top-8 bg-slate-800 border border-white/15 text-slate-200 text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg whitespace-nowrap">
         ✓ Top 3 Google
       </div>
@@ -190,7 +190,7 @@ export default function Hero() {
               <span className="text-white font-semibold">sites internet</span>{" "}
               et des{" "}
               <span className="text-white font-semibold">fiches Google</span>{" "}
-              qui transforment les recherches locales en appels — pour les
+              qui transforment les recherches locales en appels - pour les
               artisans et professionnels de l&apos;Avesnois.
             </p>
 

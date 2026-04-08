@@ -4,7 +4,7 @@ import { siteInfo } from "@/lib/site";
 import FadeIn from "@/components/FadeIn";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Mentions légales — Jovan Bienvenu, Développeur Web Avesnois",
+  title: "Mentions légales - Jovan Bienvenu, Développeur Web Avesnois",
   description: `Mentions légales du site ${siteInfo.siteUrl}: informations sur l'éditeur, l'hébergeur et les conditions d'utilisation.`,
   path: "/mentions-legales",
 });
@@ -19,7 +19,7 @@ const sections = [
         value: "Auto-entrepreneur (Entreprise Individuelle)",
       },
       { label: "SIRET", value: siteInfo.siret },
-      { label: "Code APE / NAF", value: "6201Z — Programmation informatique" },
+      { label: "Code APE / NAF", value: "6201Z - Programmation informatique" },
       {
         label: "Siège social",
         value: `Fourmies, ${siteInfo.location.split(",")[1]?.trim() ?? "Nord (59)"}`,

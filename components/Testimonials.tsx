@@ -15,7 +15,7 @@ export default function Testimonials() {
               Ils me font confiance. Voici pourquoi.
             </h2>
             <p className="text-slate-400 max-w-xl mx-auto">
-              Des retours clients réels, de l'Avesnois — pas des avis générés.
+              Des retours clients réels, de l'Avesnois - pas des avis générés.
             </p>
           </div>
         </FadeIn>

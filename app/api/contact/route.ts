@@ -55,7 +55,7 @@ function buildEmailHtml(payload: ContactPayload): string {
 
         <!-- Header -->
         <tr><td style="background:#135bec;border-radius:12px 12px 0 0;padding:28px 32px;">
-          <p style="margin:0;color:#fff;font-size:18px;font-weight:700;">Jovan — Développeur Web Avesnois</p>
+          <p style="margin:0;color:#fff;font-size:18px;font-weight:700;">Jovan - Développeur Web Avesnois</p>
           <p style="margin:4px 0 0;color:rgba(255,255,255,0.7);font-size:13px;">Nouveau message depuis le formulaire de contact</p>
         </td></tr>
 
@@ -112,7 +112,7 @@ function buildEmailHtml(payload: ContactPayload): string {
           </div>
 
           <!-- Reply CTA -->
-          <a href="mailto:${payload.email}?subject=Re: ${encodeURIComponent(`Votre demande — ${serviceLabel}`)}"
+          <a href="mailto:${payload.email}?subject=Re: ${encodeURIComponent(`Votre demande - ${serviceLabel}`)}"
              style="display:inline-block;background:#135bec;color:#fff;font-size:14px;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;">
             Répondre à ${payload.prenom}
           </a>
@@ -151,7 +151,7 @@ export async function POST(request: NextRequest) {
       from: "Contact <contact@jovanbienvenu.com>",
       to: process.env.CONTACT_EMAIL!,
       replyTo: body.email,
-      subject: `Nouveau message — ${serviceLabel} · ${body.prenom} ${body.nom}`,
+      subject: `Nouveau message - ${serviceLabel} · ${body.prenom} ${body.nom}`,
       html: buildEmailHtml(body),
     });
 

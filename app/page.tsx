@@ -19,9 +19,9 @@ import {
 import { faqs } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Création de site internet à Fourmies — 590€",
+  title: "Site internet & SEO local pour artisans - Avesnois, Nord 59",
   description:
-    "Création de site internet à Fourmies — votre site ramène des clients pendant que vous travaillez. 590€, livré en 2-3 semaines. Pour tous les pros de l'Avesnois. Devis gratuit sous 24h.",
+    "Je crée des sites vitrines et fiches Google pour les artisans et commerçants de l'Avesnois. 590€ tout inclus, livré en 2-3 semaines. Devis gratuit sous 24h.",
   path: "/",
 });
 

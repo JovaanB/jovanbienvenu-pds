@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import { ArrowRight, Home, Phone } from 'lucide-react'
-import { siteInfo } from '@/lib/site'
-import FadeIn from '@/components/FadeIn'
+import Link from "next/link";
+import { ArrowRight, Home, Phone } from "lucide-react";
+import { siteInfo } from "@/lib/site";
+import FadeIn from "@/components/FadeIn";
 
 export default function NotFound() {
   return (
@@ -13,7 +13,6 @@ export default function NotFound() {
       </div>
 
       <div className="relative z-10 text-center max-w-2xl mx-auto">
-
         {/* 404 */}
         <FadeIn>
           <p className="text-[140px] md:text-[180px] font-bold leading-none select-none text-transparent bg-clip-text bg-gradient-to-b from-white/15 to-white/3 mb-0">
@@ -27,7 +26,8 @@ export default function NotFound() {
             Cette page est introuvable.
           </h1>
           <p className="text-slate-400 text-lg leading-relaxed mb-10">
-            Un peu comme un artisan local sans site internet —<br className="hidden sm:block" />
+            Un peu comme un artisan local sans site internet -
+            <br className="hidden sm:block" />
             on sait qu&apos;il existe, mais personne ne le trouve.
           </p>
         </FadeIn>
@@ -60,12 +60,15 @@ export default function NotFound() {
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               {[
-                { href: '/creation-site-internet', label: 'Création de site' },
-                { href: '/referencement-local-google', label: 'Référencement local' },
-                { href: '/tarifs', label: 'Tarifs' },
-                { href: '/realisations', label: 'Réalisations' },
-                { href: '/blog', label: 'Blog' },
-                { href: '/contact', label: 'Contact' },
+                { href: "/creation-site-internet", label: "Création de site" },
+                {
+                  href: "/referencement-local-google",
+                  label: "Référencement local",
+                },
+                { href: "/tarifs", label: "Tarifs" },
+                { href: "/realisations", label: "Réalisations" },
+                { href: "/blog", label: "Blog" },
+                { href: "/contact", label: "Contact" },
               ].map((link) => (
                 <Link
                   key={link.href}
@@ -79,8 +82,7 @@ export default function NotFound() {
             </div>
           </div>
         </FadeIn>
-
       </div>
     </main>
-  )
+  );
 }

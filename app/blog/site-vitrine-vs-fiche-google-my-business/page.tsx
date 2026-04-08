@@ -15,7 +15,7 @@ const SLUG = "site-vitrine-vs-fiche-google-my-business";
 const DATE = "2026-02-05";
 const TITLE = "Site vitrine ou fiche Google My Business : que choisir ?";
 const DESCRIPTION =
-  "Différences, avantages et cas d'usage de chaque outil. Quand commencer par l'un ou l'autre — et pourquoi les deux ensemble sont imbattables.";
+  "Différences, avantages et cas d'usage de chaque outil. Quand commencer par l'un ou l'autre - et pourquoi les deux ensemble sont imbattables.";
 
 export const metadata: Metadata = buildMetadata({
   title: TITLE,
@@ -31,8 +31,14 @@ const articleSchema = {
   url: `${SITE_URL}/blog/${SLUG}`,
   datePublished: DATE,
   dateModified: DATE,
+  image: `${SITE_URL}/og.png`,
   author: { "@type": "Person", name: "Jovan Bienvenu", url: SITE_URL },
-  publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+  publisher: {
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: SITE_URL,
+    logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png` },
+  },
   inLanguage: "fr-FR",
 };
 
@@ -103,7 +109,7 @@ export default function ArticleSiteVitrineVsGMB() {
                   « Dois-je d'abord créer un site internet ou optimiser ma fiche
                   Google ? »
                 </strong>
-                . La réponse dépend de votre situation — mais une chose est sûre
+                . La réponse dépend de votre situation - mais une chose est sûre
                 : les deux outils ne s'opposent pas, ils se complètent. Voici
                 comment choisir.
               </p>
@@ -121,7 +127,7 @@ export default function ArticleSiteVitrineVsGMB() {
                     </h2>
                   </div>
                   <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                    Votre propre espace sur internet — vous en êtes propriétaire
+                    Votre propre espace sur internet - vous en êtes propriétaire
                     à 100 %. Il vit à votre adresse (ex: monentreprise.com) et
                     contient tout ce que vous voulez : vos services, vos photos,
                     vos tarifs, votre histoire.
@@ -169,7 +175,7 @@ export default function ArticleSiteVitrineVsGMB() {
                   </div>
                   <p className="text-slate-400 text-sm leading-relaxed mb-4">
                     Votre carte de visite sur Google Maps et dans les résultats
-                    locaux. Gratuite, elle appartient à Google — mais c'est le
+                    locaux. Gratuite, elle appartient à Google - mais c'est le
                     levier le plus puissant pour être trouvé par les clients
                     proches de vous.
                   </p>
@@ -229,9 +235,14 @@ export default function ArticleSiteVitrineVsGMB() {
                       « Qui est disponible près de moi maintenant ? »
                     </strong>{" "}
                     C'est là qu'un client cherche{" "}
-                    <Link href="/referencement-local-google-fourmies" className="text-slate-300 underline decoration-slate-600 hover:text-amber-300 transition-colors">« plombier urgence Fourmies »</Link> à 20h. Il veut un
-                    numéro de téléphone, des avis, et savoir si vous êtes ouvert
-                    — pas lire 5 pages de contenu.
+                    <Link
+                      href="/referencement-local-google-fourmies"
+                      className="text-slate-300 underline decoration-slate-600 hover:text-amber-300 transition-colors"
+                    >
+                      « plombier urgence Fourmies »
+                    </Link>{" "}
+                    à 20h. Il veut un numéro de téléphone, des avis, et savoir
+                    si vous êtes ouvert - pas lire 5 pages de contenu.
                   </p>
                 </div>
               </div>
@@ -334,7 +345,10 @@ export default function ArticleSiteVitrineVsGMB() {
                 </div>
                 <p className="text-slate-400 text-sm leading-relaxed">
                   C'est pourquoi le{" "}
-                  <Link href="/tarifs" className="text-white font-semibold underline decoration-white/30 hover:decoration-white transition-colors">
+                  <Link
+                    href="/tarifs"
+                    className="text-white font-semibold underline decoration-white/30 hover:decoration-white transition-colors"
+                  >
                     Pack Visibilité à 590 €
                   </Link>{" "}
                   inclut les deux : création de site internet + fiche Google My
@@ -353,7 +367,7 @@ export default function ArticleSiteVitrineVsGMB() {
                 <p className="text-slate-400 text-sm leading-relaxed mb-6">
                   Je commence toujours par un audit gratuit de votre présence en
                   ligne actuelle. En 15 minutes, je vous dis exactement ce dont
-                  vous avez besoin — sans engagement.
+                  vous avez besoin - sans engagement.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
@@ -371,13 +385,15 @@ export default function ArticleSiteVitrineVsGMB() {
                   </Link>
                 </div>
                 <div className="flex flex-wrap justify-center items-center gap-2 mt-5 pt-5 border-t border-white/8">
-                  <span className="text-slate-500 text-xs w-full text-center mb-1">Référencement local par ville :</span>
+                  <span className="text-slate-500 text-xs w-full text-center mb-1">
+                    Référencement local par ville :
+                  </span>
                   {[
-                    { label: 'Fourmies', slug: 'fourmies' },
-                    { label: 'Avesnes-sur-Helpe', slug: 'avesnes-sur-helpe' },
-                    { label: 'Hirson', slug: 'hirson' },
-                    { label: 'Maubeuge', slug: 'maubeuge' },
-                    { label: 'Glageon', slug: 'glageon' },
+                    { label: "Fourmies", slug: "fourmies" },
+                    { label: "Avesnes-sur-Helpe", slug: "avesnes-sur-helpe" },
+                    { label: "Hirson", slug: "hirson" },
+                    { label: "Maubeuge", slug: "maubeuge" },
+                    { label: "Glageon", slug: "glageon" },
                   ].map((v) => (
                     <Link
                       key={v.slug}

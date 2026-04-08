@@ -3,9 +3,12 @@ import { ExternalLink, MapPin } from "lucide-react";
 import type { Realisation } from "@/data/realisations";
 
 const typeColors: Record<string, string> = {
-  "Site Vitrine": "bg-blue-950/85 text-blue-300 border-blue-500/30 backdrop-blur-sm",
-  "SEO Local": "bg-purple-950/85 text-purple-300 border-purple-500/30 backdrop-blur-sm",
-  "Site + SEO": "bg-amber-950/85 text-amber-300 border-amber-500/30 backdrop-blur-sm",
+  "Site Vitrine":
+    "bg-blue-950/85 text-blue-300 border-blue-500/30 backdrop-blur-sm",
+  "SEO Local":
+    "bg-purple-950/85 text-purple-300 border-purple-500/30 backdrop-blur-sm",
+  "Site + SEO":
+    "bg-amber-950/85 text-amber-300 border-amber-500/30 backdrop-blur-sm",
 };
 
 interface RealisationCardProps {
@@ -32,7 +35,7 @@ export default function RealisationCard({ realisation }: RealisationCardProps) {
         {image ? (
           <Image
             src={image}
-            alt={`${client} — ${titre}`}
+            alt={`${client} - ${titre}`}
             fill
             className="object-contain p-3"
           />

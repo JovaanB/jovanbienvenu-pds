@@ -9,10 +9,9 @@ import SchemaOrg from "@/components/SchemaOrg";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = buildMetadata({
-  title:
-    "Tarifs création site internet & référencement local — Fourmies",
+  title: "Tarifs création site internet & référencement local - Fourmies",
   description:
-    "Prix transparents : site internet à 590€ + fiche Google incluse, ou optimisation Google My Business à 280€. Forfaits clés en main pour les professionnels de l'Avesnois. Devis gratuit 24h.",
+    "Site internet à 590€ + fiche Google incluse, ou optimisation Google My Business à 280€. Forfait unique, sans abonnement. Devis gratuit sous 24h.",
   path: "/tarifs",
 });
 
@@ -26,7 +25,7 @@ const pricingFaq = [
   ...faqsGmb.slice(3, 4),
   {
     q: "Puis-je payer en plusieurs fois ?",
-    a: "Oui. Je propose des facilités de paiement adaptées aux petites entreprises — par exemple un acompte à la commande et le solde à la livraison. On en discute ensemble lors du premier échange.",
+    a: "Oui. Je propose des facilités de paiement adaptées aux petites entreprises - par exemple un acompte à la commande et le solde à la livraison. On en discute ensemble lors du premier échange.",
   },
   {
     q: "Y a-t-il des frais cachés après la livraison ?",
@@ -70,9 +69,9 @@ export default function TarifsPage() {
               </span>
             </h1>
             <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
-              Deux forfaits pensés pour les professionnels de
-              l&apos;Avesnois. Vous savez exactement ce que vous payez et ce que
-              vous obtenez — avant même de signer.
+              Deux forfaits pensés pour les professionnels de l&apos;Avesnois.
+              Vous savez exactement ce que vous payez et ce que vous obtenez -
+              avant même de signer.
             </p>
           </FadeIn>
         </div>
@@ -132,7 +131,7 @@ export default function TarifsPage() {
                         <span className="font-semibold">
                           Garantie résultats
                         </span>{" "}
-                        — Pas de progression en 8 semaines ? Je retravaille la
+                        - Pas de progression en 8 semaines ? Je retravaille la
                         fiche sans frais.
                       </p>
                     </div>
@@ -184,8 +183,8 @@ export default function TarifsPage() {
                 className="text-slate-500 hover:text-white underline underline-offset-4 transition-colors"
               >
                 Création de site internet
-              </Link>
-              {" "}·{" "}
+              </Link>{" "}
+              ·{" "}
               <Link
                 href="/referencement-local-google"
                 className="text-slate-500 hover:text-white underline underline-offset-4 transition-colors"
@@ -245,7 +244,7 @@ export default function TarifsPage() {
                 {
                   situation: "Vous partez de zéro (ni site, ni fiche)",
                   conseil:
-                    "Pack Visibilité à 590€ — le meilleur rapport qualité/prix",
+                    "Pack Visibilité à 590€ - le meilleur rapport qualité/prix",
                   detail:
                     "Site + fiche Google pour 590€ au lieu de 590€ + 280€ séparément. La fiche est offerte dans le pack.",
                   color: "text-amber-400",
@@ -283,7 +282,7 @@ export default function TarifsPage() {
           <FadeIn>
             <div className="rounded-2xl border border-white/8 bg-surface-dark p-6">
               <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-4">
-                Zones desservies — mêmes tarifs partout
+                Zones desservies - mêmes tarifs partout
               </p>
               <div className="flex flex-wrap gap-3">
                 {villes.map((ville) => (
@@ -346,7 +345,7 @@ export default function TarifsPage() {
                 Un devis gratuit sous 24h
               </h2>
               <p className="text-slate-400 mb-8">
-                Décrivez votre activité et votre besoin — je reviens vers vous
+                Décrivez votre activité et votre besoin - je reviens vers vous
                 rapidement avec une proposition adaptée à votre situation.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

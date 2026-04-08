@@ -8,7 +8,8 @@ import { temoignages } from "@/data/temoignages";
 import { externalLinks } from "@/lib/site";
 
 export const SITE_URL = "https://jovanbienvenu.com";
-export const SITE_NAME = "Jovan — Sites Internet & Référencement Local Avesnois";
+export const SITE_NAME =
+  "Jovan - Sites Internet & Référencement Local Avesnois";
 /** Suffixe court utilisé dans le template <title> des pages */
 export const SITE_BRAND = "Jovan";
 
@@ -59,10 +60,8 @@ export function buildMetadata({
   };
 }
 
-/** Schema.org BreadcrumbList — items : tableau de { name, url } */
-export function buildBreadcrumbSchema(
-  items: { name: string; url: string }[]
-) {
+/** Schema.org BreadcrumbList - items : tableau de { name, url } */
+export function buildBreadcrumbSchema(items: { name: string; url: string }[]) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -75,7 +74,7 @@ export function buildBreadcrumbSchema(
   };
 }
 
-/** Schema.org ProfessionalService — étendu par chaque page */
+/** Schema.org ProfessionalService - étendu par chaque page */
 export function buildLocalBusinessSchema(overrides?: {
   addressLocality?: string;
   /** Code postal de la ville ciblée. Défaut: "59610" (Fourmies) */
@@ -117,6 +116,40 @@ export function buildLocalBusinessSchema(overrides?: {
       reviewCount: String(ratingCount),
       bestRating: "5",
       worstRating: "1",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Services de visibilité digitale",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          name: "Pack Visibilité - Site internet + Fiche Google",
+          description:
+            "Création de site vitrine professionnel + optimisation Google My Business. Livré en 2-3 semaines.",
+          price: "590",
+          priceCurrency: "EUR",
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            price: "590",
+            priceCurrency: "EUR",
+            valueAddedTaxIncluded: false,
+          },
+        },
+        {
+          "@type": "Offer",
+          name: "Optimisation Google My Business",
+          description:
+            "Audit et optimisation complète de la fiche Google Business Profile. Résultats en 4 à 8 semaines.",
+          price: "280",
+          priceCurrency: "EUR",
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            price: "280",
+            priceCurrency: "EUR",
+            valueAddedTaxIncluded: false,
+          },
+        },
+      ],
     },
     openingHoursSpecification: [
       {

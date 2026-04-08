@@ -15,13 +15,13 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 const livrables = [
   "Un design qui inspire confiance dès le premier regard",
   "Jusqu'à 5 pages (Accueil, À propos, Services, Galerie, Contact)",
-  "Parfait sur tous les écrans — vos clients naviguent partout",
+  "Parfait sur tous les écrans - vos clients naviguent partout",
   "Vos clients vous contactent directement depuis le site",
-  "Hébergement inclus — rien à payer en plus la 1ère année",
+  "Hébergement inclus - rien à payer en plus la 1ère année",
   "Votre adresse web .com ou .fr offerte la 1ère année",
-  "Optimisé pour Google dès le lancement — vous existez en ligne",
+  "Optimisé pour Google dès le lancement - vous existez en ligne",
   "Besoin d'une mise à jour après livraison ? Je suis disponible",
-  "Votre fiche Google optimisée offerte — double présence locale 🎁",
+  "Votre fiche Google optimisée offerte - double présence locale 🎁",
 ];
 
 const etapes = [
@@ -120,8 +120,8 @@ export default function CreationSiteTemplate({
             )}
             {!ville && (
               <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-                Artisan, commerçant ou indépendant dans l'Avesnois ? Je crée votre site
-                vitrine professionnel clé en main — design moderne,
+                Artisan, commerçant ou indépendant dans l'Avesnois ? Je crée
+                votre site vitrine professionnel clé en main - design moderne,
                 ultra-rapide, optimisé pour Google et livré en moins de 3
                 semaines.
               </p>
@@ -172,7 +172,7 @@ export default function CreationSiteTemplate({
                 L'offre
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Un site complet à 590€ — tout inclus
+                Un site complet à 590€ - tout inclus
               </h2>
               <p className="text-slate-400 max-w-xl mx-auto">
                 Pas de surprise, pas de frais cachés. Un forfait unique qui
@@ -204,10 +204,10 @@ export default function CreationSiteTemplate({
                 {/* Highlight: GMB incluse */}
                 <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 mb-6">
                   <p className="text-amber-300 text-sm font-semibold">
-                    🎁 Fiche Google incluse — création ou optimisation
+                    🎁 Fiche Google incluse - création ou optimisation
                   </p>
                   <p className="text-amber-400/70 text-xs mt-1">
-                    Incluse dans le pack à 590 € — pas de supplément
+                    Incluse dans le pack à 590 € - pas de supplément
                   </p>
                   {ville && (
                     <Link
@@ -265,7 +265,7 @@ export default function CreationSiteTemplate({
                   {
                     icon: "🔒",
                     titre: "Site sécurisé & performant",
-                    desc: "HTTPS, chargement ultra-rapide, hébergé sur une infrastructure fiable — vos visiteurs ne repartent pas.",
+                    desc: "HTTPS, chargement ultra-rapide, hébergé sur une infrastructure fiable - vos visiteurs ne repartent pas.",
                   },
                   {
                     icon: "🤝",
@@ -275,7 +275,7 @@ export default function CreationSiteTemplate({
                   {
                     icon: "⏱️",
                     titre: "Réponse sous 24h",
-                    desc: "Du lundi au samedi, je réponds rapidement — souvent le jour même.",
+                    desc: "Du lundi au samedi, je réponds rapidement - souvent le jour même.",
                   },
                 ].map((item) => (
                   <div key={item.titre} className="flex gap-4">
@@ -409,7 +409,7 @@ export default function CreationSiteTemplate({
                   Guide
                 </span>
                 <h3 className="text-white font-semibold text-sm leading-snug group-hover:text-blue-300 transition-colors">
-                  Site vitrine ou fiche Google My Business — que choisir ?
+                  Site vitrine ou fiche Google My Business - que choisir ?
                 </h3>
                 <span className="inline-flex items-center gap-1 text-xs text-slate-500 group-hover:text-primary transition-colors mt-auto">
                   Lire l'article <ArrowRight size={12} />

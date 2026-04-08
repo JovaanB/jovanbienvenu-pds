@@ -39,7 +39,7 @@ export const siteInfo = {
   /** URL du site en production */
   siteUrl: "https://jovanbienvenu.com",
 
-  /** SIRET — affiché dans le bandeau de confiance */
+  /** SIRET - affiché dans le bandeau de confiance */
   siret: "893 883 157 00032",
 
   /** Ville et département */
@@ -62,12 +62,12 @@ export const externalLinks = {
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
-// 3. SEO — MÉTADONNÉES
+// 3. SEO - MÉTADONNÉES
 // ─────────────────────────────────────────────────────────────────────────────
 export const seoMetadata = {
-  title: "Création de site internet à Fourmies — 590€ | Jovan",
+  title: "Site internet & SEO local pour artisans - Avesnois, Nord 59 | Jovan",
   description:
-    "Création de site internet à Fourmies — votre site ramène des clients pendant que vous travaillez. 590€, livré en 2-3 semaines. Pour tous les pros de l'Avesnois. Devis gratuit sous 24h.",
+    "Je crée des sites vitrines et fiches Google pour les artisans de l'Avesnois. 590€ tout inclus, livré en 2-3 semaines. Devis gratuit sous 24h.",
   keywords: [
     "création site internet Fourmies",
     "création site web Fourmies",
@@ -107,7 +107,7 @@ export const hero = {
    * sera automatiquement mis en valeur (couleur blanche / gras).
    */
   subheadline:
-    "Pendant que vous travaillez, votre site ramène des clients. Je crée des sites et des fiches Google qui transforment les recherches locales en appels — pour tous les professionnels de l'Avesnois. Devis gratuit sous 24h.",
+    "Pendant que vous travaillez, votre site ramène des clients. Je crée des sites et des fiches Google qui transforment les recherches locales en appels - pour tous les professionnels de l'Avesnois. Devis gratuit sous 24h.",
   subheadlineHighlight: "l'Avesnois",
 
   cta: {
@@ -161,11 +161,11 @@ export const services = {
       "Sites vitrines modernes, ultra-rapides et parfaitement adaptés aux mobiles. Design unique pour captiver votre audience dès la première seconde et convertir les visiteurs en clients.",
     features: [
       "Site vitrine & e-commerce",
-      "Parfait sur mobile, tablette et PC — 70% de vos clients naviguent sur téléphone",
-      "Site ultra-rapide — un client qui attend part chez le concurrent",
+      "Parfait sur mobile, tablette et PC - 70% de vos clients naviguent sur téléphone",
+      "Site ultra-rapide - un client qui attend part chez le concurrent",
       "Hébergement & nom de domaine inclus",
       "Maintenance optionnelle après livraison",
-      "Optimisé pour Google dès la mise en ligne — vos clients vous trouvent",
+      "Optimisé pour Google dès la mise en ligne - vos clients vous trouvent",
     ],
     cta: {
       label: "Découvrir l'offre complète",
@@ -176,7 +176,7 @@ export const services = {
     Icon: MapPin,
     title: "Référencement local / Google My Business",
     description:
-      "Soyez le premier choix dans votre ville. J'optimise votre fiche Google Business Profile pour que les clients locaux vous trouvent avant vos concurrents — sans pub.",
+      "Soyez le premier choix dans votre ville. J'optimise votre fiche Google Business Profile pour que les clients locaux vous trouvent avant vos concurrents - sans pub.",
     features: [
       "Audit de visibilité locale",
       "Création & optimisation fiche Google Business Profile",
@@ -207,7 +207,7 @@ export const whyItems: WhyItem[] = [
     Icon: MapPin,
     gradient: "from-primary/20 to-primary/5",
     title: "Pas une agence. Un voisin.",
-    desc: "Je connais l'Avesnois, ses professionnels, ses quartiers. On se voit en vrai si besoin. Et vous savez exactement qui appeler — pas un ticket de support.",
+    desc: "Je connais l'Avesnois, ses professionnels, ses quartiers. On se voit en vrai si besoin. Et vous savez exactement qui appeler - pas un ticket de support.",
   },
   {
     Icon: TrendingUp,
@@ -225,7 +225,7 @@ export const whyItems: WhyItem[] = [
     Icon: BarChart2,
     gradient: "from-primary/20 to-primary/5",
     title: "Des chiffres, pas des promesses",
-    desc: "Chaque mois, vous voyez combien de personnes ont visité votre site, cliqué pour appeler, cherché votre adresse. Rien de flou — que des résultats mesurables.",
+    desc: "Chaque mois, vous voyez combien de personnes ont visité votre site, cliqué pour appeler, cherché votre adresse. Rien de flou - que des résultats mesurables.",
   },
 ];
 
@@ -265,13 +265,13 @@ export const pricingTiers: PricingTier[] = [
     features: [
       "Un design qui inspire confiance dès le premier regard",
       "Jusqu'à 5 pages (Accueil, À propos, Services, Galerie, Contact)",
-      "Parfait sur tous les écrans — vos clients naviguent partout",
+      "Parfait sur tous les écrans - vos clients naviguent partout",
       "Vos clients vous contactent directement depuis le site",
-      "Hébergement inclus — rien à payer en plus la 1ère année",
+      "Hébergement inclus - rien à payer en plus la 1ère année",
       "Votre adresse web .com ou .fr offerte la 1ère année",
-      "Optimisé pour Google dès le lancement — vous existez en ligne",
+      "Optimisé pour Google dès le lancement - vous existez en ligne",
       "Besoin d'une mise à jour après livraison ? Je suis disponible",
-      "Votre fiche Google optimisée offerte — double présence locale 🎁",
+      "Votre fiche Google optimisée offerte - double présence locale 🎁",
     ],
     cta: "Demander un devis",
     href: "/contact",
@@ -327,7 +327,7 @@ export const faqs = [
   },
   {
     q: "Quelle différence entre un site vitrine et une fiche Google My Business ?",
-    a: 'Un site vitrine est votre "adresse" personnelle sur internet — vous en êtes propriétaire. La fiche Google My Business (Google Maps) permet aux clients proches de vous trouver rapidement dans les résultats locaux. Les deux sont complémentaires !',
+    a: 'Un site vitrine est votre "adresse" personnelle sur internet - vous en êtes propriétaire. La fiche Google My Business (Google Maps) permet aux clients proches de vous trouver rapidement dans les résultats locaux. Les deux sont complémentaires !',
   },
   {
     q: "Que se passe-t-il après la livraison de mon site ?",
@@ -336,7 +336,7 @@ export const faqs = [
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
-// 12. FAQ — RÉFÉRENCEMENT LOCAL / GOOGLE MY BUSINESS
+// 12. FAQ - RÉFÉRENCEMENT LOCAL / GOOGLE MY BUSINESS
 // ─────────────────────────────────────────────────────────────────────────────
 export const faqsGmb = [
   {
@@ -353,7 +353,7 @@ export const faqsGmb = [
   },
   {
     q: "Quelle différence avec la publicité Google Ads ?",
-    a: "La fiche Google My Business génère du trafic organique (gratuit). Vous n'avez rien à payer à chaque clic. C'est un investissement une fois fait, qui travaille pour vous 24h/24 — contrairement à Google Ads qui s'arrête dès que vous coupez le budget.",
+    a: "La fiche Google My Business génère du trafic organique (gratuit). Vous n'avez rien à payer à chaque clic. C'est un investissement une fois fait, qui travaille pour vous 24h/24 - contrairement à Google Ads qui s'arrête dès que vous coupez le budget.",
   },
   {
     q: "Dois-je m'occuper de la fiche après votre intervention ?",
@@ -367,12 +367,12 @@ export const faqsGmb = [
 export const contactConfig = {
   sectionTitle: "Parlons de votre projet",
   sectionSubtitle:
-    "Remplissez le formulaire et je vous réponds sous 24h — souvent bien moins.",
+    "Remplissez le formulaire et je vous réponds sous 24h - souvent bien moins.",
   successTitle: "Votre demande a bien été envoyée !",
   successMessage:
     "Je vous répondrai dans les 24 heures (généralement sous 2h en semaine).",
   privacyNote:
-    "Vos données sont traitées de manière confidentielle — aucun spam, jamais.",
+    "Vos données sont traitées de manière confidentielle - aucun spam, jamais.",
   submitLabel: "Envoyer ma demande",
   serviceOptions: [
     { value: "site-vitrine", label: "Création de site internet" },

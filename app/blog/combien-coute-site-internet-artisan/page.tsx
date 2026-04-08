@@ -37,8 +37,14 @@ const articleSchema = {
   url: `${SITE_URL}/blog/${SLUG}`,
   datePublished: DATE,
   dateModified: DATE,
+  image: `${SITE_URL}/og.png`,
   author: { "@type": "Person", name: "Jovan Bienvenu", url: SITE_URL },
-  publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+  publisher: {
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: SITE_URL,
+    logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png` },
+  },
   inLanguage: "fr-FR",
 };
 
@@ -50,7 +56,7 @@ const breadcrumbSchema = buildBreadcrumbSchema([
 
 const tiers = [
   {
-    label: "DIY — Wix, Squarespace, Jimdo",
+    label: "DIY - Wix, Squarespace, Jimdo",
     price: "0 – 30 €/mois",
     pros: ["Pas de coût initial", "Rapide à lancer"],
     cons: [
@@ -159,7 +165,7 @@ export default function ArticleCoutSiteInternet() {
                     « Combien ça coûte, un site internet ? »
                   </strong>
                   . La réponse honnête : ça dépend. Mais pas de façon arbitraire
-                  — il existe des fourchettes claires selon ce que vous
+                  - il existe des fourchettes claires selon ce que vous
                   cherchez. Voici le tour complet, sans langue de bois.
                 </p>
               </div>
@@ -247,7 +253,7 @@ export default function ArticleCoutSiteInternet() {
                     {
                       factor: "Design sur-mesure vs template",
                       detail:
-                        "Un template bien adapté peut être très efficace. Un design 100% sur-mesure prend plus de temps donc coûte plus cher — mais il est unique.",
+                        "Un template bien adapté peut être très efficace. Un design 100% sur-mesure prend plus de temps donc coûte plus cher - mais il est unique.",
                     },
                     {
                       factor: "SEO inclus ou en option",
@@ -290,7 +296,7 @@ export default function ArticleCoutSiteInternet() {
                     {
                       num: "01",
                       titre: 'Le "gratuit" qui revient cher',
-                      desc: "Wix ou Squarespace semblent gratuits, mais vous perdez des heures à bricoler un outil qui n'est pas votre métier. Le coût réel, c'est votre temps — qui vaut cher.",
+                      desc: "Wix ou Squarespace semblent gratuits, mais vous perdez des heures à bricoler un outil qui n'est pas votre métier. Le coût réel, c'est votre temps - qui vaut cher.",
                     },
                     {
                       num: "02",
@@ -332,19 +338,19 @@ export default function ArticleCoutSiteInternet() {
                   Ce qu'inclut le Pack Visibilité à 590 €
                 </h2>
                 <p className="text-slate-400 text-sm mb-5">
-                  Pour les professionnels de l'Avesnois, je propose un
-                  forfait tout-inclus sans surprise.
+                  Pour les professionnels de l'Avesnois, je propose un forfait
+                  tout-inclus sans surprise.
                 </p>
                 <ul className="space-y-2 mb-6">
                   {[
                     "Un design qui inspire confiance dès le premier regard",
                     "Jusqu'à 5 pages (Accueil, À propos, Services, Galerie, Contact)",
-                    "Parfait sur tous les écrans — vos clients naviguent partout",
+                    "Parfait sur tous les écrans - vos clients naviguent partout",
                     "Vos clients vous contactent directement depuis le site",
-                    "Hébergement inclus — rien à payer en plus la 1ère année",
+                    "Hébergement inclus - rien à payer en plus la 1ère année",
                     "Votre adresse web .com ou .fr offerte la 1ère année",
-                    "Optimisé pour Google dès le lancement — vous existez en ligne",
-                    "Votre fiche Google optimisée offerte — double présence locale 🎁",
+                    "Optimisé pour Google dès le lancement - vous existez en ligne",
+                    "Votre fiche Google optimisée offerte - double présence locale 🎁",
                   ].map((item) => (
                     <li
                       key={item}
@@ -375,13 +381,15 @@ export default function ArticleCoutSiteInternet() {
                   </Link>
                 </div>
                 <div className="flex flex-wrap items-center gap-2 mt-5 pt-5 border-t border-white/8">
-                  <span className="text-slate-500 text-xs w-full mb-1">Site internet par ville :</span>
+                  <span className="text-slate-500 text-xs w-full mb-1">
+                    Site internet par ville :
+                  </span>
                   {[
-                    { label: 'Fourmies', slug: 'fourmies' },
-                    { label: 'Avesnes-sur-Helpe', slug: 'avesnes-sur-helpe' },
-                    { label: 'Hirson', slug: 'hirson' },
-                    { label: 'Maubeuge', slug: 'maubeuge' },
-                    { label: 'Glageon', slug: 'glageon' },
+                    { label: "Fourmies", slug: "fourmies" },
+                    { label: "Avesnes-sur-Helpe", slug: "avesnes-sur-helpe" },
+                    { label: "Hirson", slug: "hirson" },
+                    { label: "Maubeuge", slug: "maubeuge" },
+                    { label: "Glageon", slug: "glageon" },
                   ].map((v) => (
                     <Link
                       key={v.slug}

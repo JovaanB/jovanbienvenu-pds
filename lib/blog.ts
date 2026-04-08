@@ -33,7 +33,7 @@ export const articles: Article[] = [
     slug: "site-vitrine-vs-fiche-google-my-business",
     title: "Site vitrine ou fiche Google My Business : que choisir ?",
     description:
-      "Différences, avantages et cas d'usage de chaque outil. Quand commencer par l'un ou l'autre — et pourquoi les deux ensemble sont imbattables.",
+      "Différences, avantages et cas d'usage de chaque outil. Quand commencer par l'un ou l'autre - et pourquoi les deux ensemble sont imbattables.",
     date: "2026-02-05",
     readTime: 7,
     category: "Stratégie",

@@ -1,4 +1,4 @@
-# Jovan — Landing Page Développeur Web & SEO Local
+# Jovan - Landing Page Développeur Web & SEO Local
 
 Landing page professionnelle pour un développeur web basé dans l'Avesnois (Nord, France), ciblant artisans et commerçants locaux.
 
@@ -102,16 +102,16 @@ colors: {
 
 ## 📋 Sections
 
-1. **Navbar** — Navigation flottante pill avec effet glass au scroll
-2. **Hero** — Accroche principale avec 2 CTA (devis + appel)
-3. **Trust Banner** — 4 indicateurs de confiance
-4. **Services** — 2 cartes services (site web + SEO local)
-5. **Pourquoi moi** — 4 arguments différenciants
-6. **Portfolio** — 3 projets fictifs avec filtres par secteur
-7. **Tarifs** — 2 offres (site vitrine 490€ + SEO local 149€/mois)
-8. **FAQ** — 5 questions fréquentes en accordéon
-9. **Contact** — Formulaire UI-only avec validation HTML5
-10. **Footer** — CTA final + liens légaux + réseaux sociaux
+1. **Navbar** - Navigation flottante pill avec effet glass au scroll
+2. **Hero** - Accroche principale avec 2 CTA (devis + appel)
+3. **Trust Banner** - 4 indicateurs de confiance
+4. **Services** - 2 cartes services (site web + SEO local)
+5. **Pourquoi moi** - 4 arguments différenciants
+6. **Portfolio** - 3 projets fictifs avec filtres par secteur
+7. **Tarifs** - 2 offres (site vitrine 490€ + SEO local 149€/mois)
+8. **FAQ** - 5 questions fréquentes en accordéon
+9. **Contact** - Formulaire UI-only avec validation HTML5
+10. **Footer** - CTA final + liens légaux + réseaux sociaux
 
 ## 📱 Responsive
 
@@ -131,4 +131,4 @@ Le formulaire est **UI seulement** (pas de backend). Pour l'activer en productio
 
 ## 📄 Licence
 
-Usage privé — tous droits réservés.
+Usage privé - tous droits réservés.

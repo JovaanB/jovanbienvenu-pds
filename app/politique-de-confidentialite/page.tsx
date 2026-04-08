@@ -5,7 +5,7 @@ import FadeIn from "@/components/FadeIn";
 
 export const metadata: Metadata = buildMetadata({
   title:
-    "Politique de confidentialité — Jovan Bienvenu, Développeur Web Avesnois",
+    "Politique de confidentialité - Jovan Bienvenu, Développeur Web Avesnois",
   description: `Politique de confidentialité et traitement des données personnelles du site ${siteInfo.siteUrl}, conforme au RGPD.`,
   path: "/politique-de-confidentialite",
 });
@@ -33,7 +33,7 @@ export default function PolitiqueConfidentialitePage() {
             </h1>
             <p className="text-slate-400 text-sm">
               Vos données personnelles sont traitées avec soin, dans le respect
-              du Règlement Général sur la Protection des Données (RGPD — UE
+              du Règlement Général sur la Protection des Données (RGPD - UE
               2016/679).
             </p>
           </FadeIn>
@@ -53,7 +53,7 @@ export default function PolitiqueConfidentialitePage() {
                 {[
                   {
                     label: "Identité",
-                    value: "Jovan Bienvenu — Auto-entrepreneur",
+                    value: "Jovan Bienvenu - Auto-entrepreneur",
                   },
                   { label: "SIRET", value: siteInfo.siret },
                   { label: "Email", value: siteInfo.email },
@@ -274,7 +274,7 @@ export default function PolitiqueConfidentialitePage() {
                 <span className="text-slate-400">
                   CNIL (Commission Nationale de l'Informatique et des Libertés)
                 </span>{" "}
-                — www.cnil.fr — si vous estimez que vos droits ne sont pas
+                - www.cnil.fr - si vous estimez que vos droits ne sont pas
                 respectés.
               </p>
             </div>

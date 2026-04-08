@@ -3,9 +3,9 @@ import { buildMetadata } from "@/lib/metadata";
 import CreationSiteTemplate from "@/components/CreationSiteTemplate";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Création de site internet Avesnois — 590€ tout inclus",
+  title: "Création de site internet Avesnois - 590€ tout inclus",
   description:
-    "Pack Visibilité à 590 € : création de site internet + fiche Google incluse (création ou optimisation). Livré en 2 semaines, développeur web local basé à Fourmies. Devis gratuit sous 24h.",
+    "Site vitrine + fiche Google à 590€ tout inclus. Développeur web local basé à Fourmies, livraison en 2 semaines. Devis gratuit sous 24h.",
   path: "/creation-site-internet",
 });
 

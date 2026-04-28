@@ -42,7 +42,7 @@ export default function VideoPlayer({ src, poster, className = '' }: VideoPlayer
   }, [])
 
   return (
-    <div className={`relative rounded-2xl overflow-hidden bg-surface-dark ${className}`}>
+    <div className={`relative rounded-2xl overflow-hidden bg-bg-alt ${className}`}>
       <video
         ref={videoRef}
         muted
@@ -54,7 +54,7 @@ export default function VideoPlayer({ src, poster, className = '' }: VideoPlayer
       >
         {/* data-src au lieu de src : le navigateur ne fait aucune requête avant le scroll */}
         <source data-src={src} type="video/mp4" />
-        <p className="text-slate-400 text-sm p-4">
+        <p className="text-ink-3 text-sm p-4">
           Votre navigateur ne supporte pas la lecture vidéo.{' '}
           <a href={src} className="text-primary underline" download>
             Télécharger la vidéo

@@ -29,35 +29,27 @@ export default function RealisationsPage() {
     <main className="relative">
       <SchemaOrg schema={schema} />
       <SchemaOrg schema={breadcrumbSchema} />
-
-      {/* Ambient glows */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute -top-[20%] left-[30%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]" />
-      </div>
+      <div className="ambient-bg" />
 
       {/* ── HERO ── */}
       <section className="relative z-10 pt-36 pb-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
-            <p className="text-primary font-bold tracking-widest uppercase text-xs mb-4">
-              Portfolio
-            </p>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <span className="pill-badge mb-4 inline-flex">Portfolio</span>
+            <h1 className="text-4xl md:text-6xl font-bold text-ink mb-6 leading-tight mt-3">
               Mes{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-300">
-                réalisations
-              </span>
+              <span className="text-gradient-primary">réalisations</span>
             </h1>
-            <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+            <p className="text-ink-3 text-lg max-w-2xl mx-auto">
               Des sites internet et des optimisations SEO qui produisent des
-              résultats concrets pour des professionnels de l'Avesnois.
+              résultats concrets pour des professionnels de l&apos;Avesnois.
             </p>
           </FadeIn>
         </div>
       </section>
 
       {/* ── GRILLE PROJETS ── */}
-      <section className="relative z-10 py-12 px-6">
+      <section className="relative z-10 py-12 px-6 bg-bg-alt">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {realisations.map((r, i) => (
@@ -69,7 +61,7 @@ export default function RealisationsPage() {
 
           {realisations.length === 0 && (
             <div className="text-center py-24">
-              <p className="text-slate-500">Les projets arrivent bientôt…</p>
+              <p className="text-ink-4">Les projets arrivent bientôt…</p>
             </div>
           )}
         </div>

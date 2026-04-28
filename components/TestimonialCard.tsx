@@ -9,7 +9,7 @@ export default function TestimonialCard({ temoignage }: TestimonialCardProps) {
   const { nom, ville, metier, note, texte, date } = temoignage
 
   return (
-    <div className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-surface-dark p-6 card-hover h-full">
+    <div className="flex flex-col gap-4 rounded-2xl border border-border-warm bg-white p-6 card-hover h-full shadow-card">
       {/* Stars */}
       <div className="flex gap-0.5">
         {Array.from({ length: note }).map((_, i) => (
@@ -17,17 +17,15 @@ export default function TestimonialCard({ temoignage }: TestimonialCardProps) {
         ))}
       </div>
 
-      {/* Testimonial text */}
-      <blockquote className="text-slate-300 text-sm leading-relaxed flex-1">
+      {/* Text */}
+      <blockquote className="text-ink-2 text-sm leading-relaxed flex-1">
         &ldquo;{texte}&rdquo;
       </blockquote>
 
       {/* Author */}
-      <div className="border-t border-white/5 pt-4">
-        <p className="text-white font-semibold text-sm">{nom}</p>
-        <p className="text-slate-500 text-xs mt-1">
-          {metier} · {ville} · {date}
-        </p>
+      <div className="border-t border-border-soft pt-4">
+        <p className="text-ink font-semibold text-sm">{nom}</p>
+        <p className="text-ink-4 text-xs mt-1">{metier} · {ville} · {date}</p>
       </div>
     </div>
   )

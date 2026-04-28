@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Clock, Calendar, CheckCircle } from "lucide-react";
+import { ArrowRight, Clock, Calendar, CheckCircle, Globe, MapPin } from "lucide-react";
 import {
   buildMetadata,
   buildBreadcrumbSchema,
@@ -53,11 +53,7 @@ export default function ArticleSiteVitrineVsGMB() {
     <main className="relative">
       <SchemaOrg schema={articleSchema} />
       <SchemaOrg schema={breadcrumbSchema} />
-
-      {/* Ambient glow */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-[15%] right-[15%] w-[400px] h-[400px] bg-amber-900/8 rounded-full blur-[120px]" />
-      </div>
+      <div className="ambient-bg" />
 
       <article className="relative z-10">
         {/* Hero */}
@@ -67,22 +63,22 @@ export default function ArticleSiteVitrineVsGMB() {
               <div className="flex items-center gap-3 mb-6">
                 <Link
                   href="/blog"
-                  className="text-slate-500 text-sm hover:text-white transition-colors"
+                  className="text-ink-4 text-sm hover:text-ink transition-colors"
                 >
                   ← Blog
                 </Link>
-                <span className="text-slate-700">/</span>
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300">
+                <span className="text-ink-3">/</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-amber-100 text-amber-700">
                   Stratégie
                 </span>
               </div>
-              <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              <h1 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                 {TITLE}
               </h1>
-              <p className="text-slate-400 text-lg leading-relaxed mb-6">
+              <p className="text-ink-3 text-lg leading-relaxed mb-6">
                 {DESCRIPTION}
               </p>
-              <div className="flex items-center gap-5 text-slate-500 text-sm">
+              <div className="flex items-center gap-5 text-ink-4 text-sm">
                 <span className="flex items-center gap-1.5">
                   <Calendar size={13} /> {formatDate(DATE)}
                 </span>
@@ -90,7 +86,7 @@ export default function ArticleSiteVitrineVsGMB() {
                   <Clock size={13} /> 7 min de lecture
                 </span>
                 <span>
-                  Par <span className="text-slate-300">Jovan Bienvenu</span>
+                  Par <span className="text-ink-2">Jovan Bienvenu</span>
                 </span>
               </div>
             </FadeIn>
@@ -102,15 +98,15 @@ export default function ArticleSiteVitrineVsGMB() {
           <div className="max-w-3xl mx-auto space-y-12">
             {/* Intro */}
             <FadeIn>
-              <p className="text-slate-300 text-base leading-relaxed">
-                C'est la question que me posent le plus souvent les artisans
+              <p className="text-ink-2 text-base leading-relaxed">
+                C&apos;est la question que me posent le plus souvent les artisans
                 avec un budget limité :{" "}
-                <strong className="text-white">
-                  « Dois-je d'abord créer un site internet ou optimiser ma fiche
+                <strong className="text-ink">
+                  « Dois-je d&apos;abord créer un site internet ou optimiser ma fiche
                   Google ? »
                 </strong>
                 . La réponse dépend de votre situation - mais une chose est sûre
-                : les deux outils ne s'opposent pas, ils se complètent. Voici
+                : les deux outils ne s&apos;opposent pas, ils se complètent. Voici
                 comment choisir.
               </p>
             </FadeIn>
@@ -119,14 +115,14 @@ export default function ArticleSiteVitrineVsGMB() {
             <FadeIn>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {/* Site vitrine */}
-                <div className="rounded-2xl border border-primary/30 bg-gradient-to-b from-primary/8 to-surface-dark p-6">
+                <div className="rounded-2xl border border-primary/30 bg-gradient-to-b from-violet-50 to-white p-6">
                   <div className="flex items-center gap-2 mb-4">
-                    <span className="text-2xl">🌐</span>
-                    <h2 className="text-white font-bold text-lg">
+                    <Globe size={22} className="text-primary" />
+                    <h2 className="text-ink font-bold text-lg">
                       Le site vitrine
                     </h2>
                   </div>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                  <p className="text-ink-3 text-sm leading-relaxed mb-4">
                     Votre propre espace sur internet - vous en êtes propriétaire
                     à 100 %. Il vit à votre adresse (ex: monentreprise.com) et
                     contient tout ce que vous voulez : vos services, vos photos,
@@ -142,7 +138,7 @@ export default function ArticleSiteVitrineVsGMB() {
                     ].map((item) => (
                       <li
                         key={item}
-                        className="flex items-start gap-2 text-sm text-slate-300"
+                        className="flex items-start gap-2 text-sm text-ink-2"
                       >
                         <CheckCircle
                           size={13}
@@ -152,30 +148,30 @@ export default function ArticleSiteVitrineVsGMB() {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-4 pt-4 border-t border-white/8">
-                    <p className="text-slate-500 text-xs">
+                  <div className="mt-4 pt-4 border-t border-border-soft">
+                    <p className="text-ink-4 text-xs">
                       Coût : à partir de{" "}
-                      <strong className="text-slate-300">590 €</strong> tout
+                      <strong className="text-ink-2">590 €</strong> tout
                       inclus
                     </p>
-                    <p className="text-slate-500 text-xs">
+                    <p className="text-ink-4 text-xs">
                       Délai : résultats en{" "}
-                      <strong className="text-slate-300">2-6 mois</strong>
+                      <strong className="text-ink-2">2-6 mois</strong>
                     </p>
                   </div>
                 </div>
 
                 {/* Fiche GMB */}
-                <div className="rounded-2xl border border-amber-500/30 bg-gradient-to-b from-amber-900/10 to-surface-dark p-6">
+                <div className="rounded-2xl border border-amber-200 bg-gradient-to-b from-amber-50 to-white p-6">
                   <div className="flex items-center gap-2 mb-4">
-                    <span className="text-2xl">📍</span>
-                    <h2 className="text-white font-bold text-lg">
+                    <MapPin size={22} className="text-amber-500" />
+                    <h2 className="text-ink font-bold text-lg">
                       La fiche Google My Business
                     </h2>
                   </div>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                  <p className="text-ink-3 text-sm leading-relaxed mb-4">
                     Votre carte de visite sur Google Maps et dans les résultats
-                    locaux. Gratuite, elle appartient à Google - mais c'est le
+                    locaux. Gratuite, elle appartient à Google - mais c&apos;est le
                     levier le plus puissant pour être trouvé par les clients
                     proches de vous.
                   </p>
@@ -189,24 +185,24 @@ export default function ArticleSiteVitrineVsGMB() {
                     ].map((item) => (
                       <li
                         key={item}
-                        className="flex items-start gap-2 text-sm text-slate-300"
+                        className="flex items-start gap-2 text-sm text-ink-2"
                       >
                         <CheckCircle
                           size={13}
-                          className="text-amber-400 mt-0.5 shrink-0"
+                          className="text-amber-500 mt-0.5 shrink-0"
                         />
                         {item}
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-4 pt-4 border-t border-white/8">
-                    <p className="text-slate-500 text-xs">
-                      Coût : <strong className="text-slate-300">280 €</strong>{" "}
+                  <div className="mt-4 pt-4 border-t border-border-soft">
+                    <p className="text-ink-4 text-xs">
+                      Coût : <strong className="text-ink-2">280 €</strong>{" "}
                       (optimisation pro) ou gratuit en DIY
                     </p>
-                    <p className="text-slate-500 text-xs">
+                    <p className="text-ink-4 text-xs">
                       Délai : résultats en{" "}
-                      <strong className="text-slate-300">4 à 8 semaines</strong>
+                      <strong className="text-ink-2">4 à 8 semaines</strong>
                     </p>
                   </div>
                 </div>
@@ -215,29 +211,29 @@ export default function ArticleSiteVitrineVsGMB() {
 
             {/* Différence clé */}
             <FadeIn>
-              <div className="rounded-2xl border border-white/8 bg-surface-dark p-6 md:p-8">
-                <h2 className="text-white font-bold text-xl mb-4">
+              <div className="rounded-2xl border border-border-soft bg-white p-6 md:p-8">
+                <h2 className="text-ink font-bold text-xl mb-4">
                   La différence fondamentale
                 </h2>
-                <div className="space-y-4 text-sm text-slate-400 leading-relaxed">
+                <div className="space-y-4 text-sm text-ink-3 leading-relaxed">
                   <p>
                     Un site vitrine répond à la question :{" "}
-                    <strong className="text-white">
+                    <strong className="text-ink">
                       « Qui êtes-vous et que proposez-vous ? »
                     </strong>{" "}
-                    C'est votre vitrine permanente sur internet. Les gens qui
+                    C&apos;est votre vitrine permanente sur internet. Les gens qui
                     arrivent sur votre site ont souvent déjà entendu parler de
                     vous, ou vous cherchent spécifiquement.
                   </p>
                   <p>
                     La fiche Google My Business répond à la question :{" "}
-                    <strong className="text-white">
+                    <strong className="text-ink">
                       « Qui est disponible près de moi maintenant ? »
                     </strong>{" "}
-                    C'est là qu'un client cherche{" "}
+                    C&apos;est là qu&apos;un client cherche{" "}
                     <Link
                       href="/referencement-local-google-fourmies"
-                      className="text-slate-300 underline decoration-slate-600 hover:text-amber-300 transition-colors"
+                      className="text-primary underline underline-offset-2 decoration-primary/30 hover:decoration-primary transition-colors"
                     >
                       « plombier urgence Fourmies »
                     </Link>{" "}
@@ -251,16 +247,16 @@ export default function ArticleSiteVitrineVsGMB() {
             {/* Quand choisir quoi */}
             <FadeIn>
               <div>
-                <h2 className="text-white font-bold text-2xl mb-6">
+                <h2 className="text-ink font-bold text-2xl mb-6">
                   Quand commencer par quoi ?
                 </h2>
                 <div className="space-y-4">
                   <div className="rounded-xl border border-primary/20 bg-primary/5 p-5">
-                    <h3 className="text-white font-bold mb-2 flex items-center gap-2">
+                    <h3 className="text-ink font-bold mb-2 flex items-center gap-2">
                       <span className="text-primary">→</span> Commencez par le
                       site vitrine si…
                     </h3>
-                    <ul className="space-y-1 text-sm text-slate-400">
+                    <ul className="space-y-1 text-sm text-ink-3">
                       {[
                         "Vous avez une activité nationale ou régionale (pas seulement locale)",
                         "Vous proposez des services complexes qui demandent à être expliqués",
@@ -275,12 +271,12 @@ export default function ArticleSiteVitrineVsGMB() {
                       ))}
                     </ul>
                   </div>
-                  <div className="rounded-xl border border-amber-500/20 bg-amber-900/8 p-5">
-                    <h3 className="text-white font-bold mb-2 flex items-center gap-2">
-                      <span className="text-amber-400">→</span> Commencez par la
+                  <div className="rounded-xl border border-amber-200 bg-amber-50 p-5">
+                    <h3 className="text-ink font-bold mb-2 flex items-center gap-2">
+                      <span className="text-amber-500">→</span> Commencez par la
                       fiche GMB si…
                     </h3>
-                    <ul className="space-y-1 text-sm text-slate-400">
+                    <ul className="space-y-1 text-sm text-ink-3">
                       {[
                         "Vous êtes artisan, commerçant ou TPE avec une clientèle 100 % locale",
                         "Vous avez besoin de résultats rapides (4-8 semaines vs 3-6 mois)",
@@ -289,7 +285,7 @@ export default function ArticleSiteVitrineVsGMB() {
                         "Vous intervenez directement chez vos clients",
                       ].map((i) => (
                         <li key={i} className="flex gap-2">
-                          <span className="text-amber-400">✓</span>
+                          <span className="text-amber-500">✓</span>
                           {i}
                         </li>
                       ))}
@@ -301,13 +297,13 @@ export default function ArticleSiteVitrineVsGMB() {
 
             {/* Le duo gagnant */}
             <FadeIn>
-              <div className="rounded-2xl border border-emerald-500/20 bg-gradient-to-b from-emerald-900/10 to-surface-dark p-6 md:p-8">
-                <h2 className="text-white font-bold text-xl mb-4">
+              <div className="rounded-2xl border border-emerald-200 bg-gradient-to-b from-emerald-50 to-white p-6 md:p-8">
+                <h2 className="text-ink font-bold text-xl mb-4">
                   Le duo gagnant : les deux ensemble
                 </h2>
-                <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                  La vraie réponse, c'est{" "}
-                  <strong className="text-white">les deux</strong>. Un site
+                <p className="text-ink-3 text-sm leading-relaxed mb-4">
+                  La vraie réponse, c&apos;est{" "}
+                  <strong className="text-ink">les deux</strong>. Un site
                   vitrine renforce la crédibilité de votre fiche Google (Google
                   favorise les fiches avec un site web), et votre fiche Google
                   envoie du trafic local vers votre site. Ensemble, ils couvrent
@@ -316,38 +312,34 @@ export default function ArticleSiteVitrineVsGMB() {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
                   {[
                     {
-                      emoji: "🔍",
                       label: "Recherche nationale",
                       result: "Votre site vitrine apparaît",
                     },
                     {
-                      emoji: "📍",
                       label: "Recherche locale",
                       result: "Votre fiche GMB apparaît en premier",
                     },
                     {
-                      emoji: "🤝",
                       label: "Crédibilité",
                       result: "Les deux se renforcent mutuellement",
                     },
                   ].map((s) => (
                     <div
                       key={s.label}
-                      className="text-center p-4 rounded-xl bg-white/3 border border-white/5"
+                      className="text-center p-4 rounded-xl bg-white border border-border-warm"
                     >
-                      <p className="text-2xl mb-2">{s.emoji}</p>
-                      <p className="text-slate-400 text-xs mb-1">{s.label}</p>
-                      <p className="text-white text-xs font-semibold">
+                      <p className="text-ink-4 text-xs mb-1">{s.label}</p>
+                      <p className="text-ink text-xs font-semibold">
                         {s.result}
                       </p>
                     </div>
                   ))}
                 </div>
-                <p className="text-slate-400 text-sm leading-relaxed">
-                  C'est pourquoi le{" "}
+                <p className="text-ink-3 text-sm leading-relaxed">
+                  C&apos;est pourquoi le{" "}
                   <Link
                     href="/tarifs"
-                    className="text-white font-semibold underline decoration-white/30 hover:decoration-white transition-colors"
+                    className="text-primary font-semibold underline underline-offset-2 decoration-primary/30 hover:decoration-primary transition-colors"
                   >
                     Pack Visibilité à 590 €
                   </Link>{" "}
@@ -360,11 +352,11 @@ export default function ArticleSiteVitrineVsGMB() {
 
             {/* CTA */}
             <FadeIn>
-              <div className="rounded-2xl border border-white/8 bg-surface-dark p-6 md:p-8 text-center">
-                <h2 className="text-white font-bold text-xl mb-2">
+              <div className="rounded-2xl border border-border-soft bg-white p-6 md:p-8 text-center">
+                <h2 className="text-ink font-bold text-xl mb-2">
                   Pas sûr(e) de ce qui vous convient ?
                 </h2>
-                <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                <p className="text-ink-3 text-sm leading-relaxed mb-6">
                   Je commence toujours par un audit gratuit de votre présence en
                   ligne actuelle. En 15 minutes, je vous dis exactement ce dont
                   vous avez besoin - sans engagement.
@@ -372,20 +364,20 @@ export default function ArticleSiteVitrineVsGMB() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl transition-colors text-sm"
+                    className="group btn-cta inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm"
                   >
                     Audit gratuit de ma présence
                     <ArrowRight size={15} />
                   </Link>
                   <Link
                     href="/creation-site-internet"
-                    className="inline-flex items-center gap-2 px-6 py-3 border border-white/15 text-slate-300 hover:text-white hover:border-white/30 font-medium rounded-xl transition-colors text-sm"
+                    className="inline-flex items-center gap-2 px-6 py-3 border border-border-warm text-ink-2 hover:text-ink hover:border-primary/30 font-medium rounded-xl transition-colors text-sm"
                   >
                     Voir le Pack Visibilité
                   </Link>
                 </div>
-                <div className="flex flex-wrap justify-center items-center gap-2 mt-5 pt-5 border-t border-white/8">
-                  <span className="text-slate-500 text-xs w-full text-center mb-1">
+                <div className="flex flex-wrap justify-center items-center gap-2 mt-5 pt-5 border-t border-border-soft">
+                  <span className="text-ink-4 text-xs w-full text-center mb-1">
                     Référencement local par ville :
                   </span>
                   {[
@@ -398,7 +390,7 @@ export default function ArticleSiteVitrineVsGMB() {
                     <Link
                       key={v.slug}
                       href={`/referencement-local-google-${v.slug}`}
-                      className="text-xs px-3 py-1 rounded-full border border-white/15 text-slate-400 hover:border-white/30 hover:text-slate-300 transition-colors"
+                      className="text-xs px-3 py-1 rounded-full border border-border-warm text-ink-3 hover:border-primary/30 hover:text-primary transition-colors"
                     >
                       {v.label}
                     </Link>
@@ -409,16 +401,16 @@ export default function ArticleSiteVitrineVsGMB() {
 
             {/* Lire aussi */}
             <FadeIn>
-              <div className="border-t border-white/8 pt-10">
-                <p className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-4">
+              <div className="border-t border-border-soft pt-10">
+                <p className="text-ink-4 text-xs font-bold uppercase tracking-widest mb-4">
                   Lire aussi
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <Link
                     href="/blog/combien-coute-site-internet-artisan"
-                    className="group rounded-xl border border-white/8 bg-surface-dark p-4 hover:border-white/20 transition-all"
+                    className="group rounded-xl border border-border-soft bg-white p-4 hover:border-border-warm transition-all"
                   >
-                    <p className="text-white text-sm font-semibold group-hover:text-primary transition-colors leading-snug">
+                    <p className="text-ink text-sm font-semibold group-hover:text-primary transition-colors leading-snug">
                       Combien coûte un site internet pour un artisan ?
                     </p>
                     <p className="text-primary text-xs mt-2 flex items-center gap-1">
@@ -427,10 +419,10 @@ export default function ArticleSiteVitrineVsGMB() {
                   </Link>
                   <Link
                     href="/blog/top-3-google-maps-avesnois"
-                    className="group rounded-xl border border-white/8 bg-surface-dark p-4 hover:border-white/20 transition-all"
+                    className="group rounded-xl border border-border-soft bg-white p-4 hover:border-border-warm transition-all"
                   >
-                    <p className="text-white text-sm font-semibold group-hover:text-primary transition-colors leading-snug">
-                      Comment apparaître dans le top 3 Google dans l'Avesnois ?
+                    <p className="text-ink text-sm font-semibold group-hover:text-primary transition-colors leading-snug">
+                      Comment apparaître dans le top 3 Google dans l&apos;Avesnois ?
                     </p>
                     <p className="text-primary text-xs mt-2 flex items-center gap-1">
                       Lire <ArrowRight size={11} />

@@ -6,7 +6,7 @@ import { contactConfig } from '@/lib/site'
 import { trackEvent } from '@/lib/gtag'
 
 const inputClass =
-  'w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors duration-200'
+  'w-full px-4 py-3 rounded-xl bg-white border border-border-warm text-ink placeholder-ink-4 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-colors duration-200'
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
@@ -21,7 +21,6 @@ export default function ContactForm() {
     const form = e.currentTarget
     const data = Object.fromEntries(new FormData(form).entries())
 
-    // Validation côté client
     if (!data.service || (data.service as string).trim() === '') {
       setErrorMsg('Veuillez sélectionner un service.')
       setStatus('error')
@@ -64,17 +63,17 @@ export default function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div className="bg-surface-dark border border-white/10 rounded-2xl p-8 md:p-12 flex flex-col items-center justify-center gap-5 py-16 text-center">
-        <div className="w-16 h-16 rounded-full bg-green-500/15 flex items-center justify-center">
-          <CheckCircle size={36} className="text-green-400" />
+      <div className="bg-white border border-border-warm rounded-2xl p-8 md:p-12 flex flex-col items-center justify-center gap-5 py-16 text-center shadow-card">
+        <div className="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center">
+          <CheckCircle size={36} className="text-emerald-600" />
         </div>
         <div>
-          <h3 className="text-xl font-bold text-white mb-2">{contactConfig.successTitle}</h3>
-          <p className="text-slate-400 text-sm">{contactConfig.successMessage}</p>
+          <h3 className="text-xl font-bold text-ink mb-2">{contactConfig.successTitle}</h3>
+          <p className="text-ink-3 text-sm">{contactConfig.successMessage}</p>
         </div>
         <button
           onClick={() => setStatus('idle')}
-          className="inline-flex items-center gap-2 text-sm text-primary hover:text-blue-300 transition-colors mt-2"
+          className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary-hover transition-colors mt-2"
         >
           <RotateCcw size={14} />
           Envoyer une autre demande
@@ -84,30 +83,34 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="bg-surface-dark border border-white/10 rounded-2xl p-8 md:p-10">
+    <div className="bg-white border border-border-warm rounded-2xl p-8 md:p-10 shadow-card">
       <form onSubmit={handleSubmit} className="space-y-5" noValidate>
         {/* Nom row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label className="block text-sm font-medium text-slate-300 mb-2">
-              Prénom <span className="text-primary">*</span>
+            <label htmlFor="prenom" className="block text-sm font-medium text-ink-2 mb-2">
+              Prénom <span className="text-primary" aria-hidden="true">*</span>
             </label>
             <input
+              id="prenom"
               type="text"
               name="prenom"
               required
+              autoComplete="given-name"
               placeholder="Jean"
               className={inputClass}
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-slate-300 mb-2">
-              Nom <span className="text-primary">*</span>
+            <label htmlFor="nom" className="block text-sm font-medium text-ink-2 mb-2">
+              Nom <span className="text-primary" aria-hidden="true">*</span>
             </label>
             <input
+              id="nom"
               type="text"
               name="nom"
               required
+              autoComplete="family-name"
               placeholder="Dupont"
               className={inputClass}
             />
@@ -117,25 +120,29 @@ export default function ContactForm() {
         {/* Email + Téléphone */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label className="block text-sm font-medium text-slate-300 mb-2">
-              Email <span className="text-primary">*</span>
+            <label htmlFor="email" className="block text-sm font-medium text-ink-2 mb-2">
+              Email <span className="text-primary" aria-hidden="true">*</span>
             </label>
             <input
+              id="email"
               type="email"
               name="email"
               required
+              autoComplete="email"
               placeholder="jean@exemple.fr"
               className={inputClass}
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-slate-300 mb-2">
-              Téléphone <span className="text-primary">*</span>
+            <label htmlFor="telephone" className="block text-sm font-medium text-ink-2 mb-2">
+              Téléphone <span className="text-primary" aria-hidden="true">*</span>
             </label>
             <input
+              id="telephone"
               type="tel"
               name="telephone"
               required
+              autoComplete="tel"
               placeholder="06 XX XX XX XX"
               className={inputClass}
             />
@@ -145,31 +152,30 @@ export default function ContactForm() {
         {/* Ville + Service */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label className="block text-sm font-medium text-slate-300 mb-2">Votre ville</label>
+            <label htmlFor="ville" className="block text-sm font-medium text-ink-2 mb-2">Votre ville</label>
             <input
+              id="ville"
               type="text"
               name="ville"
+              autoComplete="address-level2"
               placeholder="Fourmies, Maubeuge…"
               className={inputClass}
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-slate-300 mb-2">
-              Service souhaité <span className="text-primary">*</span>
+            <label htmlFor="service" className="block text-sm font-medium text-ink-2 mb-2">
+              Service souhaité <span className="text-primary" aria-hidden="true">*</span>
             </label>
             <select
+              id="service"
               name="service"
               required
               defaultValue=""
               className={`${inputClass} cursor-pointer`}
             >
-              <option value="" disabled className="bg-gray-900 text-slate-500">
-                Choisissez un service…
-              </option>
+              <option value="" disabled>Choisissez un service…</option>
               {contactConfig.serviceOptions.map((opt) => (
-                <option key={opt.value} value={opt.value} className="bg-gray-900">
-                  {opt.label}
-                </option>
+                <option key={opt.value} value={opt.value}>{opt.label}</option>
               ))}
             </select>
           </div>
@@ -177,10 +183,11 @@ export default function ContactForm() {
 
         {/* Message */}
         <div>
-          <label className="block text-sm font-medium text-slate-300 mb-2">
-            Votre message <span className="text-primary">*</span>
+          <label htmlFor="message" className="block text-sm font-medium text-ink-2 mb-2">
+            Votre message <span className="text-primary" aria-hidden="true">*</span>
           </label>
           <textarea
+            id="message"
             name="message"
             required
             minLength={10}
@@ -188,13 +195,13 @@ export default function ContactForm() {
             placeholder="Décrivez votre projet, votre activité, vos besoins…"
             className={`${inputClass} resize-none`}
           />
-          <p className="text-xs text-slate-600 mt-1">Minimum 10 caractères.</p>
+          <p className="text-xs text-ink-4 mt-1">Minimum 10 caractères.</p>
         </div>
 
         {/* Error */}
         {status === 'error' && (
-          <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/20">
-            <p className="text-red-400 text-sm">{errorMsg}</p>
+          <div role="alert" className="p-3 rounded-xl bg-red-50 border border-red-200">
+            <p className="text-red-600 text-sm">{errorMsg}</p>
           </div>
         )}
 
@@ -202,18 +209,19 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="group w-full flex items-center justify-center gap-2 py-4 px-8 bg-primary hover:bg-primary-hover disabled:opacity-60 disabled:cursor-not-allowed rounded-xl text-white font-bold transition-all duration-200 hover:shadow-[0_0_32px_-6px_rgba(19,91,236,0.7)] active:scale-95"
+          className="group btn-cta w-full flex items-center justify-center gap-2 py-4 px-8 disabled:opacity-60 disabled:cursor-not-allowed rounded-full font-bold"
         >
           {status === 'loading' ? (
             <>
-              <Loader2 size={18} className="animate-spin" />
-              Envoi en cours…
+              <Loader2 size={18} className="animate-spin" aria-hidden="true" />
+              <span>Envoi en cours…</span>
             </>
           ) : (
             <>
               <Send
                 size={18}
                 className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                aria-hidden="true"
               />
               {contactConfig.submitLabel}
             </>
@@ -221,7 +229,7 @@ export default function ContactForm() {
         </button>
 
         {/* RGPD */}
-        <p className="text-center text-xs text-slate-600 leading-relaxed">
+        <p className="text-center text-xs text-ink-4 leading-relaxed">
           {contactConfig.privacyNote}
           <br />
           Conformément au RGPD, vos données ne sont pas revendues et peuvent être supprimées sur

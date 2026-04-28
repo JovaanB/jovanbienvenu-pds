@@ -93,7 +93,19 @@ export const realisations: Realisation[] = [
     image: "/realisations/bienvenueducotedecheznous.png",
     url: "https://bienvenueducotedecheznous.fr",
   },
+  {
+    id: 4,
+    titre: "Site vitrine - nettoyage auto",
+    client: "SB Detailing",
+    secteur: "Automobile",
+    categorie: "Services",
+    ville: "Fourmies",
+    type: "Site Vitrine",
+    description:
+      "Site vitrine pour un professionnel du detailing automobile à Fourmies. Présentation des services - lavage, detailing, rénovation - avec galerie photo et formulaire de contact.",
+    resultat:
+      "Référencé sur Google Maps et visible pour les recherches locales - prise de contact via le site en hausse.",
+    image: "/realisations/sbdetailing.jpeg",
+    url: "https://sbdetailing.fr",
+  },
 ];
-
-/** Catégories disponibles pour le filtre du portfolio */
-export const categoriesPortfolio = ["Tous", "Tourisme", "Bâtiment"] as const;

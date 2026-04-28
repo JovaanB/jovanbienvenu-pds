@@ -65,7 +65,7 @@ const tiers = [
       "Vous perdez du temps sur votre cœur de métier",
       "Dépendant de la plateforme",
     ],
-    color: "border-slate-700",
+    color: "border-border-warm",
   },
   {
     label: "Template acheté sur ThemeForest",
@@ -76,7 +76,7 @@ const tiers = [
       "Mises à jour à gérer",
       "Pas adapté à votre activité précise",
     ],
-    color: "border-slate-700",
+    color: "border-border-warm",
   },
   {
     label: "Freelance local",
@@ -100,7 +100,7 @@ const tiers = [
       "Interlocuteur qui change, suivi impersonnel",
       "Délais souvent longs",
     ],
-    color: "border-slate-700",
+    color: "border-border-warm",
   },
 ];
 
@@ -109,11 +109,7 @@ export default function ArticleCoutSiteInternet() {
     <main className="relative">
       <SchemaOrg schema={articleSchema} />
       <SchemaOrg schema={breadcrumbSchema} />
-
-      {/* Ambient glow */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-[10%] right-[10%] w-[400px] h-[400px] bg-primary/8 rounded-full blur-[120px]" />
-      </div>
+      <div className="ambient-bg" />
 
       <article className="relative z-10">
         {/* Hero */}
@@ -123,22 +119,22 @@ export default function ArticleCoutSiteInternet() {
               <div className="flex items-center gap-3 mb-6">
                 <Link
                   href="/blog"
-                  className="text-slate-500 text-sm hover:text-white transition-colors"
+                  className="text-ink-4 text-sm hover:text-ink transition-colors"
                 >
                   ← Blog
                 </Link>
-                <span className="text-slate-700">/</span>
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-300">
+                <span className="text-ink-3">/</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-primary/10 text-primary">
                   Conseils
                 </span>
               </div>
-              <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              <h1 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                 {TITLE}
               </h1>
-              <p className="text-slate-400 text-lg leading-relaxed mb-6">
+              <p className="text-ink-3 text-lg leading-relaxed mb-6">
                 {DESCRIPTION}
               </p>
-              <div className="flex items-center gap-5 text-slate-500 text-sm">
+              <div className="flex items-center gap-5 text-ink-4 text-sm">
                 <span className="flex items-center gap-1.5">
                   <Calendar size={13} /> {formatDate(DATE)}
                 </span>
@@ -146,7 +142,7 @@ export default function ArticleCoutSiteInternet() {
                   <Clock size={13} /> 6 min de lecture
                 </span>
                 <span>
-                  Par <span className="text-slate-300">Jovan Bienvenu</span>
+                  Par <span className="text-ink-2">Jovan Bienvenu</span>
                 </span>
               </div>
             </FadeIn>
@@ -158,10 +154,10 @@ export default function ArticleCoutSiteInternet() {
           <div className="max-w-3xl mx-auto space-y-12">
             <FadeIn>
               <div className="prose-custom">
-                <p className="text-slate-300 text-base leading-relaxed">
+                <p className="text-ink-2 text-base leading-relaxed">
                   C'est souvent la première question que me posent les artisans
                   et commerçants de l'Avesnois :{" "}
-                  <strong className="text-white">
+                  <strong className="text-ink">
                     « Combien ça coûte, un site internet ? »
                   </strong>
                   . La réponse honnête : ça dépend. Mais pas de façon arbitraire
@@ -174,19 +170,19 @@ export default function ArticleCoutSiteInternet() {
             {/* Tiers section */}
             <FadeIn>
               <div>
-                <h2 className="text-white font-bold text-2xl mb-6">
+                <h2 className="text-ink font-bold text-2xl mb-6">
                   Les 4 grandes catégories de prix
                 </h2>
                 <div className="space-y-4">
                   {tiers.map((tier) => (
                     <div
                       key={tier.label}
-                      className={`rounded-2xl border ${tier.color} ${tier.highlight ? "bg-primary/5" : "bg-surface-dark"} p-6`}
+                      className={`rounded-2xl border ${tier.color} ${tier.highlight ? "bg-primary/5" : "bg-white"} p-6`}
                     >
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
-                        <h3 className="text-white font-bold">{tier.label}</h3>
+                        <h3 className="text-ink font-bold">{tier.label}</h3>
                         <span
-                          className={`text-sm font-bold px-3 py-1 rounded-full shrink-0 ${tier.highlight ? "bg-primary/20 text-primary" : "bg-white/8 text-slate-300"}`}
+                          className={`text-sm font-bold px-3 py-1 rounded-full shrink-0 ${tier.highlight ? "bg-primary/20 text-primary" : "bg-stone-100 text-ink-2"}`}
                         >
                           {tier.price}
                         </span>
@@ -196,7 +192,7 @@ export default function ArticleCoutSiteInternet() {
                           {tier.pros.map((pro) => (
                             <p
                               key={pro}
-                              className="flex items-start gap-2 text-sm text-slate-300 mb-1.5"
+                              className="flex items-start gap-2 text-sm text-ink-2 mb-1.5"
                             >
                               <CheckCircle
                                 size={13}
@@ -210,7 +206,7 @@ export default function ArticleCoutSiteInternet() {
                           {tier.cons.map((con) => (
                             <p
                               key={con}
-                              className="flex items-start gap-2 text-sm text-slate-400 mb-1.5"
+                              className="flex items-start gap-2 text-sm text-ink-3 mb-1.5"
                             >
                               <XCircle
                                 size={13}
@@ -234,8 +230,8 @@ export default function ArticleCoutSiteInternet() {
 
             {/* Ce qui fait varier */}
             <FadeIn>
-              <div className="rounded-2xl border border-white/8 bg-surface-dark p-6 md:p-8">
-                <h2 className="text-white font-bold text-2xl mb-5">
+              <div className="rounded-2xl border border-border-soft bg-white p-6 md:p-8">
+                <h2 className="text-ink font-bold text-2xl mb-5">
                   Ce qui fait vraiment varier le prix
                 </h2>
                 <div className="space-y-4">
@@ -268,14 +264,14 @@ export default function ArticleCoutSiteInternet() {
                   ].map((item) => (
                     <div
                       key={item.factor}
-                      className="flex gap-4 py-3 border-b border-white/5 last:border-0"
+                      className="flex gap-4 py-3 border-b border-border-soft last:border-0"
                     >
                       <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
                       <div>
-                        <p className="text-white font-semibold text-sm mb-1">
+                        <p className="text-ink font-semibold text-sm mb-1">
                           {item.factor}
                         </p>
-                        <p className="text-slate-400 text-sm leading-relaxed">
+                        <p className="text-ink-3 text-sm leading-relaxed">
                           {item.detail}
                         </p>
                       </div>
@@ -288,7 +284,7 @@ export default function ArticleCoutSiteInternet() {
             {/* Pièges */}
             <FadeIn>
               <div>
-                <h2 className="text-white font-bold text-2xl mb-5">
+                <h2 className="text-ink font-bold text-2xl mb-5">
                   3 pièges à éviter absolument
                 </h2>
                 <div className="space-y-4">
@@ -312,16 +308,16 @@ export default function ArticleCoutSiteInternet() {
                   ].map((item) => (
                     <div
                       key={item.num}
-                      className="rounded-xl border border-white/8 bg-surface-dark p-5 flex gap-4"
+                      className="rounded-xl border border-border-soft bg-white p-5 flex gap-4"
                     >
-                      <span className="text-3xl font-bold text-white/10 shrink-0 leading-none">
+                      <span className="text-3xl font-bold text-ink/[0.06] shrink-0 leading-none">
                         {item.num}
                       </span>
                       <div>
-                        <p className="text-white font-semibold mb-1">
+                        <p className="text-ink font-semibold mb-1">
                           {item.titre}
                         </p>
-                        <p className="text-slate-400 text-sm leading-relaxed">
+                        <p className="text-ink-3 text-sm leading-relaxed">
                           {item.desc}
                         </p>
                       </div>
@@ -333,11 +329,11 @@ export default function ArticleCoutSiteInternet() {
 
             {/* Mon offre */}
             <FadeIn>
-              <div className="rounded-2xl border border-primary/30 bg-gradient-to-b from-primary/8 to-surface-dark p-6 md:p-8">
-                <h2 className="text-white font-bold text-2xl mb-2">
+              <div className="rounded-2xl border border-primary/30 bg-gradient-to-b from-violet-50 to-white p-6 md:p-8">
+                <h2 className="text-ink font-bold text-2xl mb-2">
                   Ce qu'inclut le Pack Visibilité à 590 €
                 </h2>
-                <p className="text-slate-400 text-sm mb-5">
+                <p className="text-ink-3 text-sm mb-5">
                   Pour les professionnels de l'Avesnois, je propose un forfait
                   tout-inclus sans surprise.
                 </p>
@@ -350,11 +346,11 @@ export default function ArticleCoutSiteInternet() {
                     "Hébergement inclus - rien à payer en plus la 1ère année",
                     "Votre adresse web .com ou .fr offerte la 1ère année",
                     "Optimisé pour Google dès le lancement - vous existez en ligne",
-                    "Votre fiche Google optimisée offerte - double présence locale 🎁",
+                    "Votre fiche Google optimisée offerte - double présence locale ",
                   ].map((item) => (
                     <li
                       key={item}
-                      className="flex items-start gap-2.5 text-sm text-slate-300"
+                      className="flex items-start gap-2.5 text-sm text-ink-2"
                     >
                       <CheckCircle
                         size={14}
@@ -367,21 +363,21 @@ export default function ArticleCoutSiteInternet() {
                 <div className="flex flex-wrap gap-3">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl transition-colors text-sm"
+                    className="group btn-cta inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm"
                   >
                     Obtenir mon devis gratuit
                     <ArrowRight size={15} />
                   </Link>
                   <Link
                     href="/tarifs"
-                    className="inline-flex items-center gap-2 px-6 py-3 border border-white/15 text-slate-300 hover:text-white hover:border-white/30 font-medium rounded-xl transition-colors text-sm"
+                    className="inline-flex items-center gap-2 px-6 py-3 border border-border-warm text-ink-2 hover:text-ink hover:border-primary/30 font-medium rounded-xl transition-colors text-sm"
                   >
                     Voir les tarifs détaillés
                     <ArrowRight size={15} />
                   </Link>
                 </div>
-                <div className="flex flex-wrap items-center gap-2 mt-5 pt-5 border-t border-white/8">
-                  <span className="text-slate-500 text-xs w-full mb-1">
+                <div className="flex flex-wrap items-center gap-2 mt-5 pt-5 border-t border-border-soft">
+                  <span className="text-ink-4 text-xs w-full mb-1">
                     Site internet par ville :
                   </span>
                   {[
@@ -394,7 +390,7 @@ export default function ArticleCoutSiteInternet() {
                     <Link
                       key={v.slug}
                       href={`/creation-site-internet-${v.slug}`}
-                      className="text-xs px-3 py-1 rounded-full border border-white/15 text-slate-400 hover:border-primary/50 hover:text-primary transition-colors"
+                      className="text-xs px-3 py-1 rounded-full border border-border-warm text-ink-3 hover:border-primary/50 hover:text-primary transition-colors"
                     >
                       {v.label}
                     </Link>
@@ -405,16 +401,16 @@ export default function ArticleCoutSiteInternet() {
 
             {/* Articles suivants */}
             <FadeIn>
-              <div className="border-t border-white/8 pt-10">
-                <p className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-4">
+              <div className="border-t border-border-soft pt-10">
+                <p className="text-ink-4 text-xs font-bold uppercase tracking-widest mb-4">
                   Lire aussi
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <Link
                     href="/blog/site-vitrine-vs-fiche-google-my-business"
-                    className="group rounded-xl border border-white/8 bg-surface-dark p-4 hover:border-white/20 transition-all"
+                    className="group rounded-xl border border-border-soft bg-white p-4 hover:border-border-warm transition-all"
                   >
-                    <p className="text-white text-sm font-semibold group-hover:text-primary transition-colors leading-snug">
+                    <p className="text-ink text-sm font-semibold group-hover:text-primary transition-colors leading-snug">
                       Site vitrine ou fiche Google My Business : que choisir ?
                     </p>
                     <p className="text-primary text-xs mt-2 flex items-center gap-1">
@@ -423,9 +419,9 @@ export default function ArticleCoutSiteInternet() {
                   </Link>
                   <Link
                     href="/blog/top-3-google-maps-avesnois"
-                    className="group rounded-xl border border-white/8 bg-surface-dark p-4 hover:border-white/20 transition-all"
+                    className="group rounded-xl border border-border-soft bg-white p-4 hover:border-border-warm transition-all"
                   >
-                    <p className="text-white text-sm font-semibold group-hover:text-primary transition-colors leading-snug">
+                    <p className="text-ink text-sm font-semibold group-hover:text-primary transition-colors leading-snug">
                       Comment apparaître dans le top 3 Google dans l'Avesnois ?
                     </p>
                     <p className="text-primary text-xs mt-2 flex items-center gap-1">

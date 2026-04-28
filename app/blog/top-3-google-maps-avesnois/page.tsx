@@ -86,11 +86,7 @@ export default function ArticleTop3GoogleMaps() {
     <main className="relative">
       <SchemaOrg schema={articleSchema} />
       <SchemaOrg schema={breadcrumbSchema} />
-
-      {/* Ambient glow */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-[10%] left-[10%] w-[400px] h-[400px] bg-purple-900/8 rounded-full blur-[120px]" />
-      </div>
+      <div className="ambient-bg" />
 
       <article className="relative z-10">
         {/* Hero */}
@@ -100,22 +96,22 @@ export default function ArticleTop3GoogleMaps() {
               <div className="flex items-center gap-3 mb-6">
                 <Link
                   href="/blog"
-                  className="text-slate-500 text-sm hover:text-white transition-colors"
+                  className="text-ink-4 text-sm hover:text-ink transition-colors"
                 >
                   ← Blog
                 </Link>
-                <span className="text-slate-700">/</span>
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-300">
+                <span className="text-ink-3">/</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-primary/10 text-primary">
                   SEO Local
                 </span>
               </div>
-              <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              <h1 className="text-3xl md:text-4xl font-bold text-ink mb-4 leading-tight">
                 {TITLE}
               </h1>
-              <p className="text-slate-400 text-lg leading-relaxed mb-6">
+              <p className="text-ink-3 text-lg leading-relaxed mb-6">
                 {DESCRIPTION}
               </p>
-              <div className="flex items-center gap-5 text-slate-500 text-sm">
+              <div className="flex items-center gap-5 text-ink-4 text-sm">
                 <span className="flex items-center gap-1.5">
                   <Calendar size={13} /> {formatDate(DATE)}
                 </span>
@@ -123,7 +119,7 @@ export default function ArticleTop3GoogleMaps() {
                   <Clock size={13} /> 5 min de lecture
                 </span>
                 <span>
-                  Par <span className="text-slate-300">Jovan Bienvenu</span>
+                  Par <span className="text-ink-2">Jovan Bienvenu</span>
                 </span>
               </div>
             </FadeIn>
@@ -135,14 +131,14 @@ export default function ArticleTop3GoogleMaps() {
           <div className="max-w-3xl mx-auto space-y-12">
             {/* Intro */}
             <FadeIn>
-              <p className="text-slate-300 text-base leading-relaxed">
-                Quand quelqu'un cherche{" "}
-                <strong className="text-white">« plombier Fourmies »</strong> ou{" "}
-                <strong className="text-white">« boulangerie Maubeuge »</strong>{" "}
+              <p className="text-ink-2 text-base leading-relaxed">
+                Quand quelqu&apos;un cherche{" "}
+                <strong className="text-ink">« plombier Fourmies »</strong> ou{" "}
+                <strong className="text-ink">« boulangerie Maubeuge »</strong>{" "}
                 sur Google, il voit trois résultats dans un encadré en haut de
-                page - avant même les sites web classiques. C'est ce qu'on
-                appelle le <strong className="text-white">local pack</strong> ou
-                top 3 Google Maps. Apparaître là, c'est capter 70 % des clics
+                page - avant même les sites web classiques. C&apos;est ce qu&apos;on
+                appelle le <strong className="text-ink">local pack</strong> ou
+                top 3 Google Maps. Apparaître là, c&apos;est capter 70 % des clics
                 sur cette recherche.
               </p>
             </FadeIn>
@@ -167,12 +163,12 @@ export default function ArticleTop3GoogleMaps() {
                 ].map((s) => (
                   <div
                     key={s.label}
-                    className="rounded-xl border border-white/8 bg-surface-dark p-4 text-center"
+                    className="rounded-xl border border-border-soft bg-white p-4 text-center"
                   >
-                    <p className="text-2xl font-bold text-white mb-1">
+                    <p className="text-2xl font-bold text-ink mb-1">
                       {s.val}
                     </p>
-                    <p className="text-slate-500 text-xs leading-tight">
+                    <p className="text-ink-4 text-xs leading-tight">
                       {s.label}
                     </p>
                   </div>
@@ -182,29 +178,29 @@ export default function ArticleTop3GoogleMaps() {
 
             {/* Les 5 facteurs */}
             <FadeIn>
-              <h2 className="text-white font-bold text-2xl mb-6">
+              <h2 className="text-ink font-bold text-2xl mb-6">
                 Les 5 facteurs qui font la différence
               </h2>
               <div className="space-y-5">
                 {facteurs.map((f) => (
                   <div
                     key={f.num}
-                    className="rounded-2xl border border-white/8 bg-surface-dark p-6"
+                    className="rounded-2xl border border-border-soft bg-white p-6"
                   >
                     <div className="flex gap-4">
-                      <span className="text-3xl font-bold text-white/10 leading-none shrink-0">
+                      <span className="text-3xl font-bold text-ink/[0.06] leading-none shrink-0">
                         {f.num}
                       </span>
                       <div>
-                        <h3 className="text-white font-bold mb-2">{f.titre}</h3>
-                        <p className="text-slate-400 text-sm leading-relaxed mb-3">
+                        <h3 className="text-ink font-bold mb-2">{f.titre}</h3>
+                        <p className="text-ink-3 text-sm leading-relaxed mb-3">
                           {f.desc}
                         </p>
-                        <div className="flex items-start gap-2 bg-primary/8 border border-primary/20 rounded-lg p-3">
+                        <div className="flex items-start gap-2 bg-primary/5 border border-primary/15 rounded-lg p-3">
                           <span className="text-primary text-xs font-bold uppercase tracking-wider shrink-0 mt-0.5">
-                            💡 Astuce
+                            Astuce
                           </span>
-                          <p className="text-slate-300 text-xs leading-relaxed">
+                          <p className="text-ink-2 text-xs leading-relaxed">
                             {f.tip}
                           </p>
                         </div>
@@ -217,16 +213,16 @@ export default function ArticleTop3GoogleMaps() {
 
             {/* Ce qui prend du temps */}
             <FadeIn>
-              <div className="rounded-2xl border border-white/8 bg-surface-dark p-6 md:p-8">
-                <h2 className="text-white font-bold text-xl mb-5">
+              <div className="rounded-2xl border border-border-soft bg-white p-6 md:p-8">
+                <h2 className="text-ink font-bold text-xl mb-5">
                   Rapide à faire vs long à obtenir
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <p className="text-emerald-400 font-bold text-sm mb-3 flex items-center gap-2">
-                      ⚡ En quelques jours
+                    <p className="text-emerald-600 font-bold text-sm mb-3 flex items-center gap-2">
+                      En quelques jours
                     </p>
-                    <ul className="space-y-2 text-sm text-slate-400">
+                    <ul className="space-y-2 text-sm text-ink-3">
                       {[
                         "Compléter les champs de la fiche à 100 %",
                         "Choisir la bonne catégorie principale",
@@ -234,17 +230,17 @@ export default function ArticleTop3GoogleMaps() {
                         "Rédiger une description optimisée",
                       ].map((i) => (
                         <li key={i} className="flex gap-2">
-                          <span className="text-emerald-400">✓</span>
+                          <span className="text-emerald-500">✓</span>
                           {i}
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <p className="text-amber-400 font-bold text-sm mb-3 flex items-center gap-2">
-                      ⏱ Sur le long terme
+                    <p className="text-amber-600 font-bold text-sm mb-3 flex items-center gap-2">
+                      Sur le long terme
                     </p>
-                    <ul className="space-y-2 text-sm text-slate-400">
+                    <ul className="space-y-2 text-sm text-ink-3">
                       {[
                         "Accumuler des avis positifs récents",
                         "Maintenir l'activité avec des publications",
@@ -252,7 +248,7 @@ export default function ArticleTop3GoogleMaps() {
                         "Dépasser les concurrents bien établis",
                       ].map((i) => (
                         <li key={i} className="flex gap-2">
-                          <span className="text-amber-400">→</span>
+                          <span className="text-amber-500">→</span>
                           {i}
                         </li>
                       ))}
@@ -264,44 +260,44 @@ export default function ArticleTop3GoogleMaps() {
 
             {/* Cas concret Avesnois */}
             <FadeIn>
-              <div className="rounded-2xl border border-purple-500/20 bg-gradient-to-b from-purple-900/10 to-surface-dark p-6 md:p-8">
+              <div className="rounded-2xl border border-primary/20 bg-gradient-to-b from-violet-50 to-white p-6 md:p-8">
                 <div className="flex items-center gap-2 mb-4">
-                  <MapPin size={16} className="text-purple-400" />
-                  <h2 className="text-white font-bold text-xl">
-                    Dans l'Avesnois, la concurrence est faible
+                  <MapPin size={16} className="text-primary" />
+                  <h2 className="text-ink font-bold text-xl">
+                    Dans l&apos;Avesnois, la concurrence est faible
                   </h2>
                 </div>
-                <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                <p className="text-ink-3 text-sm leading-relaxed mb-4">
                   Bonne nouvelle : sur des requêtes comme{" "}
                   <Link
                     href="/referencement-local-google-fourmies"
-                    className="text-slate-300 underline decoration-slate-600 hover:text-purple-300 transition-colors"
+                    className="text-primary underline underline-offset-2 decoration-primary/30 hover:decoration-primary transition-colors"
                   >
                     « électricien Fourmies »
                   </Link>
                   ,{" "}
                   <Link
                     href="/referencement-local-google-avesnes-sur-helpe"
-                    className="text-slate-300 underline decoration-slate-600 hover:text-purple-300 transition-colors"
+                    className="text-primary underline underline-offset-2 decoration-primary/30 hover:decoration-primary transition-colors"
                   >
                     « coiffeur Avesnes-sur-Helpe »
                   </Link>{" "}
                   ou{" "}
                   <Link
                     href="/referencement-local-google-hirson"
-                    className="text-slate-300 underline decoration-slate-600 hover:text-purple-300 transition-colors"
+                    className="text-primary underline underline-offset-2 decoration-primary/30 hover:decoration-primary transition-colors"
                   >
                     « plombier Hirson »
                   </Link>
                   , la concurrence locale est souvent faible. Les fiches en
-                  place sont rarement bien optimisées. Cela signifie qu'une
+                  place sont rarement bien optimisées. Cela signifie qu&apos;une
                   fiche correctement travaillée peut atteindre le top 3 en{" "}
-                  <strong className="text-white">4 à 8 semaines</strong>, là où
+                  <strong className="text-ink">4 à 8 semaines</strong>, là où
                   il faudrait 6 mois dans une grande ville.
                 </p>
-                <p className="text-slate-400 text-sm leading-relaxed">
-                  C'est le meilleur moment pour prendre de l'avance sur vos
-                  concurrents avant qu'ils n'y pensent eux aussi.
+                <p className="text-ink-3 text-sm leading-relaxed">
+                  C&apos;est le meilleur moment pour prendre de l&apos;avance sur vos
+                  concurrents avant qu&apos;ils n&apos;y pensent eux aussi.
                 </p>
               </div>
             </FadeIn>
@@ -309,8 +305,8 @@ export default function ArticleTop3GoogleMaps() {
             {/* Par ville */}
             <FadeIn>
               <div className="flex flex-wrap items-center gap-2">
-                <span className="text-slate-500 text-xs">
-                  Voir l'offre par ville :
+                <span className="text-ink-4 text-xs">
+                  Voir l&apos;offre par ville :
                 </span>
                 {[
                   { label: "Fourmies", slug: "fourmies" },
@@ -322,7 +318,7 @@ export default function ArticleTop3GoogleMaps() {
                   <Link
                     key={v.slug}
                     href={`/referencement-local-google-${v.slug}`}
-                    className="text-xs px-3 py-1 rounded-full border border-purple-500/30 text-purple-300 hover:border-purple-400/50 hover:text-purple-200 transition-colors"
+                    className="text-xs px-3 py-1 rounded-full border border-border-warm text-ink-3 hover:border-primary/30 hover:text-primary transition-colors"
                   >
                     {v.label}
                   </Link>
@@ -332,43 +328,45 @@ export default function ArticleTop3GoogleMaps() {
 
             {/* CTA */}
             <FadeIn>
-              <div className="rounded-2xl border border-primary/30 bg-gradient-to-b from-primary/8 to-surface-dark p-6 md:p-8">
-                <h2 className="text-white font-bold text-xl mb-2">
+              <div className="rounded-2xl border border-primary/30 bg-gradient-to-b from-violet-50 to-white p-6 md:p-8">
+                <h2 className="text-ink font-bold text-xl mb-2">
                   Vous voulez intégrer le top 3 ?
                 </h2>
-                <p className="text-slate-400 text-sm leading-relaxed mb-5">
+                <p className="text-ink-3 text-sm leading-relaxed mb-5">
                   Je commence toujours par un audit gratuit de votre fiche
                   actuelle - sans engagement. Je vous dis exactement où vous en
                   êtes et ce qui peut être amélioré.
                 </p>
-                <Link
-                  href="/referencement-local-google-fourmies"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-xl transition-colors text-sm mr-3"
-                >
-                  Voir l'offre SEO local à Fourmies
-                  <ArrowRight size={15} />
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 border border-white/15 text-slate-300 hover:text-white hover:border-white/30 font-medium rounded-xl transition-colors text-sm"
-                >
-                  Audit gratuit
-                </Link>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Link
+                    href="/referencement-local-google-fourmies"
+                    className="group btn-cta inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm"
+                  >
+                    Voir l&apos;offre SEO local à Fourmies
+                    <ArrowRight size={15} />
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 px-6 py-3 border border-border-warm text-ink-2 hover:text-ink hover:border-primary/30 font-medium rounded-xl transition-colors text-sm"
+                  >
+                    Audit gratuit
+                  </Link>
+                </div>
               </div>
             </FadeIn>
 
             {/* Lire aussi */}
             <FadeIn>
-              <div className="border-t border-white/8 pt-10">
-                <p className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-4">
+              <div className="border-t border-border-soft pt-10">
+                <p className="text-ink-4 text-xs font-bold uppercase tracking-widest mb-4">
                   Lire aussi
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <Link
                     href="/blog/site-vitrine-vs-fiche-google-my-business"
-                    className="group rounded-xl border border-white/8 bg-surface-dark p-4 hover:border-white/20 transition-all"
+                    className="group rounded-xl border border-border-soft bg-white p-4 hover:border-border-warm transition-all"
                   >
-                    <p className="text-white text-sm font-semibold group-hover:text-primary transition-colors leading-snug">
+                    <p className="text-ink text-sm font-semibold group-hover:text-primary transition-colors leading-snug">
                       Site vitrine ou fiche Google My Business : que choisir ?
                     </p>
                     <p className="text-primary text-xs mt-2 flex items-center gap-1">
@@ -377,9 +375,9 @@ export default function ArticleTop3GoogleMaps() {
                   </Link>
                   <Link
                     href="/blog/combien-coute-site-internet-artisan"
-                    className="group rounded-xl border border-white/8 bg-surface-dark p-4 hover:border-white/20 transition-all"
+                    className="group rounded-xl border border-border-soft bg-white p-4 hover:border-border-warm transition-all"
                   >
-                    <p className="text-white text-sm font-semibold group-hover:text-primary transition-colors leading-snug">
+                    <p className="text-ink text-sm font-semibold group-hover:text-primary transition-colors leading-snug">
                       Combien coûte un site internet pour un artisan ?
                     </p>
                     <p className="text-primary text-xs mt-2 flex items-center gap-1">

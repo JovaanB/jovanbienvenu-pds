@@ -63,7 +63,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body
-        className={`${syne.variable} ${manrope.variable} font-sans bg-background-dark text-slate-300 overflow-x-hidden`}
+        className={`${syne.variable} ${manrope.variable} font-sans bg-bg-base text-ink overflow-x-hidden`}
       >
         {GA_ID && GA_ID !== "G-XXXXXXXXXX" && (
           <>
@@ -81,8 +81,14 @@ export default function RootLayout({
             </Script>
           </>
         )}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-full focus:text-sm focus:font-bold focus:shadow-lg"
+        >
+          Aller au contenu principal
+        </a>
         <Navbar />
-        {children}
+        <div id="main-content">{children}</div>
         <Footer />
         <Analytics />
       </body>

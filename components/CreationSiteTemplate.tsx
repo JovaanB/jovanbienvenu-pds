@@ -1,5 +1,16 @@
 import Link from "next/link";
-import { CheckCircle, ArrowRight, Phone, Clock, Star } from "lucide-react";
+import {
+  CheckCircle,
+  ArrowRight,
+  Phone,
+  Clock,
+  Star,
+  Zap,
+  MapPin,
+  Lock,
+  Users,
+  Gift,
+} from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import VideoPlayer from "@/components/VideoPlayer";
 import SchemaOrg from "@/components/SchemaOrg";
@@ -21,7 +32,7 @@ const livrables = [
   "Votre adresse web .com ou .fr offerte la 1ère année",
   "Optimisé pour Google dès le lancement - vos clients vous trouvent",
   "Disponible après livraison pour toutes vos questions",
-  "Votre fiche Google optimisée offerte - double présence locale 🎁",
+  "Votre fiche Google optimisée offerte — double présence locale",
 ];
 
 const etapes = [
@@ -47,14 +58,39 @@ const etapes = [
   },
 ];
 
+const trustItems = [
+  {
+    Icon: Zap,
+    titre: "Livré en moins de 2 semaines",
+    desc: "Un planning précis vous est fourni dès le départ. Sur mes dernières réalisations, la livraison tient en 10 jours ouvrés.",
+  },
+  {
+    Icon: MapPin,
+    titre: "Un voisin, pas une agence",
+    desc: "Basé à Fourmies, je me déplace chez vous. Vous parlez à une vraie personne - pas à un ticket de support.",
+  },
+  {
+    Icon: Lock,
+    titre: "Site rapide & sécurisé",
+    desc: "HTTPS, chargement en moins d'une seconde, hébergement fiable. Un site lent perd des clients - le vôtre les garde.",
+  },
+  {
+    Icon: Users,
+    titre: "Disponible après livraison",
+    desc: "Questions, ajustements, évolutions - je reste disponible après la mise en ligne. Pas de ticket de support.",
+  },
+  {
+    Icon: Clock,
+    titre: "Réponse sous 24h",
+    desc: "Du lundi au samedi. En pratique, je réponds généralement sous 2h en semaine.",
+  },
+];
+
 interface CreationSiteTemplateProps {
-  /** Si fourni : version page ville. Si absent : version générique Avesnois */
   ville?: VilleSEO;
 }
 
-export default function CreationSiteTemplate({
-  ville,
-}: CreationSiteTemplateProps) {
+export default function CreationSiteTemplate({ ville }: CreationSiteTemplateProps) {
   const nomVille = ville ? `à ${ville.nom}` : "dans l'Avesnois";
   const pageUrl = ville
     ? `${SITE_URL}/creation-site-internet-${ville.slug}`
@@ -78,13 +114,8 @@ export default function CreationSiteTemplate({
 
   const breadcrumbItems = [
     { name: "Accueil", url: SITE_URL },
-    {
-      name: "Création de site internet",
-      url: `${SITE_URL}/creation-site-internet`,
-    },
-    ...(ville
-      ? [{ name: `Création de site internet à ${ville.nom}`, url: pageUrl }]
-      : []),
+    { name: "Création de site internet", url: `${SITE_URL}/creation-site-internet` },
+    ...(ville ? [{ name: `Création de site internet à ${ville.nom}`, url: pageUrl }] : []),
   ];
   const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbItems);
 
@@ -98,28 +129,24 @@ export default function CreationSiteTemplate({
       <section className="relative z-10 pt-36 pb-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
-            <p className="text-primary font-bold tracking-widest uppercase text-xs mb-4">
-              Création de site internet
-            </p>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tight">
+            <span className="pill-badge mb-4 inline-flex">Création de site internet</span>
+            <h1 className="text-4xl md:text-6xl font-bold text-ink mb-6 leading-tight tracking-tight mt-3">
               Création de site internet{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-300">
-                {nomVille}
-              </span>
+              <span className="text-gradient-primary">{nomVille}</span>
             </h1>
 
             {ville && (
               <>
-                <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-4 leading-relaxed">
+                <p className="text-ink-3 text-lg max-w-2xl mx-auto mb-4 leading-relaxed">
                   {ville.paragrapheIntro}
                 </p>
-                <p className="text-slate-500 text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+                <p className="text-ink-4 text-base max-w-2xl mx-auto mb-8 leading-relaxed">
                   {ville.contextEconomique}
                 </p>
               </>
             )}
             {!ville && (
-              <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
+              <p className="text-ink-3 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
                 Votre prochain client vous cherche sur Google en ce moment. Je
                 crée votre site vitrine pour qu&apos;il vous appelle vous - pas
                 votre concurrent. Clé en main, livré en moins de 3 semaines.
@@ -129,16 +156,16 @@ export default function CreationSiteTemplate({
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary-hover text-white font-bold rounded-full transition-all duration-200 hover:shadow-[0_0_32px_-6px_rgba(19,91,236,0.7)] active:scale-95"
+                className="group btn-cta inline-flex items-center gap-2 h-12 px-8 rounded-full font-bold text-sm"
               >
                 Obtenir mon devis gratuit
-                <ArrowRight size={18} />
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
                 href={`tel:${siteInfo.phone}`}
-                className="inline-flex items-center gap-2 px-8 py-4 border border-white/20 text-white font-medium rounded-full hover:border-white/40 hover:bg-white/5 transition-all duration-200"
+                className="inline-flex items-center gap-2 h-12 px-8 border border-border-warm rounded-full text-ink font-medium text-sm hover:border-primary/40 hover:text-primary transition-all duration-200 bg-white shadow-card"
               >
-                <Phone size={16} className="text-primary" />
+                <Phone size={15} className="text-primary" />
                 {siteInfo.phoneDisplay}
               </a>
             </div>
@@ -151,11 +178,11 @@ export default function CreationSiteTemplate({
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <div className="relative">
-              <div className="absolute -inset-4 bg-primary/10 blur-2xl rounded-3xl pointer-events-none" />
+              <div className="absolute -inset-4 bg-primary/5 blur-2xl rounded-3xl pointer-events-none" />
               <VideoPlayer
                 src="/video/presentation.mp4"
                 poster="/images/poster-video.jpg"
-                className="relative aspect-video shadow-2xl shadow-black/50 border border-white/10"
+                className="relative aspect-video shadow-card border border-border-warm rounded-2xl overflow-hidden"
               />
             </div>
           </FadeIn>
@@ -163,17 +190,15 @@ export default function CreationSiteTemplate({
       </section>
 
       {/* ── OFFRE ── */}
-      <section className="relative z-10 py-20 px-6">
+      <section className="relative z-10 py-20 px-6 bg-bg-alt">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <div className="text-center mb-14">
-              <p className="text-primary font-bold tracking-widest uppercase text-xs mb-3">
-                L'offre
-              </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <span className="pill-badge mb-4 inline-flex">L&apos;offre</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 mt-3">
                 Un site complet à 590€ - tout inclus
               </h2>
-              <p className="text-slate-400 max-w-xl mx-auto">
+              <p className="text-ink-3 max-w-xl mx-auto">
                 Pas de surprise, pas de frais cachés. Un forfait unique pour
                 être visible, crédible et rentable en ligne - dès la première
                 semaine.
@@ -184,7 +209,7 @@ export default function CreationSiteTemplate({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Price card */}
             <FadeIn delay={100}>
-              <div className="relative rounded-2xl border border-primary/30 bg-gradient-to-b from-primary/10 to-surface-dark p-8">
+              <div className="relative rounded-2xl border border-primary/30 bg-gradient-to-b from-violet-50 to-white p-8 shadow-card-hover">
                 <div className="absolute -top-3 left-6">
                   <span className="bg-primary text-white text-xs font-bold px-4 py-1 rounded-full">
                     Offre la plus choisie
@@ -192,26 +217,27 @@ export default function CreationSiteTemplate({
                 </div>
                 <div className="mb-6 pt-4">
                   <div className="flex items-baseline gap-2">
-                    <span className="text-6xl font-bold text-white">590</span>
+                    <span className="text-6xl font-bold text-ink leading-none">590</span>
                     <span className="text-primary text-2xl font-bold">€</span>
-                    <span className="text-slate-400 text-sm">
-                      forfait unique
-                    </span>
+                    <span className="text-ink-4 text-sm">forfait unique</span>
                   </div>
                 </div>
 
                 {/* Highlight: GMB incluse */}
-                <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 mb-6">
-                  <p className="text-amber-300 text-sm font-semibold">
-                    🎁 Fiche Google incluse - création ou optimisation
-                  </p>
-                  <p className="text-amber-400/70 text-xs mt-1">
+                <div className="p-4 rounded-xl bg-primary/5 border border-primary/15 mb-6">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Gift size={14} className="text-primary flex-shrink-0" />
+                    <p className="text-primary text-sm font-semibold">
+                      Fiche Google incluse - création ou optimisation
+                    </p>
+                  </div>
+                  <p className="text-ink-4 text-xs mt-1 ml-5">
                     Incluse dans le pack à 590 € - pas de supplément
                   </p>
                   {ville && (
                     <Link
                       href={`/referencement-local-google-${ville.slug}`}
-                      className="inline-flex items-center gap-1 text-amber-400 hover:text-amber-300 text-xs mt-2 transition-colors"
+                      className="inline-flex items-center gap-1 text-primary hover:text-primary-hover text-xs mt-2 ml-5 transition-colors"
                     >
                       Voir l&apos;offre référencement local {ville.nom}
                       <ArrowRight size={11} />
@@ -221,14 +247,8 @@ export default function CreationSiteTemplate({
 
                 <ul className="space-y-3">
                   {livrables.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-2.5 text-sm text-slate-300"
-                    >
-                      <CheckCircle
-                        size={15}
-                        className="text-primary mt-0.5 shrink-0"
-                      />
+                    <li key={item} className="flex items-start gap-2.5 text-sm text-ink-2">
+                      <CheckCircle size={15} className="text-primary mt-0.5 shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -236,13 +256,10 @@ export default function CreationSiteTemplate({
 
                 <Link
                   href="/contact"
-                  className="group mt-8 w-full flex items-center justify-center gap-2 py-4 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl transition-all duration-200 hover:shadow-[0_0_24px_-4px_rgba(19,91,236,0.6)] active:scale-95"
+                  className="group btn-cta mt-8 w-full flex items-center justify-center gap-2 h-12 rounded-full font-bold text-sm"
                 >
                   Obtenir mon devis gratuit
-                  <ArrowRight
-                    size={16}
-                    className="group-hover:translate-x-1 transition-transform"
-                  />
+                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </FadeIn>
@@ -250,42 +267,14 @@ export default function CreationSiteTemplate({
             {/* Trust items */}
             <FadeIn delay={200}>
               <div className="space-y-5">
-                {[
-                  {
-                    icon: "⚡",
-                    titre: "Livré en moins de 2 semaines",
-                    desc: "Un planning précis vous est fourni dès le départ. Sur mes dernières réalisations, la livraison tient en 10 jours ouvrés.",
-                  },
-                  {
-                    icon: "📍",
-                    titre: "Un voisin, pas une agence",
-                    desc: `Basé à Fourmies, je me déplace chez vous ${nomVille}. Vous parlez à une vraie personne - pas à un ticket de support.`,
-                  },
-                  {
-                    icon: "🔒",
-                    titre: "Site rapide & sécurisé",
-                    desc: "HTTPS, chargement en moins d'une seconde, hébergement fiable. Un site lent perd des clients - le vôtre les garde.",
-                  },
-                  {
-                    icon: "🤝",
-                    titre: "Disponible après livraison",
-                    desc: "Questions, ajustements, évolutions - je reste disponible après la mise en ligne. Pas de ticket de support.",
-                  },
-                  {
-                    icon: "⏱️",
-                    titre: "Réponse sous 24h",
-                    desc: "Du lundi au samedi. En pratique, je réponds généralement sous 2h en semaine.",
-                  },
-                ].map((item) => (
-                  <div key={item.titre} className="flex gap-4">
-                    <span className="text-2xl shrink-0">{item.icon}</span>
+                {trustItems.map(({ Icon, titre, desc }) => (
+                  <div key={titre} className="flex gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-violet-50 border border-violet-200 flex items-center justify-center flex-shrink-0">
+                      <Icon size={18} className="text-primary" />
+                    </div>
                     <div>
-                      <h3 className="text-white font-semibold text-sm mb-1">
-                        {item.titre}
-                      </h3>
-                      <p className="text-slate-400 text-sm leading-relaxed">
-                        {item.desc}
-                      </p>
+                      <h3 className="text-ink font-semibold text-sm mb-1">{titre}</h3>
+                      <p className="text-ink-3 text-sm leading-relaxed">{desc}</p>
                     </div>
                   </div>
                 ))}
@@ -296,14 +285,12 @@ export default function CreationSiteTemplate({
       </section>
 
       {/* ── PROCESSUS ── */}
-      <section className="relative z-10 py-20 px-6">
+      <section className="relative z-10 py-20 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <div className="text-center mb-14">
-              <p className="text-primary font-bold tracking-widest uppercase text-xs mb-3">
-                Comment ça marche
-              </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <span className="pill-badge mb-4 inline-flex">Comment ça marche</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 mt-3">
                 Votre site en ligne en moins de 3 semaines
               </h2>
             </div>
@@ -312,19 +299,17 @@ export default function CreationSiteTemplate({
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {etapes.map((etape, i) => (
               <FadeIn key={etape.num} delay={i * 100}>
-                <div className="relative p-6 rounded-2xl border border-white/10 bg-surface-dark h-full">
+                <div className="relative p-6 rounded-2xl border border-border-warm bg-bg-base h-full card-hover">
                   {i < etapes.length - 1 && (
-                    <div className="hidden lg:block absolute top-8 -right-3 z-10">
-                      <ArrowRight size={16} className="text-slate-600" />
+                    <div aria-hidden="true" className="hidden lg:block absolute top-8 -right-3 z-10">
+                      <ArrowRight size={16} className="text-ink-4" />
                     </div>
                   )}
-                  <span className="text-4xl font-bold text-white/10 mb-4 block">
+                  <span className="text-4xl font-bold text-ink/[0.06] mb-4 block select-none">
                     {etape.num}
                   </span>
-                  <h3 className="text-white font-bold mb-2">{etape.titre}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">
-                    {etape.desc}
-                  </p>
+                  <h3 className="text-ink font-bold mb-2">{etape.titre}</h3>
+                  <p className="text-ink-3 text-sm leading-relaxed">{etape.desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -333,30 +318,28 @@ export default function CreationSiteTemplate({
       </section>
 
       {/* ── FAQ ── */}
-      <section className="relative z-10 py-20 px-6">
+      <section className="relative z-10 py-20 px-6 bg-bg-alt">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <div className="text-center mb-12">
-              <p className="text-primary font-bold tracking-widest uppercase text-xs mb-3">
-                FAQ
-              </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <span className="pill-badge mb-4 inline-flex">FAQ</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4 mt-3">
                 Vos questions, réponses directes
               </h2>
             </div>
           </FadeIn>
 
-          <div className="space-y-4">
+          <div className="space-y-3">
             {faqs.map((faq, i) => (
               <FadeIn key={faq.q} delay={i * 60}>
-                <details className="group rounded-xl border border-white/10 bg-surface-dark overflow-hidden">
-                  <summary className="flex items-center justify-between p-5 cursor-pointer text-white font-medium hover:text-primary transition-colors list-none gap-4">
+                <details className="group rounded-xl border border-border-warm bg-white overflow-hidden">
+                  <summary className="flex items-center justify-between p-5 cursor-pointer text-ink font-medium hover:text-primary transition-colors list-none gap-4">
                     <span>{faq.q}</span>
-                    <span className="text-slate-500 group-open:text-primary transition-colors text-xl shrink-0 leading-none">
+                    <span className="text-ink-4 group-open:text-primary transition-colors text-xl shrink-0 leading-none font-bold">
                       +
                     </span>
                   </summary>
-                  <p className="px-5 pb-5 text-slate-400 text-sm leading-relaxed">
+                  <p className="px-5 pb-5 text-ink-3 text-sm leading-relaxed border-t border-border-soft pt-4">
                     {faq.a}
                   </p>
                 </details>
@@ -367,17 +350,15 @@ export default function CreationSiteTemplate({
       </section>
 
       {/* ── GUIDES BLOG ── */}
-      <section className="relative z-10 py-16 px-6">
+      <section className="relative z-10 py-16 px-6 bg-white">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <div className="text-center mb-8">
-              <p className="text-primary font-bold tracking-widest uppercase text-xs mb-3">
-                Nos guides
-              </p>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+              <span className="pill-badge mb-4 inline-flex">Nos guides</span>
+              <h2 className="text-2xl md:text-3xl font-bold text-ink mb-3 mt-3">
                 Tout savoir avant de vous lancer
               </h2>
-              <p className="text-slate-400 text-sm">
+              <p className="text-ink-4 text-sm">
                 Des articles pour vous aider à prendre les bonnes décisions.
               </p>
             </div>
@@ -386,32 +367,28 @@ export default function CreationSiteTemplate({
             <FadeIn delay={80}>
               <Link
                 href="/blog/combien-coute-site-internet-artisan"
-                className="group flex flex-col gap-2 p-5 rounded-2xl border border-white/10 bg-surface-dark hover:border-primary/30 transition-all duration-200"
+                className="group flex flex-col gap-2 p-5 rounded-2xl border border-border-warm bg-bg-base hover:border-primary/30 hover:shadow-card transition-all duration-200"
               >
-                <span className="text-xs font-bold uppercase tracking-wider text-primary">
-                  Guide
-                </span>
-                <h3 className="text-white font-semibold text-sm leading-snug group-hover:text-blue-300 transition-colors">
+                <span className="text-xs font-bold uppercase tracking-wider text-primary">Guide</span>
+                <h3 className="text-ink font-semibold text-sm leading-snug group-hover:text-primary transition-colors">
                   Combien coûte un site internet pour un artisan ?
                 </h3>
-                <span className="inline-flex items-center gap-1 text-xs text-slate-500 group-hover:text-primary transition-colors mt-auto">
-                  Lire l'article <ArrowRight size={12} />
+                <span className="inline-flex items-center gap-1 text-xs text-ink-4 group-hover:text-primary transition-colors mt-auto">
+                  Lire l&apos;article <ArrowRight size={12} />
                 </span>
               </Link>
             </FadeIn>
             <FadeIn delay={160}>
               <Link
                 href="/blog/site-vitrine-vs-fiche-google-my-business"
-                className="group flex flex-col gap-2 p-5 rounded-2xl border border-white/10 bg-surface-dark hover:border-primary/30 transition-all duration-200"
+                className="group flex flex-col gap-2 p-5 rounded-2xl border border-border-warm bg-bg-base hover:border-primary/30 hover:shadow-card transition-all duration-200"
               >
-                <span className="text-xs font-bold uppercase tracking-wider text-primary">
-                  Guide
-                </span>
-                <h3 className="text-white font-semibold text-sm leading-snug group-hover:text-blue-300 transition-colors">
+                <span className="text-xs font-bold uppercase tracking-wider text-primary">Guide</span>
+                <h3 className="text-ink font-semibold text-sm leading-snug group-hover:text-primary transition-colors">
                   Site vitrine ou fiche Google My Business - que choisir ?
                 </h3>
-                <span className="inline-flex items-center gap-1 text-xs text-slate-500 group-hover:text-primary transition-colors mt-auto">
-                  Lire l'article <ArrowRight size={12} />
+                <span className="inline-flex items-center gap-1 text-xs text-ink-4 group-hover:text-primary transition-colors mt-auto">
+                  Lire l&apos;article <ArrowRight size={12} />
                 </span>
               </Link>
             </FadeIn>
@@ -420,11 +397,11 @@ export default function CreationSiteTemplate({
       </section>
 
       {/* ── MAILLAGE INTERNE VILLES ── */}
-      <section className="relative z-10 py-12 px-6">
+      <section className="relative z-10 py-12 px-6 bg-bg-alt">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
-            <div className="rounded-2xl border border-white/8 bg-surface-dark p-6">
-              <p className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-4">
+            <div className="rounded-2xl border border-border-warm bg-white p-6">
+              <p className="text-ink-4 text-xs font-bold uppercase tracking-widest mb-4">
                 Je travaille aussi à
               </p>
               <div className="flex flex-wrap gap-3">
@@ -434,9 +411,10 @@ export default function CreationSiteTemplate({
                     <Link
                       key={v.slug}
                       href={`/creation-site-internet-${v.slug}`}
-                      className="text-sm text-slate-400 hover:text-white border border-white/10 hover:border-white/30 px-4 py-2 rounded-full transition-all duration-200"
+                      className="inline-flex items-center gap-1.5 text-sm text-ink-3 hover:text-primary border border-border-warm hover:border-primary/30 px-4 py-2 rounded-full transition-all duration-200"
                     >
-                      📍 Création site internet {v.nom}
+                      <MapPin size={11} />
+                      Création site internet {v.nom}
                     </Link>
                   ))}
               </div>
@@ -446,40 +424,33 @@ export default function CreationSiteTemplate({
       </section>
 
       {/* ── CTA FINAL ── */}
-      <section className="relative z-10 py-20 px-6">
+      <section className="relative z-10 py-20 px-6 bg-white">
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn>
-            <div className="relative rounded-2xl border border-primary/20 bg-gradient-to-b from-primary/10 to-surface-dark p-10 md:p-16">
-              <div className="absolute inset-0 bg-primary/5 blur-3xl rounded-2xl pointer-events-none" />
-              <div className="relative">
-                <div className="flex items-center justify-center gap-1 mb-4">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star
-                      key={i}
-                      size={18}
-                      className="text-amber-400 fill-amber-400"
-                    />
-                  ))}
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                  Prêt à lancer votre projet {nomVille} ?
-                </h2>
-                <p className="text-slate-400 mb-8">
-                  Devis gratuit, sans engagement. Je vous réponds sous 24h -
-                  généralement sous 2h en semaine.
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl transition-all duration-200 hover:shadow-[0_0_32px_-6px_rgba(19,91,236,0.7)] active:scale-95"
-                  >
-                    Demander mon devis gratuit
-                    <ArrowRight size={18} />
-                  </Link>
-                  <div className="flex items-center gap-2 text-slate-400 text-sm">
-                    <Clock size={14} className="text-primary" />
-                    Réponse sous 24h · Lun-Sam
-                  </div>
+            <div className="relative rounded-2xl border border-primary/20 bg-gradient-to-b from-violet-50 to-white p-10 md:p-16 shadow-card">
+              <div className="flex items-center justify-center gap-0.5 mb-4">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} size={18} className="text-amber-400 fill-amber-400" />
+                ))}
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4">
+                Prêt à lancer votre projet {nomVille} ?
+              </h2>
+              <p className="text-ink-3 mb-8">
+                Devis gratuit, sans engagement. Je vous réponds sous 24h -
+                généralement sous 2h en semaine.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link
+                  href="/contact"
+                  className="group btn-cta inline-flex items-center gap-2 h-12 px-8 rounded-full font-bold text-sm"
+                >
+                  Demander mon devis gratuit
+                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <div className="flex items-center gap-2 text-ink-4 text-sm">
+                  <Clock size={14} className="text-primary" />
+                  Réponse sous 24h · Lun-Sam
                 </div>
               </div>
             </div>

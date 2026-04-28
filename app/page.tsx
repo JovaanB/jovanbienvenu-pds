@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Mail } from "lucide-react";
 import Hero from "@/components/Hero";
 import TrustBanner from "@/components/TrustBanner";
 import Process from "@/components/Process";
@@ -55,8 +56,19 @@ export default function Home() {
       <Portfolio />
       <Pricing />
       <FAQ />
-      <section id="contact">
-        <ContactForm />
+      <section id="contact" className="py-28 bg-white relative z-10">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <span className="pill-badge mb-4 inline-flex"><Mail size={13} />Contact</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-ink mt-3 mb-3">
+              Parlons de votre projet
+            </h2>
+            <p className="text-ink-3">
+              Remplissez le formulaire — je vous réponds sous 24h.
+            </p>
+          </div>
+          <ContactForm />
+        </div>
       </section>
       <WhatsAppButton message="Bonjour Jovan, je souhaite un devis gratuit pour mon activité." />
     </main>
